@@ -1,0 +1,77 @@
+@import url("https://use.fontawesome.com/releases/v6.1.1/css/all.css");
+
+.home {
+    position: relative;
+    height: 550px;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 3px 3px black;
+}
+
+.img-wrapper {
+    position: absolute;
+    left: 0;
+    top: -255px;
+    z-index: -1;
+}
+
+.img-wrapper img {
+    width: 100%;
+}
+
+.img-wrapper::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #284167;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+}
+
+.title {
+    font-size: 55px;
+    margin: 200px 0 0 0;
+    z-index: 1;
+}
+
+.subtitle {
+    font-size: 18px;
+    margin-inline: 450px;
+    margin-bottom: 80px;
+}
+
+.header-btn {
+    font-size: 18px;
+    /* background-color: #adf802; */
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    padding: 15px 25px;
+    color:#284167;
+    margin-bottom: 50px;
+}
+
+.header-btn:hover {
+    border: 4px solid #fff;
+    background-color: unset;
+    color: #fff;
+}
+
+/* .action {
+    font-size: 24px;
+    color: #fff;
+}
+
+.action i {
+    text-shadow: none;
+    background-color: #fff;
+    font-size: 18px;
+    padding: 2px 4px;
+    border-radius: 50%;
+    color: #000;
+} */
