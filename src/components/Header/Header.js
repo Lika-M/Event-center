@@ -1,47 +1,55 @@
-import './Header.css'
+import './Header.css';
+import { NavLink } from 'react-router-dom';
+
 const Header = () => {
-return (
+    return (
+        <header>
+            <div className="before-header">
+                <span className="before-header-contact"><i class="fas fa-phone-alt"></i>+359 555 555 555</span>
+                <span className="before-header-contact"><i class="fas fa-envelope-open"></i>event-center@event.bg</span>
+            </div>
+            <div class="header">
+                <article class="header-logo">
+                    <img src="/images/logo.png" alt='logo' />
+                    <span className="header-logo-text">EVENT CENTER</span>
+                </article>
+                <nav class="header-nav">
+                    <ul className="header-nav-list">
 
-    <header class="header">
-    <article class="header-logo">
-        <img src="/images/logo.png" alt='logo'/>
-        <span className="header-logo-text">EVENT CENTER</span>
-    </article>
-    <nav class="header-nav">
-        <ul className="header-nav-list">
+                        <li className="header-nav-list-item">
+                            <NavLink to="/" className="header-nav-list-item-link">HOME</NavLink>
+                        </li>
 
-            <li className="header-nav-list-item active">
-                <a href="#/" className="header-nav-list-item-link active">HOME</a>
-            </li>
+                        <li className="header-nav-list-item">
+                            <NavLink to="/about" className="header-nav-list-item-link">ABOUT US</NavLink>
+                        </li>
 
-            <li className="header-nav-list-item">
-                <a href="#/" className="header-nav-list-item-link">ABOUT US</a>
-            </li>
+                        <li className="header-nav-list-item">
+                            <NavLink to="/" className="header-nav-list-item-link">LAST EVENTS</NavLink>
+                        </li>
+                        {/* <!-- Logged users --> */}
+                        <li className="header-nav-list-item">
+                            <NavLink to="/" className="header-nav-list-item-link">CREATE EVENT</NavLink>
+                        </li>
+                        <li className="header-nav-list-item">
+                            <NavLink to="/" className="header-nav-list-item-link">SEARCH</NavLink>
+                        </li>
+                        <li className="header-nav-list-item">
+                            <NavLink to="/" className="header-nav-list-item-link">LOGOUT</NavLink>
+                        </li>
 
-            <li className="header-nav-list-item">
-                <a href="#/" className="header-nav-list-item-link">LAST EVENTS</a>
-            </li>
-            {/* <!-- Logged users --> */}
-            <li className="header-nav-list-item">
-                <a href="#/" className="header-nav-list-item-link">CREATE EVENT</a>
-            </li>
-            <li className="header-nav-list-item">
-                <a href="#/" className="header-nav-list-item-link">SEARCH</a>
-            </li>
-            <li className="header-nav-list-item">
-                <a href="#/" className="header-nav-list-item-link">LOGOUT</a>
-            </li>
-
-            {/* <!-- Guest users --> */}
-            <li className="header-nav-list-item">
-                <a href="#/" className="header-nav-list-item-link">REGISTER</a>
-            </li>
-            <li className="header-nav-list-item">
-                <a href="#/" className="header-nav-list-item-link">LOGIN</a>
-            </li>
-        </ul>
-    </nav>
-</header>
-)};
+                        {/* <!-- Guest users --> */}
+                        <li className="header-nav-list-item">
+                            <NavLink to="/" className="header-nav-list-item-link">REGISTER</NavLink>
+                        </li>
+                        <li className="header-nav-list-item">
+                            <NavLink to="/" className="header-nav-list-item-link">LOGIN</NavLink>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    )
+};
 
 export default Header
