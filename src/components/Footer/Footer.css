@@ -1,0 +1,93 @@
+footer {
+    background-color: #dffd9a;
+    text-align: center;
+    position: absolute;
+}
+
+.footer-cards {
+    color: #284167;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px 100px 0 100px;
+}
+
+.card-title, .footer-logo{
+    margin-bottom: 15px;
+}
+
+.footer-logo{
+    display: inline-block;
+    font-size: 1em;
+    color: #3c2064;
+    justify-content: left;
+}
+
+.footer-cards p {
+    font-family: 'Mukta', sans-serif;
+    color: #000;
+    text-align: left;
+    font-size: 16px;
+    font-weight: lighter;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.footer-logo>img{
+    width: 35px;
+}
+
+.footer-cards .card {
+    flex-basis: 350px;
+    margin-bottom: 20px;
+}
+
+.footer-cards .card.card-contacts{
+    padding-top: 20px;
+}
+
+.footer-cards i {
+    color: #284167;
+    margin-right: 15px;
+}
+
+.footer-cards .link i {
+    font-size: 25px;
+    color: #284167;
+    border: 1px solid #284167;
+    padding: 20px;
+    border-radius: 50%;
+}
+
+.footer-cards .link i:hover {
+    color: #dffd9a;
+    background-color: #284167;
+}
+
+.card-title {
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.card-text {
+    padding: 0 20px;
+}
+
+.last span.bold {
+    font-weight: bold;
+}
+
+.rights {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-color: #284167;
+    color: #ffff;
+    font-size: 12px;
+    width: 100%;
+    height: 40px;
+    padding: unset;
+}

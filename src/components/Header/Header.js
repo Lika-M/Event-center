@@ -5,15 +5,15 @@ const Header = () => {
     return (
         <header>
             <div className="before-header">
-                <span className="before-header-contact"><i class="fas fa-phone-alt"></i>+359 555 555 555</span>
-                <span className="before-header-contact"><i class="fas fa-envelope-open"></i>event-center@event.bg</span>
+                <span className="before-header-contact"><i className="fas fa-phone-alt"></i>+359 555 555 555</span>
+                <span className="before-header-contact"><i className="fas fa-envelope-open"></i>event-center@event.bg</span>
             </div>
-            <div class="header">
-                <article class="header-logo">
+            <div className="header">
+                <article className="header-logo">
                     <img src="/images/logo.png" alt='logo' />
                     <span className="header-logo-text">EVENT CENTER</span>
                 </article>
-                <nav class="header-nav">
+                <nav className="header-nav">
                     <ul className="header-nav-list">
 
                         <li className="header-nav-list-item">

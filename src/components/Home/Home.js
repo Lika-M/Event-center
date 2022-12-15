@@ -3,20 +3,20 @@ import './Home.css'
 const Home = () => {
     return (
         <section className='home'>
-            <div class="img-wrapper">
+            <div className="img-wrapper">
                 <img src="/images/hall-1.jpg" alt="hall-1" />
             </div>
-            <h1 class="title">
+            <h1 className="title">
                 EVENT CENTER
             </h1>
-            <p class="subtitle">
+            <p className="subtitle">
                 Modern Event space. Multifunctional halls.Combining art, design & technology.
 
             </p>
-            <button class="header-btn">BOOK EVENT</button>
-            {/* <article class="action">
+            <button className="header-btn">BOOK EVENT</button>
+            {/* <article className="action">
                 See it in action
-                <i class="fa-solid fa-arrow-right"></i>
+                <i className="fa-solid fa-arrow-right"></i>
 
             </article> */}
         </section>
