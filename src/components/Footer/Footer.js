@@ -7,9 +7,9 @@ const Footer = () => {
             <article className="footer-cards">
                 <article className="card">
                     <Link to="/" >
-                       <div className="footer-logo"> 
-                        <img src="/images/logo.png" alt='logo' />
-                        <span className="card-title">EVENT CENTER</span>
+                        <div className="footer-logo">
+                            <img src="/images/logo.png" alt='logo' />
+                            <span className="card-title">EVENT CENTER</span>
                         </div>
                         <p className="card-text">
                             The Event Center has halls, area for coffee breaks, networking and an open space part with the ability to follow in real time the events in the halls of the center.

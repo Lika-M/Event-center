@@ -14,11 +14,7 @@ const Home = () => {
 
             </p>
             <button className="header-btn">BOOK EVENT</button>
-            {/* <article className="action">
-                See it in action
-                <i className="fa-solid fa-arrow-right"></i>
-
-            </article> */}
+         
         </section>
     )
 }
