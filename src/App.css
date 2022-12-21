@@ -1,29 +1,5 @@
-body {
+ body {
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 0;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  background-position: 20% 82%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-#box {
-  height: auto;
-  width: auto;
-}
-
-main {
-  padding-bottom: 1em;
-}
-a{
-  padding: 0;
-}

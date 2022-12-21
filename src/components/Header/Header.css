@@ -1,117 +1,329 @@
 @import url("https://use.fontawesome.com/releases/v6.1.1/css/all.css");
 
-.before-header {
-    height: 40px;
-    background-color: #dffd9a;
-    display: flex;
-    align-items: center;
-    font-family: Helvetica, sans-serif;
-    padding-left: 10px;
-}
-
-.before-header-contact{
-    display: inline-block;
-    align-items: center;
-    font-size: 14px;
-    padding-left: 40px;
-}
-
-.before-header-contact i{
-    margin-right: 8px;
-}
-
 .header {
-    display: flex;
-    justify-content: space-between;
-    padding-left: 3em;
-    padding-right: 3em;
-    height: 80px;
-    align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 100px;
+}
+
+.header ul {
+  float: right;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+}
+
+.header ul li {
+  margin: 0px;
+  /* display:inline-block; */
+  float: left;
+}
+
+.header a {
+  display: block;
+  /* padding:14px 20px;	 */
+  color: #FFF;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.header ul ul {
+  display: none;
+  position: absolute;
+  /* has to be the same number as the "line-height" of "nav a" */
+  top: 60px;
+}
+
+.before-header {
+  height: 40px;
+  background-color: #dffd9a;
+  display: flex;
+  align-items: center;
+  font-family: Helvetica, sans-serif;
+  padding-left: 10px;
+}
+
+.before-header-contact {
+  display: inline-block;
+  align-items: center;
+  font-size: 14px;
+  padding-left: 40px;
+}
+
+.before-header-contact i {
+  margin-right: 8px;
 }
 
 .header-logo {
-    display: flex;
-    align-items: center;
-    margin-top: 0;
-    margin: 0%;
+  float: left;
+  display: block;
+  align-items: center;
+  margin-top: 0;
+  margin: 0%;
 }
 
 .header-logo>img {
-    height: 40px;
-    margin-right: 5px;
+  height: 45px;
+  margin-right: 5px;
+  position: relative;
+  top: 10px;
 }
 
 .header-logo-text {
-    font-size: 1.2em;
-    color: #3c2064;
+  display: inline-block;
+  font-size: 1.2em;
+  color: #3c2064;
+}
 
+.header-nav {
+  float: right;
+}
+
+.header-nav ul li:hover>ul {
+  display: inherit;
+}
+
+.toggle,
+[id^=drop] {
+  display: none;
 }
 
 .header-nav-list {
-    display: flex;
-    padding-right: 0px;
+  display: flex;
+  padding-right: 0px;
 }
 
 .header-nav-list-item {
-    list-style: none;
-    padding: 10px 20px;
-    margin: 0 1px;
-    margin-left: 4px;
+  list-style: none;
+  /* background: #adf802; */
+  padding: 12px 20px;
+  margin: 0 1px;
+  margin-left: 4px;
 }
 
-.header-nav-list-item-link {
-    font-size: 1em;
-    text-decoration: none;
-    font-family: 'Mukta', sans-serif;
-    color: #284167;
+nav li:hover>ul {
+  display: inherit;
 }
 
-.header-nav-list-item-link:hover {
-    padding-bottom: 10px;
-    border-bottom: 3px solid #dffd9a;
-    ;
+.header-nav-list-item ul li {
+  width: 170px;
+  float: none;
+  display: list-item;
+  position: relative;
 }
 
-.header-nav-list-item-link.active {
-    padding-bottom: 10px;
-    border-bottom: 3px solid#dffd9a;
+.header-nav-list-item a, label {
+  font-size: 1.05em;
+  text-decoration: none;
+  font-family: 'Mukta', sans-serif;
+  color: #284167;
+  position: relative;
+  z-index: 3;
 }
 
+.header-nav-list-item.active {
+  border-bottom: 3px solid #284167;
+}
+
+.header-nav-list-item:hover {
+  border-bottom: 3px solid #284167;
+  position: relative;
+  z-index: 3;
+}
+
+
+
+/* ::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.01);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4d6d72;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4d6d72;
+} */
 
 .error-box {
-    position: fixed;
-    display: block;
-    z-index: 11111;
-    left: 2%;
-    top: 15%;
-    margin-top: 1em;
-    text-align: center;
-    border-radius: 0.5rem;
-    color: white;
-    height: auto;
-    width: 340px;
-    font-style: italic;
-    background-color: #284167;
-    box-shadow: 0px 0px 8px 7px white;
+  position: fixed;
+  display: block;
+  z-index: 11111;
+  left: 2%;
+  top: 15%;
+  margin-top: 1em;
+  text-align: center;
+  border-radius: 0.5rem;
+  color: white;
+  height: auto;
+  width: 340px;
+  font-style: italic;
+  background-color: #284167;
+  box-shadow: 0px 0px 8px 7px white;
 }
 
 .error-box>p {
-    font-size: 24px;
-    font-weight: bold;
-    font-family: 'Barlow', sans-serif;
-    padding: 14px;
-    height: auto;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Barlow', sans-serif;
+  padding: 14px;
+  height: auto;
 }
 
 .error-box {
-    -moz-animation: cssAnimation 0s ease-in 2s forwards;
-    /* Firefox */
-    -webkit-animation: cssAnimation 0s ease-in 2s forwards;
-    /* Safari and Chrome */
-    -o-animation: cssAnimation 0s ease-in 2s forwards;
-    /* Opera */
-    animation: cssAnimation 0s ease-in 2s forwards;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
+  -moz-animation: cssAnimation 0s ease-in 2s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 2s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 2s forwards;
+  /* Opera */
+  animation: cssAnimation 0s ease-in 2s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
 
+@keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+  }
+}
+
+@-webkit-keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    padding: 0;
+  }
+}
+
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width : 768px) {
+
+
+  .header-logo {
+    display: block;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    float: right;
+  }
+
+  .header-nav-list-item:hover {
+    border-bottom: none;
+  }
+  
+
+  nav {
+		margin: 0;
+	}
+
+	/* Hide the navigation menu by default */
+	/* Also hide the  */
+	.toggle + a,
+	.menu {
+		display: none;
+	}
+
+	/* Stylinf the toggle lable */
+	.toggle {
+		display: block;
+		padding:14px 20px;	
+		font-size:17px;
+		text-decoration:none;
+		border:none;
+	}
+
+	/* .toggle:hover {
+		background-color: #000000;
+	} */
+
+	/* Display Dropdown when clicked on Parent Lable */
+	[id^=drop]:checked + ul {
+		display: block;
+	}
+
+	/* Change menu item's width to 100% */
+	nav ul li {
+		display: block;
+		width: 100%;
+		}
+
+	nav ul ul .toggle,
+	nav ul ul a {
+		padding: 0 40px;
+	}
+
+	nav ul ul ul a {
+		padding: 0 80px;
+	}
+
+	nav a:hover,
+ 	nav ul ul ul a {
+		background-color: #ffffff;
+    
+	}
+  
+	nav ul li ul li .toggle,
+	nav ul ul a{
+		padding:14px 20px;	
+		font-size:17px; 
+    position: relative;
+    top: -50px;
+    left: 150px;
+	}
+  
+  
+	nav ul li ul li .toggle,
+	nav ul ul a {
+		background-color: #fff; 
+	}
+
+	/* Hide Dropdowns by Default */
+	nav ul ul {
+		float: none;
+		position:static;
+		color: #ffffff;
+		/* has to be the same number as the "line-height" of "nav a" */
+	}
+		
+	/* Hide menus on hover */
+	nav ul ul li:hover > ul,
+	nav ul li:hover > ul {
+		display: none;
+	}
+		
+	/* Fisrt Tier Dropdown */
+	nav ul ul li {
+		display: block;
+		width: 100%;
+	}
+
+	nav ul ul ul li {
+		position: static;
+		/* has to be the same number as the "width" of "nav ul ul li" */ 
+
+	}
+
+}
+
+@media all and (max-width : 330px) {
+
+	nav ul li {
+		display:block;
+		width: 94%;
+	}
+
+}

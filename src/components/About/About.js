@@ -8,7 +8,7 @@ const About = () => {
             </h2>
             <p>When you book your event, these services and amenities are included.</p>
 
-            {/* <article className="perfect-content">
+            <article className="perfect-content">
                 <article className="perfect-content-card">
                     <img src="https://www.jarviswoodhouse.com/wp-content/uploads/2017/07/event_management.jpg" alt="Event management" />
                     <p>Event management</p>
@@ -22,16 +22,16 @@ const About = () => {
                     <p>Economic management</p>
                 </article>
                 <article className="perfect-content-card">
-                    <img src="" alt="Affiliate organizations relationships" />
+                    <img src="https://neilpatel.com/wp-content/uploads/2021/07/affiliate-marketing.png" alt="Affiliate organizations relationships" />
                     <p>Affiliate organizations relationships</p>
                 </article>
                 <article className="perfect-content-card">
-                    <img src="" alt="Catering" />
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToFr2hM0MFu4ccpSSJQ5ouwES_cGIOHrHm2A&usqp=CAU" alt="Catering" />
                     <p>Catering</p>
                 </article>
 
 
-            </article> */}
+            </article>
             <article className="perfect-offer">
                 <article className="perfect-offer-card">
                     <h3>Exclusive Use of the Space</h3>

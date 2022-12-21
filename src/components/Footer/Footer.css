@@ -26,11 +26,12 @@ footer {
     margin-bottom: 10px;
 }
 
-.footer-logo{
+/* .footer-logo{
     display: inline-block;
+
     font-size: 1em;
     color: #3c2064;
-}
+} */
 
 .footer-logo>img{
     width: 30px;

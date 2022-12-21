@@ -5,7 +5,7 @@
     text-align: center;
     color: #fff;
     text-shadow: 1px 3px 3px black;
-  
+    z-index: 0;
 }
 
 .img-wrapper {
@@ -32,7 +32,7 @@
 }
 
 .title {
-    font-size:3em;
+    font-size: 3em;
     margin: 200px 0 50px 0;
     z-index: 1;
 }
@@ -60,26 +60,27 @@
     color: #fff;
 }
 
-@media (max-width: 1200px){
+@media (max-width: 1200px) {
     .title {
         margin: 100px 0 30px 0;
     }
+
     .subtitle {
         margin-inline: 100px;
     }
 
-    .home{
+    .home {
         height: 33em;
-       }
+    }
 }
 
-@media (max-width: 800px){
-   .home{
-    height: 25em;
-   }
-   .header-btn{
-    display: none;
-   }
-   
-}
+@media (max-width: 800px) {
+    .home {
+        height: 25em;
+    }
 
+    .header-btn {
+        display: none;
+    }
+
+}
