@@ -1,15 +1,11 @@
 @import url("https://use.fontawesome.com/releases/v6.1.1/css/all.css");
 
 .header {
-  margin: 0;
-  padding: 0;
-  height: 100px;
+  height: 80px;
 }
 
 .header ul {
   float: right;
-  padding: 0;
-  margin: 0;
   list-style: none;
   position: relative;
 }
