@@ -1,7 +1,12 @@
-footer {
+.footer {
+    min-height: 20px;
+    padding: 15px 0;
+    background: #dffd9a;
+    border-radius: 0 0 10px 10px;
     background-color: #dffd9a;
     text-align: center;
-    position: absolute;
+    border-radius: 0 0 10px 10px;
+    border-top: 3px solid #fff;
 }
 
 .footer-cards {
@@ -9,10 +14,12 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 20px 100px 0 100px;
+    padding: 20px 0 0 0 ;
 }
 
-.card-title, .footer-logo{
+.card-title,
+.footer-logo {
+    color: #284167;
     margin-bottom: 15px;
 }
 
@@ -33,16 +40,16 @@ footer {
     color: #3c2064;
 } */
 
-.footer-logo>img{
+.footer-logo>img {
     width: 30px;
 }
 
 .footer-cards .card {
-    flex-basis: 400px;
+    flex-basis: 300px;
     margin-bottom: 20px;
 }
 
-.footer-cards .card.card-contacts{
+.footer-cards .card.card-contacts {
     padding-top: 20px;
 }
 
@@ -81,7 +88,6 @@ footer {
 
 .rights {
     display: flex;
-    position: absolute;
     align-items: center;
     justify-content: center;
     background-color: #284167;
@@ -90,4 +96,6 @@ footer {
     width: 100%;
     height: 40px;
     padding: unset;
+    border-top: 3px solid #fff;
+    border-bottom: 3px solid #fff;
 }

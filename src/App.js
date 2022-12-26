@@ -7,7 +7,7 @@ import About from './components/About/About.js';
 
 function App() {
   return (
-    <>
+    <div class="wrapper">
       <Header />
       <Routes>
 
@@ -17,7 +17,7 @@ function App() {
 
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 }
 
