@@ -3,35 +3,32 @@ import './About.css';
 const About = () => {
     return (
         <section className="perfect">
-            <h2 className="perfect-title">
-                WHAT WE OFFER
-            </h2>
-            <p>When you book your event, these services and amenities are included.</p>
-
-            <article className="perfect-content">
-                <article className="perfect-content-card">
+            <h2 className="perfect-title">WHAT WE OFFER</h2>
+        
+            <ul className="perfect-content">
+                <li className="perfect-content-card">
                     <img src="https://www.jarviswoodhouse.com/wp-content/uploads/2017/07/event_management.jpg" alt="Event management" />
                     <p>Event management</p>
-                </article>
-                <article className="perfect-content-card">
+                </li>
+                <li className="perfect-content-card">
                     <img src="https://raffaeleconte.com/jg-admin/ckeditor/kcfinder/upload/images/brand.png" alt="Branding and design" />
                     <p>Branding and design</p>
-                </article>
-                <article className="perfect-content-card">
+                </li>
+                <li className="perfect-content-card">
                     <img src="https://www.uam.es/EscuelaDoctorado/imagen/1429099878733/Programa%20de%20Doctorado%20en%20Econom%C3%ADa%20y%20Gesti%C3%B3n%20de%20la%20Innovaci%C3%B3n_red.jpg" alt="Economic management" />
                     <p>Economic management</p>
-                </article>
-                <article className="perfect-content-card">
+                </li>
+                <li className="perfect-content-card">
                     <img src="https://neilpatel.com/wp-content/uploads/2021/07/affiliate-marketing.png" alt="Affiliate organizations relationships" />
                     <p>Affiliate organizations relationships</p>
-                </article>
-                <article className="perfect-content-card">
+                </li>
+                <li className="perfect-content-card">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToFr2hM0MFu4ccpSSJQ5ouwES_cGIOHrHm2A&usqp=CAU" alt="Catering" />
                     <p>Catering</p>
-                </article>
+                </li>
+            </ul>
 
-
-            </article>
+            <p>When you book your event, these services and amenities are included.</p>
             <ul className="perfect-offer">
                 <li className="perfect-offer-card">
                     <h3>Exclusive Use of the Space</h3>
@@ -59,8 +56,8 @@ const About = () => {
                 </li>
                 <li className="perfect-offer-card">
                     <h3>Easy to Decorate:</h3>
-                    <p>Our modern industrial style is perfect with or without decor. Decorating must occur during the rental time, early access is not permitted. You are welcome to bring your own table decor; however, we have centerpieces available for use, free of charge, if interested.</p>
-                    <p> If hanging decor or lighting is desired, pre-approval by The Jerome is required to ensure that proper fasteners are used; nails and tape are not allowed.</p>
+                    <p>Our modern industrial style is perfect with or without decor. Decorating must occur during the rental time, early access is not permitted. You are welcome to bring your own table decor; however, we have centerpieces available for use, free of charge, if interested. If hanging decor or lighting is desired, pre-approval by The Jerome is required to ensure that proper fasteners are used; nails and tape are not allowed.</p>
+
                 </li>
 
             </ul>
