@@ -5,7 +5,7 @@
     margin: 50px auto;
     background-color:  #042553;
     opacity:0.8;
-    border: 2px solid white;
+    border: 3px solid white;
     border-radius: 20px;
 }
 
@@ -43,7 +43,6 @@
     border: none;
     background-color: #dffd9a;
     color: #042553;
-    font-weight: bold;
     font-size: 15px;
 }
 

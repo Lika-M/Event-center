@@ -2,9 +2,10 @@
     color: white;
     width: 360px;
     height: 330px;
-    margin: auto;
+    margin: 50px auto;
     background-color:  #042553;
-    border: 2px solid white;
+    opacity:0.8;
+    border: 3px solid white;
     border-radius: 20px;
 }
 
@@ -39,7 +40,7 @@
 .login-box input[type="submit"] {
     width: 330px;
     height: 35px;
-    margin-top: 20px;
+    margin-top: 30px;
     border: none;
     background-color: #dffd9a;
     color: #042553;
@@ -50,7 +51,6 @@
     text-align: center;
     padding-top: 20px;
     font-size: 15px;
-
 }
 
 .login-box p>a {

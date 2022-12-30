@@ -9,9 +9,9 @@ export const Login = () => {
                 <h1>Login</h1>
                 <form >
                     <label>Email</label>
-                    <input type="text" name="" placeholder="Email.." />
+                    <input type="text" name="" placeholder="Email" />
                     <label>Password</label>
-                    <input type="password" name="" placeholder="Password.." />
+                    <input type="password" name="" placeholder="Password" />
                     <input type="submit" value="Submit" />
                 </form>
                 <p>Not have an account? <Link to="/register">Register here</Link></p>
