@@ -1,6 +1,6 @@
 import './About.css';
 
-const About = () => {
+export const About = () => {
     return (
         <section className="perfect">
             <h2 className="perfect-title">WHAT WE OFFER</h2>
@@ -67,4 +67,3 @@ const About = () => {
     )
 }
 
-export default About

@@ -1,6 +1,6 @@
 import './Home.css'
 
-const Home = () => {
+export const Home = () => {
     return (
         <section className='home'>
             <div className="img-wrapper">
@@ -19,4 +19,3 @@ const Home = () => {
     )
 }
 
-export default Home;

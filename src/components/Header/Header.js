@@ -1,7 +1,7 @@
 import './Header.css';
 import { NavLink } from 'react-router-dom';
 
-const Header = () => {
+export const Header = () => {
   return (
     <>
 
@@ -34,8 +34,8 @@ const Header = () => {
         <li><NavLink to="#" className="navigation-link" title="Contact">LOGOUT</NavLink></li>
 
         {/* <!-- Guest users --> */}
-        <li><NavLink to="#" className="navigation-link" title="Contact">REGISTER</NavLink></li>
-        <li><NavLink to="#" className="navigation-link" title="Contact">LOGIN</NavLink></li>
+        <li><NavLink to="/register" className="navigation-link" title="Contact">REGISTER</NavLink></li>
+        <li><NavLink to="/login" className="navigation-link" title="Contact">LOGIN</NavLink></li>
         <div className="clear"></div>
       </ul>
 
@@ -100,4 +100,3 @@ const Header = () => {
   )
 };
 
-export default Header

@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
-import './Footer.css'
-const Footer = () => {
+import './Footer.css';
+
+
+export const Footer = () => {
     return (
         <footer className="footer">
 
@@ -50,4 +52,3 @@ const Footer = () => {
     )
 }
 
-export default Footer;
