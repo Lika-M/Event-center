@@ -9,14 +9,14 @@ export const Register = () => {
                 <h1>Register</h1>
 
                 <form>
-                    <label>Username</label>
-                    <input type="text" name="" placeholder="Username" />
-                    <label>Email</label>
-                    <input type="text" name="" placeholder="Email" />
-                    <label>Password</label>
-                    <input type="password" name="" placeholder="Password" />
-                    <label>Confirm Password</label>
-                    <input type="password" name="" placeholder="Confirm Password" />
+                    <label htmlFor="username">Username</label>
+                    <input type="text" name="username" id="username" placeholder="Username" />
+                    <label htmlFor="email">Email</label>
+                    <input type="text" name="email" id="email" placeholder="Email" />
+                    <label htmlFor="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Password" />
+                    <label htmlFor="rePass">Confirm Password</label>
+                    <input type="password" name="rePass" id="rePass" placeholder="Confirm Password" />
                     <input type="submit" value="Submit" />
                 </form>
                 <p>Already have an account? <Link to="/login">Login here</Link></p>

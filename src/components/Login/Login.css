@@ -1,8 +1,12 @@
+.login{
+    padding: 40px 0;
+    background: url("https://images.unsplash.com/photo-1585637071663-799845ad5212?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80") no-repeat fixed center;
+}
 .login-box {
     color: white;
     width: 360px;
     height: 330px;
-    margin: 50px auto;
+    margin:  auto;
     background-color:  #042553;
     opacity:0.8;
     border: 3px solid white;
@@ -40,7 +44,7 @@
 .login-box input[type="submit"] {
     width: 330px;
     height: 35px;
-    margin-top: 30px;
+    margin-top: 40px;
     border: none;
     background-color: #dffd9a;
     color: #042553;
