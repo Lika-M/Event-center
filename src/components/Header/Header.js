@@ -26,7 +26,7 @@ export const Header = () => {
           </ul>
         </li>
 
-        <li><NavLink to="#" className="navigation-link">LAST EVENTS</NavLink></li>
+        <li><NavLink to="/calendar" className="navigation-link">CALENDAR</NavLink></li>
 
         {/* <!-- Logged users --> */}
         <li><NavLink to="#" className="navigation-link" title="Contact">CREATE EVENT</NavLink></li>

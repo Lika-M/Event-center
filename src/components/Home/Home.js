@@ -1,8 +1,9 @@
-import './Home.css'
+import './Home.css';
 
 export const Home = () => {
     return (
         <section className='home'>
+            
             <div className="img-wrapper">
                 <img src="/images/hall-1.jpg" alt="hall-1" />
             </div>
@@ -14,7 +15,7 @@ export const Home = () => {
 
             </p>
             <button className="header-btn">BOOK EVENT</button>
-         
+
         </section>
     )
 }
