@@ -6,10 +6,11 @@ const endpoints = {
     'logout': '/users/logout'
 }
 
-export async function register(email, password) {
-    const result = await post(endpoints.register, { email, password});
+export async function register(username, email, password) {
+    const result = await post(endpoints.register, { username, email, password });
     const userData = {
         _id: result._id,
+        username: result.username,
         email: result.email,
         token: result.accessToken
     };
