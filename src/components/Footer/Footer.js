@@ -23,9 +23,9 @@ export const Footer = () => {
                     <h4 className="card-title">
                         LINKS
                     </h4>
-                    <Link to="#" className="link"><i class="fab fa-facebook-square"></i></Link>
-                    <Link to="#" className="link"><i class="fab fa-instagram-square"></i></Link>
-                    <Link to="#" className="link"><i class="fab fa-linkedin"></i></Link>
+                    <Link to="#" className="link"><i className="fab fa-facebook-square"></i></Link>
+                    <Link to="#" className="link"><i className="fab fa-instagram-square"></i></Link>
+                    <Link to="#" className="link"><i className="fab fa-linkedin"></i></Link>
 
                 </article>
                 <article className="card card-contacts">
@@ -33,7 +33,7 @@ export const Footer = () => {
                         CONTACTS
                     </h4>
                     <p className="card-text">
-                        <span><i class="fas fa-map-marker-alt"></i>ul. "Svilenitsa" 555А, 1463 Sofia Center, Sofia</span>
+                        <span><i className="fas fa-map-marker-alt"></i>ul. "Svilenitsa" 555А, 1463 Sofia Center, Sofia</span>
                     </p>
                     <p className="card-text">
                         <span><i className="fas fa-phone-alt"></i>+359 555 555 555</span>

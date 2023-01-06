@@ -5,7 +5,7 @@ export const Header = () => {
   return (
     <>
 
-      <div class="top">
+      <div className="top">
         <div className="navigation-logo">
           <img src="/images/logo.png" alt='logo' />
           <span className="navigation-logo-text">EVENT CENTER</span>
@@ -15,7 +15,7 @@ export const Header = () => {
           <span ><i className="fas fa-envelope-open"></i>event-center@event.bg</span>
         </div>
       </div>
-      <ul class="navigation">
+      <ul className="navigation">
 
         <li><NavLink to="/" className="navigation-link" title="Home">HOME</NavLink></li>
         <li><NavLink to="/about" className="navigation-link" title="About us">ABOUT</NavLink>
@@ -53,10 +53,10 @@ export const Header = () => {
     //     </article>
     //     <article className="header-nav">
 
-    //       <label for="drop" class="toggle">MENU</label>
+    //       <label for="drop" className="toggle">MENU</label>
     //       <input type="checkbox" id="drop" />
 
-    //       <ul class="menu">
+    //       <ul className="menu">
     //         <li className="header-nav-list-item"><NavLink to="/">HOME</NavLink></li>
     //         <li className="header-nav-list-item">
 
