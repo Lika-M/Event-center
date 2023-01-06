@@ -20,6 +20,13 @@
     vertical-align: middle;
 }
 
+.event-card-content-detail {
+    color: grey;
+    font-style: italic;
+    flex-grow: 1;
+    padding: 10px  0 0 30px;
+}
+
 .event-card-content-date {
     position: relative;
     background-color: #284167;
@@ -75,11 +82,6 @@
     padding: 15px;
     background-color: #284167;
     color: #fff;
-}
-
-.event-card-content-detail {
-    color: grey;
-    font-style: italic;
 }
 
 @media (max-width: 1200px) {

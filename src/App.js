@@ -15,7 +15,7 @@ function App() {
 
   return (
     <AuthContext.Provider value={{}}>
-      <div class="wrapper">
+      <div className="wrapper">
         <Header />
         <Routes>
 
