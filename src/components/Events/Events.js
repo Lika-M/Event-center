@@ -32,7 +32,7 @@ export const Events = () => {
                     {events.map(x => <EventItem key={x._id} {...x} />)}
                 </ul>
                 : <p style={{ fontSize: "30px", color: "red" }}>
-                    {`'No events in Database`}
+                    {`No events in Database`}
                 </p>}
             <button>Next >></button>
         </section>

@@ -1,5 +1,22 @@
-import { createContext } from "react";
+import { createContext, useState } from 'react';
 
-const AuthContext = createContext();
+export const AuthContext = createContext();
+export const AuthProvider = ({ children }) => {
 
-export default AuthContext;
+    const [currentUser, setCurrentUser] = useState(localStorage.getItem('userData'));
+
+    const saveUserInfo = (userData) => {
+        setCurrentUser(userData);
+    }
+
+    const deleteUserInfo = () => {
+        setCurrentUser(null);
+    }
+
+    return (
+        <AuthContext.Provider value={{ currentUser, saveUserInfo, deleteUserInfo }}>
+            {children}
+        </AuthContext.Provider>
+    );
+}
+

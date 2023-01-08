@@ -14,6 +14,7 @@ export async function register(username, email, password) {
         email: result.email,
         token: result.accessToken
     };
+    
     return userData;
 }
 
@@ -21,13 +22,16 @@ export async function login(email, password) {
     const result = await post(endpoints.login, { email, password });
     const userData = {
         _id: result._id,
+        username: result.username,
         email: result.email,
         token: result.accessToken
     };
+    
     return userData;
 }
 
 export async function logout() {
     get(endpoints.logout);
+    localStorage.removeItem('userData');
 }
 

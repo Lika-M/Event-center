@@ -1,12 +1,37 @@
-import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
+import { login } from '../../services/authService.js'
+import { AuthContext } from '../../contexts/AuthContext.js';
+
 import './Login.css';
 
 export const Login = () => {
 
-    const onLoginHandler = (ev) =>{
+    const navigate = useNavigate();
+    const { saveUserInfo } = useContext(AuthContext);
+
+    const onLoginHandler = (ev) => {
         ev.preventDefault();
+
+        const formData = new FormData(ev.target);
+        const { email, password } = Object.fromEntries(formData);
+
+        if (email === '' || password === '') {
+            return alert('All fields are required!');
+        }
+
+        login(email, password)
+            .then(data => {
+                saveUserInfo(data);
+                localStorage.setItem('userData', JSON.stringify(data));
+                return data;
+            })
+            .catch(err => alert(err.message));
+
+        navigate('/');
     }
-    
+
     return (
         <section className="login">
             <div class="login-box">
