@@ -5,6 +5,11 @@ async function request(url, options) {
         const response = await fetch(host + url, options);
 
         if (response.ok !== true) {
+
+            if (response.status === 403) {
+                //TODO redirect if server crashed
+                localStorage.removeItem('userData');
+            }
             const error = await response.json();
             throw new Error(error.message);
         }
