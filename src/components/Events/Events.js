@@ -18,32 +18,57 @@ export const Events = () => {
             })
     }, []);
 
+    let currentMonth = new Date(events[0]?.date).toLocaleString('default', { month: 'long' });
+    let visible = true;
+    let count = 0;
+
+    const currentEvents = events.map(x => {
+
+        const month = new Date(x.date).toLocaleString('default', { month: 'long' });
+        const year = x.date.toString().split(' ')[3];
+
+
+        if (month !== currentMonth) {
+            currentMonth = month;
+            visible = true;
+        } else {
+            if (count === 0) {
+                count++;
+            } else {
+                visible = false;
+            }
+        }
+
+        return (
+            <>
+                {visible
+                    ? <div className="events-date">
+                        <span>{currentMonth} {year}</span>
+                    </div>
+                    : ''
+                }
+                <ul className="event-list">
+                    <EventItem key={x._id} {...x} />
+                </ul>
+            </>
+
+
+        );
+    })
+
     return (
         <section className="events">
             <div className="events-img">
                 <img src="https://www.onecalendar.nl/images/onecalendar.jpg" alt="calendar" />
             </div>
             <div className="events-title">Calendar</div>
-            <div className="events-date">
-                <span>January 2023</span>
-            </div>
+
             {events.length > 0
-                ? <ul className="event-list">
-                    {events.map(x => <EventItem key={x._id} {...x} />)}
-                </ul>
-                : <p style={{ fontSize: "30px", color: "red" }}>
+                ? currentEvents
+                : <p style={{ fontSize: "25px", color: "red", padding: "50px 0" }}>
                     {`No events in Database`}
                 </p>}
             <button>Next >></button>
         </section>
     );
 }
-// {
-//     plants.items.length > 0
-//     ? <ul className="plants-list">
-//         {plants.items.map(x => <PlantCard key={x._id} plant={x} />)}
-//     </ul>
-//     : <p style={{ fontSize: "30px", color: "red" }}>
-//         {`No ${type[0].toUpperCase() + type.slice(1)} in Database`}
-//     </p>
-// }
