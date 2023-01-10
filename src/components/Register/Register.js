@@ -41,7 +41,6 @@ export const Register = () => {
         .then(data => {
             console.log(data);
             saveUserInfo(data);
-            localStorage.setItem('userData', JSON.stringify(data));
             return data;
         })
         .catch(err => alert(err.message));

@@ -24,7 +24,6 @@ export const Login = () => {
         login(email, password)
             .then(data => {
                 saveUserInfo(data);
-                localStorage.setItem('userData', JSON.stringify(data));
                 return data;
             })
             .catch(err => alert(err.message));
@@ -34,7 +33,7 @@ export const Login = () => {
 
     return (
         <section className="login">
-            <div class="login-box">
+            <div className="login-box">
                 <h1>Login</h1>
                 <form onSubmit={onLoginHandler}>
                     <label htmlFor='email'>Email</label>
