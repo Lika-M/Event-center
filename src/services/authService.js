@@ -14,7 +14,7 @@ export async function register(username, email, password) {
         email: result.email,
         token: result.accessToken
     };
-    
+    localStorage.setItem('userData', JSON.stringify(userData));
     return userData;
 }
 
@@ -26,7 +26,8 @@ export async function login(email, password) {
         email: result.email,
         token: result.accessToken
     };
-    
+              
+    localStorage.setItem('userData', JSON.stringify(userData));
     return userData;
 }
 
