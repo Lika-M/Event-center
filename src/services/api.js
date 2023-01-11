@@ -1,3 +1,5 @@
+import {clearUserData, getUserData} from './util.js';
+
 const host = 'http://localhost:3030';
 
 async function request(url, options) {
@@ -8,7 +10,7 @@ async function request(url, options) {
 
             if (response.status === 403) {
                 //TODO redirect if server crashed
-                localStorage.removeItem('userData');
+                clearUserData();
             }
             const error = await response.json();
             throw new Error(error.message);
@@ -34,7 +36,7 @@ function createOptions(method = 'GET', data) {
         options.headers['Content-Type'] = 'application/json';
         options.body = JSON.stringify(data);
     }
-    const userData = JSON.parse(localStorage.getItem('userData'));
+    const userData = getUserData();
 
     if (userData && userData.token) {
         options.headers['X-Authorization'] = userData.token;

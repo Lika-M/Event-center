@@ -1,9 +1,10 @@
 import { createContext, useState } from 'react';
+import {getUserData} from '../services/util.js'
 
 export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
 
-    const [currentUser, setCurrentUser] = useState(localStorage.getItem('userData'));
+    const [currentUser, setCurrentUser] = useState(getUserData());
 
     const saveUserInfo = (userData) => {
         setCurrentUser(userData);
