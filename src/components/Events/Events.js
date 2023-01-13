@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { loadEvents } from '../../services/eventService.js'
+import { useSearchParams, Link } from 'react-router-dom'
+import { getLastEvents } from '../../services/eventService.js'
 import { EventItem } from "./EventItem.js";
 import './Events.css'
 
@@ -7,16 +8,27 @@ import './Events.css'
 export const Events = () => {
 
     const [events, setEvents] = useState([]);
+    const [pages, setPages] = useState(0);
 
+    const [searchParams, setSearchParams] = useSearchParams({});
+
+    const page = Number(searchParams.get('page') || 1);
+    
     useEffect(() => {
-        loadEvents()
+       
+        getLastEvents(page)
             .then(result => {
-                const events = result.map(x => ({
+                const events = result.data.map(x => ({
                     ...x, date: new Date(x.date)
-                })).sort((a, b) => a.date - b.date);
+                }));
+
                 setEvents(events);
+                setPages(result.pages);
+                setSearchParams({page: page})
             })
-    }, []);
+    }, [page, setSearchParams]);
+
+
 
     let currentMonth = new Date(events[0]?.date).toLocaleString('default', { month: 'long' });
     let visible = true;
@@ -40,7 +52,7 @@ export const Events = () => {
         }
 
         return (
-            <>
+            <div key={x._id}>
                 {visible
                     ? <div className="events-date">
                         <span>{currentMonth} {year}</span>
@@ -48,9 +60,9 @@ export const Events = () => {
                     : ''
                 }
                 <ul className="event-list">
-                    <EventItem key={x._id} {...x} />
+                    <EventItem  {...x} />
                 </ul>
-            </>
+            </div>
 
 
         );
@@ -68,7 +80,14 @@ export const Events = () => {
                 : <p style={{ fontSize: "25px", color: "red", padding: "50px 0" }}>
                     {`No events in Database`}
                 </p>}
-            <button>Next >></button>
+            <div className="events-pages">
+                {pages > page
+                    ? <Link to={`/calendar?page=${page + 1}`}>Backward &gt;&gt;</Link>
+                    : null}
+                {pages === page
+                    ? <Link to={`/calendar?page=${page - 1}`}>&lt;&lt; Forward</Link>
+                    : null}
+            </div>
         </section>
     );
 }
