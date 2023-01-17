@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams, Link } from 'react-router-dom'
 import { getLastEvents } from '../../services/eventService.js'
-import { EventItem } from "./EventItem.js";
+import { EventItem } from "./EventItem/EventItem.js";
 import './Events.css'
 
 
