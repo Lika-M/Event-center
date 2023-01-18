@@ -4,7 +4,6 @@ import { getLastEvents } from '../../services/eventService.js'
 import { EventItem } from "./EventItem/EventItem.js";
 import './Events.css'
 
-
 export const Events = () => {
 
     const [events, setEvents] = useState([]);
@@ -28,8 +27,6 @@ export const Events = () => {
             })
     }, [page, setSearchParams]);
 
-
-
     let currentMonth = new Date(events[0]?.date).toLocaleString('default', { month: 'long' });
     let visible = true;
     let count = 0;
@@ -38,7 +35,6 @@ export const Events = () => {
 
         const month = new Date(x.date).toLocaleString('default', { month: 'long' });
         const year = x.date.toString().split(' ')[3];
-
 
         if (month !== currentMonth) {
             currentMonth = month;
@@ -57,16 +53,13 @@ export const Events = () => {
                     ? <div className="events-date">
                         <span>{currentMonth} {year}</span>
                     </div>
-                    : ''
-                }
+                    : ''}
                 <ul className="event-list">
                     <EventItem  {...x} />
                 </ul>
             </div>
-
-
         );
-    })
+    });
 
     return (
         <section className="events">
@@ -82,10 +75,10 @@ export const Events = () => {
                 </p>}
             <div className="events-pages">
                 {pages > page
-                    ? <Link to={`/calendar?page=${page + 1}`}>Backward &gt;&gt;</Link>
+                    ? <Link to={`/calendar?page=${page + 1}`}>&lt;&lt; Backward</Link>
                     : null}
                 {pages === page
-                    ? <Link to={`/calendar?page=${page - 1}`}>&lt;&lt; Forward</Link>
+                    ? <Link to={`/calendar?page=${page - 1}`}>Forward &gt;&gt;</Link>
                     : null}
             </div>
         </section>
