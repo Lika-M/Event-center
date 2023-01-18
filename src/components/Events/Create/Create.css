@@ -1,0 +1,109 @@
+.create-form-container {
+    padding: 40px 0;
+    background: url("https://images.unsplash.com/photo-1585637071663-799845ad5212?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")no-repeat fixed center;
+}
+
+.create-form-container-box {
+    width: 370px;
+    margin: auto;
+    background-color: #042553;
+    color: #fff;
+    opacity: 0.8;
+    border: 3px solid white;
+    border-radius: 20px;
+}
+
+.create-form-container form h1,
+.create-form-container form h3 {
+    text-align: center;
+    padding-top: 15px;
+}
+
+.create-form-container form {
+    width: 300px;
+    margin-left: 20px;
+}
+
+.create-form-container form label {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.create-form-container input{
+    opacity: 1;
+    width: 320px;
+    height: 30px;
+    padding-left: 7px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    outline: none;
+}
+
+.create-form-container select {
+    border: 1px solid gray;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    line-height: 2;
+    width: 20em;
+    height: 3em;
+    padding: 0 1.5em 0 0;
+}
+
+.create-form-container option {
+    background-color: lightgray;
+    width: 390px;
+    color: #042553;
+}
+
+.create-form-container textarea {
+    font-family: 'PT Sans', sans-serif;
+    opacity: 1;
+    width: 320px;
+    padding: 7px 0 0 7px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    outline: none;
+}
+
+.create-form-container select {
+    width: 330px;
+    height: 35px;
+    outline: none;
+}
+.create-form-container input[type="date"], 
+.create-form-container input[type="time"]{
+    height: 35px;
+}
+
+::placeholder {
+    color: rgb(43, 41, 41);
+    opacity: 1;
+}
+
+.create-form-container form .btn {
+    width: 330px;
+    height: 35px;
+    margin: 40px 0;
+    border: none;
+    background-color: #dffd9a;
+    color: #042553;
+    font-size: 15px;
+}
+
+.create-form-container form p {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 15px;
+}
+
+.create-form-container form p a {
+    color: #27ae60;
+    text-decoration: underline;
+}
+
+.create-form-container form textarea {
+    resize: none;
+}

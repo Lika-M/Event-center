@@ -48,6 +48,7 @@ export const Header = () => {
         </li>
 
         <li><NavLink to="/calendar" className="navigation-link">CALENDAR</NavLink></li>
+        <li><NavLink to="/create" className="navigation-link">ADD EVENT</NavLink></li>
 
         {currentUser ? userNav : guestNav}
 

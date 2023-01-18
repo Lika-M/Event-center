@@ -10,6 +10,7 @@ import { Login } from './components/User/Login/Login.js';
 import { Logout } from './components/User/Logout/Logout.js';
 import { Events } from './components/Events/Events.js'
 import './App.css';
+import { Create } from './components/Events/Create/Create.js';
 
 function App() {
 
@@ -27,7 +28,8 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='logout' element={<Logout />} />
           <Route path='/calendar' element={<Events />} />
-
+          <Route path='/create' element={<Create/>} />
+ 
         </Routes>
         <Footer />
       </div>
