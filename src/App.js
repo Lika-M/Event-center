@@ -11,6 +11,7 @@ import { Logout } from './components/User/Logout/Logout.js';
 import { EventList } from './components/Events/EventList/EventList.js';
 import './App.css';
 import { Create } from './components/Events/Create/Create.js';
+import { EventDetail } from './components/Events/EventDetail/EventDetail.js';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           <Route path='logout' element={<Logout />} />
           <Route path='/calendar' element={<EventList />} />
           <Route path='/create' element={<Create/>} />
+          <Route path='/event/details' element={<EventDetail/>} />
  
         </Routes>
         <Footer />
