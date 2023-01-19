@@ -30,7 +30,7 @@ function App() {
           <Route path='logout' element={<Logout />} />
           <Route path='/calendar' element={<EventList />} />
           <Route path='/create' element={<Create/>} />
-          <Route path='/event/details' element={<EventDetail/>} />
+          <Route path='/calendar/:id' element={<EventDetail/>} />
  
         </Routes>
         <Footer />
