@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import './EventItem.css'
 
 export const EventItem = ({
-    topic, date, location
+   _id, topic, date, location
 }) => {
     const day = date.toString().slice(8, 11);
     const weekDay = new Date(date).toLocaleString('en-us', { weekday: 'long' })
@@ -33,7 +33,7 @@ export const EventItem = ({
 
                 </div>
                 <div className="event-card-btn-wrapper">
-                    <Link to="/calendar/details" className="event-card-link">
+                    <Link to={`/calendar/details/${_id}`} className="event-card-link">
                         EVENT DETAIL
                     </Link>
                 </div>

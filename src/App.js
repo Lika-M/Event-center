@@ -8,7 +8,7 @@ import { About } from './components/About/About.js';
 import { Register } from './components/User/Register/Register.js';
 import { Login } from './components/User/Login/Login.js';
 import { Logout } from './components/User/Logout/Logout.js';
-import { Events } from './components/Events/Events.js'
+import { EventList } from './components/Events/EventList/EventList.js';
 import './App.css';
 import { Create } from './components/Events/Create/Create.js';
 
@@ -27,7 +27,7 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
           <Route path='logout' element={<Logout />} />
-          <Route path='/calendar' element={<Events />} />
+          <Route path='/calendar' element={<EventList />} />
           <Route path='/create' element={<Create/>} />
  
         </Routes>

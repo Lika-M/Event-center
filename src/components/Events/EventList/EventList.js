@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { useSearchParams, Link } from 'react-router-dom'
-import { getLastEvents } from '../../services/eventService.js'
-import { EventItem } from "./EventItem/EventItem.js";
-import './Events.css'
+import { useSearchParams, Link } from 'react-router-dom';
 
-export const Events = () => {
+import { getLastEvents } from '../../../services/eventService.js';
+import { EventItem } from "../EventItem/EventItem.js";
+
+import './EventList.css';
+
+export const EventList = () => {
 
     const [events, setEvents] = useState([]);
     const [pages, setPages] = useState(0);
@@ -12,9 +14,9 @@ export const Events = () => {
     const [searchParams, setSearchParams] = useSearchParams({});
 
     const page = Number(searchParams.get('page') || 1);
-    
+
     useEffect(() => {
-       
+
         getLastEvents(page)
             .then(result => {
                 const events = result.data.map(x => ({
@@ -23,7 +25,7 @@ export const Events = () => {
 
                 setEvents(events);
                 setPages(result.pages);
-                setSearchParams({page: page})
+                setSearchParams({ page: page })
             })
     }, [page, setSearchParams]);
 
@@ -49,11 +51,10 @@ export const Events = () => {
 
         return (
             <div key={x._id}>
-                {visible
-                    ? <div className="events-date">
+                {visible &&
+                    <div className="events-date">
                         <span>{currentMonth} {year}</span>
-                    </div>
-                    : ''}
+                    </div>}
                 <ul className="event-list">
                     <EventItem  {...x} />
                 </ul>
