@@ -1,37 +1,70 @@
-import { Link } from 'react-router-dom';
+import { useState, useEffect} from 'react';
+import { useParams, Link,} from 'react-router-dom';
+import { getEventById } from '../../../services/eventService.js'
+import { PageNotFound } from '../../../common/PageNotFound/PageNotFound.js';
 import './EventDetail.css';
 
 export const EventDetail = () => {
+
+    const [event, setEvent] = useState({});
+    const [err, setErr] = useState('');
+
+    const { id } = useParams();
+
+    useEffect(() => {
+        getEventById(id)
+            .then(res => setEvent(res))
+            .catch(err => {
+                console.log(err)
+                setErr(err.message);
+            })
+    }, [id])
+
+    const expired = new Date(event.date) < new Date();
+
+    if (err) {
+        return (
+           <PageNotFound err={err}/>
+        );
+    }
+
     return (
         <section id="details-page">
             <div className="details-wrapper">
                 <div className="details-img">
-                    <img src="https://www.keele.ac.uk/business/businesssupport/Research_Innovation_960_640.jpg" alt="science-and-business" />
+                    <img src={event.imgUrl} alt={`${event.topic}`} />
                     {/* <!-- logged in user with available pieces--> */}
-                    <div className="details-btn subscribe">
-                        <Link to="#/">Subscribe</Link>
-                        <p>You have already subscribed</p>
-                    </div>
+
+                    {!expired &&
+                        <div className="details-btn subscribe">
+                            <Link to="#/">Subscribe</Link>
+                            <p>You have already subscribed</p>
+                        </div>
+                    }
+
                 </div>
                 <div className="details-info">
                     <div className="details-text">
                         <div className="details-text">
                             <div className="details-text-data">
-                                <h1>Topic: National Conference “Science in Support of Business”</h1>
-                                <h2>Location: The entire center</h2>
-                                <h2>Date: 4 March 2023</h2>
-                                <h2>Time: 12:00</h2>
-                                <p>expired</p>
+                                <h1>Topic: {event.topic}</h1>
+                                <h2>Location: {event.location}</h2>
+                                <h2>Date: {event.date}</h2>
+                                <h2>Time: {event.time}</h2>
+                                {expired &&
+                                    <p>expired</p>
+                                }
+
                             </div>
                             <div className="details-text-content">
                                 <h1>Description: </h1>
-                                <p>Presentation of the QUASAR Competence Center to the representatives of small and medium business, with a view to possible opportunities for future cooperation.</p>
+                                <p>{event.description}</p>
                                 <div className="details text-data">
-                                    <h2>List of participants: 102</h2>
-                                    {/* <p>Enrolled participants: 43 </p> */}
+
+                                    {/* <h2>List of participants: 102</h2> */}
 
                                     {/* <!-- If not participants: --> */}
-                                    <h2>There are no participants yet.</h2>
+                                    <h2>There are no participants yet</h2>
                                 </div>
                             </div>
                         </div>
