@@ -9,11 +9,12 @@ export const Header = () => {
   const { currentUser } = useContext(AuthContext);
 
   const userNav = (
-    <>
-      <li><NavLink to="#" className="navigation-link" title="Contact">CREATE EVENT</NavLink></li>
-      <li><NavLink to="#" className="navigation-link" title="Contact">SEARCH</NavLink></li>
-      <li><NavLink to="/logout" className="navigation-link" title="Contact">LOGOUT</NavLink></li>
-    </>
+      <>
+
+        <li><NavLink to="#" className="navigation-link" title="Contact">CREATE EVENT</NavLink></li>
+        <li><NavLink to="#" className="navigation-link" title="Contact">SEARCH</NavLink></li>
+        <li><NavLink to="/logout" className="navigation-link" title="Contact">LOGOUT</NavLink></li>
+      </>
   );
 
   const guestNav = (
@@ -36,20 +37,18 @@ export const Header = () => {
           <span ><i className="fas fa-envelope-open"></i>event-center@event.bg</span>
         </div>
       </div>
-      <ul className="navigation">
 
+      <ul className="navigation">
         <li><NavLink to="/" className="navigation-link" title="Home">HOME</NavLink></li>
-        <li><NavLink to="/about" className="navigation-link" title="About us">ABOUT</NavLink>
+        <li><NavLink className="navigation-link" title="About us">ABOUT</NavLink>
           <ul>
-            <li><NavLink to="#">What we offer</NavLink></li>
-            <li><NavLink to="#">Our space</NavLink></li>
-            <li><NavLink to="#">About us</NavLink></li>
+            <li><NavLink to="/about/content">What we offer</NavLink></li>
+            <li><NavLink to="/about/offer">Services</NavLink></li>
+            <li><NavLink to="/about/space">Our space</NavLink></li>
           </ul>
         </li>
 
         <li><NavLink to="/calendar" className="navigation-link">CALENDAR</NavLink></li>
-        <li><NavLink to="/create" className="navigation-link">ADD EVENT</NavLink></li>
-
         {currentUser ? userNav : guestNav}
 
         <div className="clear"></div>
