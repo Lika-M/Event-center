@@ -13,18 +13,21 @@ export const EventDetail = () => {
 
     useEffect(() => {
         getEventById(id)
-            .then(res => setEvent(res))
+            .then(res => {
+                console.log(res);
+                return setEvent(res)
+            })
             .catch(err => {
-                console.log(err)
                 setErr(err.message);
             })
     }, [id])
 
     const expired = new Date(event.date) < new Date();
+    console.log(event);
 
     if (err) {
         return (
-           <PageNotFound err={err}/>
+            <PageNotFound err={err} />
         );
     }
 
@@ -61,7 +64,7 @@ export const EventDetail = () => {
                                 <p>{event.description}</p>
                                 <div className="details text-data">
 
-                                    {/* <h2>List of participants: 102</h2> */}
+                                    <h2>List of participants: 102</h2>
 
                                     {/* <!-- If not participants: --> */}
                                     <h2>There are no participants yet</h2>
@@ -69,12 +72,19 @@ export const EventDetail = () => {
                             </div>
                         </div>
                     </div>
+                    <div className="details-text-content">
+                         <h1>Organizer: </h1>
+                        <h4>Address: {event.organizer?.address}</h4>
+                        <h4>Email: {event.organizer?.email}</h4>
+                        <h4>Phone: {event.organizer?.phone}</h4>
+                    </div>
 
                     {/* <!-- if there is no registered user, do not display buttons--> */}
                     <div className="details-btn own">
+                       
                         {/* <!-- Only for registered user and creator of the housing offer--> */}
-                        <Link to="#/" className="edit">Edit</Link>
-                        <Link to="#/" className="remove">Delete</Link>
+                        <Link to={`/edit/${id}`} className="edit">Edit</Link>
+                        <Link to={`/delete/${id}`} className="remove">Delete</Link>
                     </div>
                 </div>
             </div>
