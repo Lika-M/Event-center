@@ -33,7 +33,7 @@ export const EventItem = ({
 
                 </div>
                 <div className="event-card-btn-wrapper">
-                    <Link to={`/calendar/${_id}`} className="event-card-link">
+                    <Link to={`/calendar/event/${_id}`} className="event-card-link">
                         EVENT DETAIL
                     </Link>
                 </div>
