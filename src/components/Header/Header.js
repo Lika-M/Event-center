@@ -11,7 +11,7 @@ export const Header = () => {
   const userNav = (
       <>
 
-        <li><NavLink to="#" className="navigation-link" title="Contact">CREATE EVENT</NavLink></li>
+        <li><NavLink to="/event/create" className="navigation-link" title="Contact">CREATE EVENT</NavLink></li>
         <li><NavLink to="#" className="navigation-link" title="Contact">SEARCH</NavLink></li>
         <li><NavLink to="/logout" className="navigation-link" title="Contact">LOGOUT</NavLink></li>
       </>
