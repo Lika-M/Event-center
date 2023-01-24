@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
+import { Notify } from '../../../common/Notify/Notify.js';
 import { createEvent } from '../../../services/eventService.js';
 import './Create.css';
 
@@ -20,7 +21,9 @@ export const Create = () => {
         emptyFields: false,
         errorMessage: ''
     });
-    const navigate = useNavigate()
+    const [className, setClassName] = useState('notification');
+
+    const navigate = useNavigate();
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -35,6 +38,8 @@ export const Create = () => {
                 errorMessage: 'All fields are required!'
             }));
 
+            setClassName('notification');
+
         } else {
             const eventData = {
                 imgUrl: data.imgUrl,
@@ -48,12 +53,16 @@ export const Create = () => {
                     email: data.email,
                     phone: data.phone
                 }
-            }
-            console.log(eventData);
-            console.log(error);
+            };
 
-            createEvent(eventData);
-            navigate('/calendar');
+            createEvent(eventData)
+                .then(res => {
+                    navigate(`/calendar/event/${res._id}`)
+                })
+                .catch(err => setError({
+                    emptyFields: false,
+                    errorMessage: err
+                }));
         }
     }
 
@@ -62,11 +71,16 @@ export const Create = () => {
             ...state,
             [e.target.name]: e.target.value
         }));
-    }
-
+    };
+    const showNotification = (className) => {
+        setClassName(className);
+    };
 
     return (
         <section className="create-form-container">
+            {error.errorMessage &&
+                <Notify className={className} message={error.errorMessage} showNotification={showNotification} />
+            }
             <div className="create-form-container-box">
                 <form onSubmit={onSubmit}>
                     <h1>Add Event</h1>
@@ -75,18 +89,21 @@ export const Create = () => {
                     <input type="text" name="topic" id="topic" placeholder="Title"
                         onChange={onChange}
                         value={values.topic}
+                        style={{ border: error.emptyFields && values.topic === '' ? '2px solid red' : 'none' }}
                     />
 
                     <label htmlFor="imgUrl">Image URL</label>
                     <input type="text" name="imgUrl" id="imgUrl" placeholder="Image"
                         onChange={onChange}
                         value={values.imgUrl}
+                        style={{ border: error.emptyFields && values.imgUrl === '' ? '2px solid red' : 'none' }}
                     />
-                    
+
                     <label htmlFor="location">Location</label>
                     <select type="location" id="location" name="location"
                         onChange={onChange}
                         value={values.location}
+                        style={{ border: error.emptyFields && values.location === '' ? '2px solid red' : 'none' }}
                     >
                         <option defaultValue={"Library hall"}>Library hall</option>
                         <option value={"Open space zone"}>Open space zone</option>
@@ -100,12 +117,14 @@ export const Create = () => {
                     <input type="date" name="date" id="date"
                         onChange={onChange}
                         value={values.date}
+                        style={{ border: error.emptyFields && values.date === '' ? '2px solid red' : 'none' }}
                     />
 
                     <label htmlFor="time">Time</label>
                     <input type="time" name="time" id="time"
                         onChange={onChange}
                         value={values.time}
+                        style={{ border: error.emptyFields && values.time === '' ? '2px solid red' : 'none' }}
                     />
 
                     <label htmlFor="description">Description</label>
@@ -114,6 +133,7 @@ export const Create = () => {
                         placeholder="Enter Description"
                         onChange={onChange}
                         value={values.description}
+                        style={{ border: error.emptyFields && values.description === '' ? '2px solid red' : 'none' }}
                     >
                     </textarea>
 
@@ -123,18 +143,23 @@ export const Create = () => {
                     <input type="text" name="address" id="address" placeholder="Enter address"
                         onChange={onChange}
                         value={values.address}
+                        style={{ border: error.emptyFields && values.address === '' ? '2px solid red' : 'none' }}
                     />
 
                     <label htmlFor="email">Email</label>
                     <input type="email" name="email" id="email" placeholder="Enter email"
                         onChange={onChange}
                         value={values.email}
+                        style={{ border: error.emptyFields && values.email === '' ? '2px solid red' : 'none' }}
                     />
 
                     <label htmlFor='phone'>Phone</label>
                     <input type="number" name="phone" id="phone" placeholder="Enter phone number"
                         onChange={onChange}
-                        value={values.phone} />
+                        value={values.phone}
+                        style={{ border: error.emptyFields && values.phone === '' ? '2px solid red' : 'none' }}
+                    />
+
 
                     <input type="submit" value="ADD" className="btn" />
                 </form>
