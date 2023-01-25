@@ -1,5 +1,5 @@
-import { useState, useEffect} from 'react';
-import { useParams, Link,} from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useParams, Link, } from 'react-router-dom';
 import { getEventById } from '../../../services/eventService.js'
 import { PageNotFound } from '../../../common/PageNotFound/PageNotFound.js';
 import './EventDetail.css';
@@ -69,16 +69,18 @@ export const EventDetail = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="details-text-content">
-                         <h1>Organizer: </h1>
-                        <h4>Address: {event.organizer?.address}</h4>
-                        <h4>Email: {event.organizer?.email}</h4>
-                        <h4>Phone: {event.organizer?.phone}</h4>
+                    <div className="details-text">
+                        <div className="details-text-content">
+                            <h1>Organizer: </h1>
+                            <h4>Address: {event.organizer?.address}</h4>
+                            <h4>Email: {event.organizer?.email}</h4>
+                            <h4>Phone: {event.organizer?.phone}</h4>
+                        </div>
                     </div>
 
                     {/* <!-- if there is no registered user, do not display buttons--> */}
                     <div className="details-btn own">
-                       
+
                         {/* <!-- Only for registered user and creator of the housing offer--> */}
                         <Link to={`/event/${id}/edit`} className="edit">Edit</Link>
                         <Link to={`/event/${id}/delete`} className="remove">Delete</Link>

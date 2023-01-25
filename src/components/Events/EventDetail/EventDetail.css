@@ -79,10 +79,19 @@
 
 .details-text>p,
 .details-text-content p {
-    margin: 20px 18px;
+    margin: 10px 18px 30px 18px;
     color: #5f5a5a;
     line-height: 1.6em;
     font-size: 1.2rem;
+    font-weight: lighter;
+    overflow: hidden;
+}
+
+.details-text-content h4 {
+    margin: 5px 18px;
+    color: #5f5a5a;
+    line-height: 1.6em;
+    font-size: 1rem;
     font-weight: lighter;
     overflow: hidden;
 }
