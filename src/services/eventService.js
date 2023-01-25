@@ -6,7 +6,7 @@ const endpoints = {
     count: '/data/events?count',
     eventById: (id) => `/data/events/${id}`,
     create: '/data/events',
-
+    edit: (id) => `/data/events/${id}`,
 }
 
 export async function getLastEvents(page) {
@@ -28,4 +28,8 @@ export async function getEventById(id) {
 
 export function createEvent(data) {
     return api.post(endpoints.create, data);
+}
+
+export function editEvent(id, data) {
+    return api.put(endpoints.edit(id), data);
 }

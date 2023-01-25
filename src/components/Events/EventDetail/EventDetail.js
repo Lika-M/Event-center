@@ -13,17 +13,14 @@ export const EventDetail = () => {
 
     useEffect(() => {
         getEventById(id)
-            .then(res => {
-                console.log(res);
-                return setEvent(res)
-            })
+            .then(res => setEvent(res))
             .catch(err => {
                 setErr(err.message);
             })
     }, [id])
 
     const expired = new Date(event.date) < new Date();
-    console.log(event);
+    // console.log(event);
 
     if (err) {
         return (
@@ -83,8 +80,8 @@ export const EventDetail = () => {
                     <div className="details-btn own">
                        
                         {/* <!-- Only for registered user and creator of the housing offer--> */}
-                        <Link to={`/edit/${id}`} className="edit">Edit</Link>
-                        <Link to={`/delete/${id}`} className="remove">Delete</Link>
+                        <Link to={`/event/${id}/edit`} className="edit">Edit</Link>
+                        <Link to={`/event/${id}/delete`} className="remove">Delete</Link>
                     </div>
                 </div>
             </div>
