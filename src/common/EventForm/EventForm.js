@@ -5,7 +5,7 @@ import { createEvent, editEvent } from '../../services/eventService';
 import { Notify } from '../Notify/Notify.js';
 import './EventForm.css';
 
-export const EventForm = ({ title, btnName, event}) => {
+export const EventForm = ({ title, btnName, event }) => {
 
     const [values, setValues] = useState({});
     const [className, setClassName] = useState('notification');
@@ -16,7 +16,7 @@ export const EventForm = ({ title, btnName, event}) => {
 
     const navigate = useNavigate();
     const isEdit = title === 'Edit Event';
-    const {id}= useParams();
+    const { id } = useParams();
 
     useEffect(() => {
         if (isEdit) {
@@ -143,6 +143,7 @@ export const EventForm = ({ title, btnName, event}) => {
 
                     <label htmlFor="date">Date</label>
                     <input type="date" name="date" id="date"
+                        min={new Date().toISOString().split('T')[0]}
                         onChange={onChange}
                         value={values.date}
                         style={{ border: error.emptyFields && values.date === '' ? '2px solid red' : 'none' }}
