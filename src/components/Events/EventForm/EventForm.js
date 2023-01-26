@@ -17,17 +17,13 @@ export const EventForm = ({ title, btnName, event }) => {
         errorMessage: ''
     });
     const navigate = useNavigate();
-
     const { id } = useParams();
-
-
 
     const onSubmit = (e) => {
         e.preventDefault();
 
         const formData = new FormData(e.target);
         let data = Object.fromEntries(formData);
-
 
         if (Object.values(data).some(x => x === '')) {
             setError(state => ({

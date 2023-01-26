@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 
 export const useFormControl = (event, isEdit) => {
     const [data, setData] = useState({});
    
-
     useEffect(() => {
         if (isEdit) {
             setData(event);
