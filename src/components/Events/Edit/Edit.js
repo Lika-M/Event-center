@@ -1,7 +1,7 @@
 import { useParams, } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-import { EventForm } from '../../../common/EventForm/EventForm.js';
+import { EventForm } from '../EventForm/EventForm.js';
 import { getEventById } from '../../../services/eventService.js';
 import { PageNotFound } from '../../../common/PageNotFound/PageNotFound.js';
 

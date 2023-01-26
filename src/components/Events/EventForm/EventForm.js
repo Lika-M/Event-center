@@ -1,40 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useFormControl } from '../hooks/useFormControl.js';
 
-import { createEvent, editEvent } from '../../services/eventService';
-import { Notify } from '../Notify/Notify.js';
+import { createEvent, editEvent } from '../../../services/eventService';
+import { Notify } from '../../../common/Notify/Notify.js';
 import './EventForm.css';
 
 export const EventForm = ({ title, btnName, event }) => {
 
-    const [values, setValues] = useState({});
+    const isEdit = title === 'Edit Event';
+
+    const [values, setValues] = useFormControl(event, isEdit);
     const [className, setClassName] = useState('notification');
     const [error, setError] = useState({
         emptyFields: false,
         errorMessage: ''
     });
-
     const navigate = useNavigate();
-    const isEdit = title === 'Edit Event';
+
     const { id } = useParams();
 
-    useEffect(() => {
-        if (isEdit) {
-            setValues(event);
-        } else if (!isEdit) {
-            setValues({
-                imgUrl: '',
-                topic: '',
-                location: '',
-                date: '',
-                time: '',
-                description: '',
-                address: '',
-                email: '',
-                phone: ''
-            });
-        }
-    }, [isEdit, event]);
+
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -151,6 +137,7 @@ export const EventForm = ({ title, btnName, event }) => {
 
                     <label htmlFor="time">Time</label>
                     <input type="time" name="time" id="time"
+                        min="09:00" max="18:00" step="3000"
                         onChange={onChange}
                         value={values.time}
                         style={{ border: error.emptyFields && values.time === '' ? '2px solid red' : 'none' }}

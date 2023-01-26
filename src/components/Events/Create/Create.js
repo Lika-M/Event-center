@@ -1,4 +1,4 @@
-import { EventForm } from '../../../common/EventForm/EventForm.js';
+import { EventForm } from '../EventForm/EventForm.js';
 
 export const Create = () => {
 
