@@ -44,12 +44,15 @@ function createOptions(method = 'GET', data) {
 async function get(url) {
     return request(url, createOptions());
 }
+
 async function post(url, data) {
     return request(url, createOptions('POST', data));
 }
+
 async function put(url, data) {
     return request(url, createOptions('PUT', data));
 }
+
 async function del(url) {
     return request(url, createOptions('DELETE'));
 }

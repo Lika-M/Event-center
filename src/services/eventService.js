@@ -12,7 +12,7 @@ const endpoints = {
 }
 
 function createPointer(className, objectId) {
-    return { __type: "Pointer", className, objectId }
+    return { __type: "Pointer", className, objectId };
 }
 
 function addOwner(collection) {
