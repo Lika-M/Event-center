@@ -1,26 +1,17 @@
-import {clearUserData, getUserData} from './util.js';
+import { getUserData } from "./util.js";
 
-const host = 'http://localhost:3030';
+const host = 'https://parseapi.back4app.com';
 
 async function request(url, options) {
+
     try {
         const response = await fetch(host + url, options);
 
-        if (response.ok !== true) {
-
-            if (response.status === 403) {
-                //TODO redirect if server crashed
-                clearUserData();
-            }
+        if (response.ok === false) {
             const error = await response.json();
-            throw new Error(error.message);
+            throw new Error('Error ' + error.code + ': ' + error.error);
         }
-
-        try {
-            return await response.json();
-        } catch (err) {
-            return response;
-        }
+        return response.json();
 
     } catch (err) {
         throw err;
@@ -30,33 +21,37 @@ async function request(url, options) {
 function createOptions(method = 'GET', data) {
     const options = {
         method,
-        headers: {}
+        headers: {
+            'X-Parse-Application-Id': 'uheuiPwIqbr9VJKhTpZ3n0zFewcfOo1gse0CF2Jk',
+            'X-Parse-REST-API-Key': 'SxZ3MMU34aDYw01EMBH4XPByNi5jHyDDMUx0O4M0'
+        }
     };
-    if (data !== undefined) {
+
+    const userData = getUserData();
+    
+    if (userData && userData.token) {
+        options.headers['X-Parse-Session-Token'] = userData.token;
+    }
+
+    if (data) {
         options.headers['Content-Type'] = 'application/json';
         options.body = JSON.stringify(data);
     }
-    const userData = getUserData();
 
-    if (userData && userData.token) {
-        options.headers['X-Authorization'] = userData.token;
-    }
     return options;
 }
 
 async function get(url) {
     return request(url, createOptions());
 }
-
 async function post(url, data) {
     return request(url, createOptions('POST', data));
 }
-
 async function put(url, data) {
-    return request(url, createOptions('PUT', data))
+    return request(url, createOptions('PUT', data));
 }
 async function del(url) {
-    return request(url, createOptions('DELETE'))
+    return request(url, createOptions('DELETE'));
 }
 
 export {

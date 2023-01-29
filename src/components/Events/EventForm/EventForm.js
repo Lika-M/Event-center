@@ -16,6 +16,7 @@ export const EventForm = ({ title, btnName, event }) => {
         emptyFields: false,
         errorMessage: ''
     });
+
     const navigate = useNavigate();
     const { id } = useParams();
 
@@ -24,7 +25,7 @@ export const EventForm = ({ title, btnName, event }) => {
 
         const formData = new FormData(e.target);
         let data = Object.fromEntries(formData);
-
+        
         if (Object.values(data).some(x => x === '')) {
             setError(state => ({
                 ...state,
@@ -54,7 +55,7 @@ export const EventForm = ({ title, btnName, event }) => {
 
                 createEvent(eventData)
                     .then(res => {
-                        navigate(`/calendar/event/${res._id}`)
+                        navigate(`/calendar/event/${res.ObjectId}`)
                     })
                     .catch(err => setError({
                         emptyFields: false,
@@ -67,10 +68,15 @@ export const EventForm = ({ title, btnName, event }) => {
                     .then(res => {
                         navigate(`/calendar/event/${res._id}`)
                     })
-                    .catch(err => setError({
-                        emptyFields: false,
-                        errorMessage: err
-                    }));
+                    .catch(err => {
+                        //TODO redirect if user is unauthorized
+                        // errorMessage: 'You have not permission or
+                    //    navigate('/login');
+                        setError({
+                            emptyFields: false,
+                            errorMessage: err.message
+                        })
+                    });
             }
         }
     }
@@ -133,7 +139,7 @@ export const EventForm = ({ title, btnName, event }) => {
 
                     <label htmlFor="time">Time</label>
                     <input type="time" name="time" id="time"
-                        min="09:00" max="18:00" step="3000"
+                        min="09:00" max="18:00"
                         onChange={onChange}
                         value={values.time}
                         style={{ border: error.emptyFields && values.time === '' ? '2px solid red' : 'none' }}
@@ -166,7 +172,7 @@ export const EventForm = ({ title, btnName, event }) => {
                     />
 
                     <label htmlFor='phone'>Phone</label>
-                    <input type="number" name="phone" id="phone" placeholder="Enter phone number"
+                    <input type="tel" name="phone" id="phone" placeholder="Enter phone number"
                         onChange={onChange}
                         value={values.phone}
                         style={{ border: error.emptyFields && values.phone === '' ? '2px solid red' : 'none' }}

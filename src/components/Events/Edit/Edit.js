@@ -8,7 +8,7 @@ import { PageNotFound } from '../../../common/PageNotFound/PageNotFound.js';
 export const Edit = () => {
 
     const [data, setData] = useState({});
-    const [error, setError] = useState('')
+    const [error, setError] = useState('');
     const title = 'Edit Event';
     const { id } = useParams();
     const btnName = 'Edit Event';
@@ -28,7 +28,10 @@ export const Edit = () => {
                     phone: event.organizer.phone
                 })
             })
-            .catch(err => setError(err));
+            .catch(err => {
+                console.log(err);
+                setError(err)
+            });
     }, [id])
 
     if (error) {
@@ -39,7 +42,7 @@ export const Edit = () => {
 
     return (
         <>
-            {data.topic && <EventForm title={title} btnName={btnName} event={data} />}
+            {data && <EventForm title={title} btnName={btnName} event={data} />}
         </>
     )
 }

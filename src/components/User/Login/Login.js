@@ -15,19 +15,19 @@ export const Login = () => {
         ev.preventDefault();
 
         const formData = new FormData(ev.target);
-        const { email, password } = Object.fromEntries(formData);
+        const { username, password } = Object.fromEntries(formData);
 
-        if (email === '' || password === '') {
+        if (username === '' || password === '') {
             return alert('All fields are required!');
         }
 
-        login(email, password)
+        login(username, password)
             .then(data => {
                 saveUserInfo(data);
                 return data;
             })
             .catch(err => alert(err.message));
-
+        //TODO error notification
         navigate('/');
     }
 
@@ -36,8 +36,8 @@ export const Login = () => {
             <div className="login-box">
                 <h1>Login</h1>
                 <form onSubmit={onLoginHandler}>
-                    <label htmlFor='email'>Email</label>
-                    <input type="text" name="email" id="email" placeholder="Email" />
+                    <label htmlFor='username'>Username</label>
+                    <input type="text" name="username" id="username" placeholder="Username" />
                     <label htmlFor='password'>Password</label>
                     <input type="password" name="password" id="password" placeholder="Password" />
                     <input type="submit" value="Submit" />
