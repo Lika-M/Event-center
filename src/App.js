@@ -11,7 +11,7 @@ import { Logout } from './components/User/Logout/Logout.js';
 import { EventList } from './components/Events/EventList/EventList.js';
 import { Create } from './components/Events/Create/Create.js';
 import { Edit } from './components/Events/Edit/Edit.js';
-import { PageNotFound } from './common/PageNotFound/PageNotFound.js';
+import { PageNotFound } from './components/common/PageNotFound/PageNotFound.js';
 import { EventDetail } from './components/Events/EventDetail/EventDetail.js';
 import './App.css';
 

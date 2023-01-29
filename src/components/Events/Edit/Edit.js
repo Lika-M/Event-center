@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { EventForm } from '../EventForm/EventForm.js';
 import { getEventById } from '../../../services/eventService.js';
-import { PageNotFound } from '../../../common/PageNotFound/PageNotFound.js';
+import { PageNotFound } from '../../common/PageNotFound/PageNotFound.js';
 
 export const Edit = () => {
 

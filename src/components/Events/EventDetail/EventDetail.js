@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link, } from 'react-router-dom';
 import { getEventById } from '../../../services/eventService.js'
-import { PageNotFound } from '../../../common/PageNotFound/PageNotFound.js';
+import { PageNotFound } from '../../common/PageNotFound/PageNotFound.js';
 import './EventDetail.css';
-import { Loader } from '../../../common/Loader/Loader.js';
+import { Loader } from '../../common/Loader/Loader.js';
 
 export const EventDetail = () => {
 

@@ -3,7 +3,7 @@ import { useSearchParams, Link } from 'react-router-dom';
 
 import { getLastEvents } from '../../../services/eventService.js';
 import { EventItem } from "../EventItem/EventItem.js";
-import { Loader } from "../../../common/Loader/Loader.js";
+import { Loader } from "../../common/Loader/Loader.js";
 
 import './EventList.css';
 

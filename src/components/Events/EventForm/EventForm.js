@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useFormControl } from '../hooks/useFormControl.js';
 
 import { createEvent, editEvent } from '../../../services/eventService';
-import { Notify } from '../../../common/Notify/Notify.js';
+import { Notify } from '../../common/Notify/Notify.js';
 import './EventForm.css';
 
 export const EventForm = ({ title, btnName, event }) => {
