@@ -4,7 +4,7 @@ import { getUserData } from './util.js';
 const pageSize = 3;
 
 const endpoints = {
-    all: (page) => `/classes/Event?order=-createdAt&skip=${(page - 1) * pageSize}&limit=${pageSize}`,
+    all: (page) => `/classes/Event?order=-date&skip=${(page - 1) * pageSize}&limit=${pageSize}`,
     count: '/classes/Event?count',
     getById: (id) => `/classes/Event/${id}?include=owner`,
     eventById: (id) => `/classes/Event/${id}`,
@@ -16,8 +16,8 @@ function createPointer(className, objectId) {
 }
 
 function addOwner(collection) {
-    const { id } = getUserData();
-    collection.owner = createPointer('_User', id);
+    const { _id } = getUserData();
+    collection.owner = createPointer('_User', _id);
     return collection;
 }
 

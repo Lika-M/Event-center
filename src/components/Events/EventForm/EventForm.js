@@ -25,7 +25,7 @@ export const EventForm = ({ title, btnName, event }) => {
 
         const formData = new FormData(e.target);
         let data = Object.fromEntries(formData);
-        
+
         if (Object.values(data).some(x => x === '')) {
             setError(state => ({
                 ...state,
@@ -55,7 +55,7 @@ export const EventForm = ({ title, btnName, event }) => {
 
                 createEvent(eventData)
                     .then(res => {
-                        navigate(`/calendar/event/${res.ObjectId}`)
+                        navigate(`/calendar/event/${res.objectId}`)
                     })
                     .catch(err => setError({
                         emptyFields: false,
@@ -63,15 +63,14 @@ export const EventForm = ({ title, btnName, event }) => {
                     }));
 
             } else if (isEdit) {
-
                 editEvent(id, eventData)
                     .then(res => {
-                        navigate(`/calendar/event/${res._id}`)
+                        navigate(`/calendar/event/${id}`)
                     })
                     .catch(err => {
                         //TODO redirect if user is unauthorized
                         // errorMessage: 'You have not permission or
-                    //    navigate('/login');
+                        //    navigate('/login');
                         setError({
                             emptyFields: false,
                             errorMessage: err.message
@@ -86,7 +85,9 @@ export const EventForm = ({ title, btnName, event }) => {
             ...state,
             [e.target.name]: e.target.value
         }));
+      
     };
+
     const showNotification = (className) => {
         setClassName(className);
     };

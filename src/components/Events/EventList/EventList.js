@@ -84,10 +84,10 @@ export const EventList = () => {
                         </p>}
                     <div className="events-pages">
                         {pages > page
-                            ? <Link to={`/calendar?page=${page + 1}`}>&lt;&lt; Backward</Link>
+                            ? <Link to={`/calendar?page=${page + 1}`}>&lt;&lt; Previous</Link>
                             : null}
                         {pages === page
-                            ? <Link to={`/calendar?page=${page - 1}`}>Forward &gt;&gt;</Link>
+                            ? <Link to={`/calendar?page=${page - 1}`}>Next &gt;&gt;</Link>
                             : null}
                     </div>
                 </>}

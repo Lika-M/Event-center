@@ -1,15 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useParams, Link, } from 'react-router-dom';
 import { getEventById } from '../../../services/eventService.js'
 import { PageNotFound } from '../../common/PageNotFound/PageNotFound.js';
-import './EventDetail.css';
 import { Loader } from '../../common/Loader/Loader.js';
+import './EventDetail.css';
+import { AuthContext } from '../../../contexts/AuthContext.js';
 
 export const EventDetail = () => {
 
     const [event, setEvent] = useState({});
     const [err, setErr] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const {currentUser} = useContext(AuthContext);
+    const [owner, setOwner] = useState({})
 
     const { id } = useParams();
 
@@ -18,15 +21,21 @@ export const EventDetail = () => {
         getEventById(id)
             .then(res => {
                 setIsLoading(false)
+                setOwner(res.owner)
                 return setEvent(res);
             })
             .catch(err => {
                 setErr(err.message);
             })
-    }, [id])
+    }, [id]);
+
+    
+    // const hasUser = Boolean(currentUser);
+    const isOwner = (currentUser && owner && owner.objectId === currentUser._id);
+    // console.log('hasUser: ', hasUser)
+    console.log('isOwner: ', isOwner)
 
     const expired = new Date(event.date) < new Date();
-    // console.log(event);
 
     if (err) {
         return (
@@ -47,7 +56,7 @@ export const EventDetail = () => {
                             <img src={event.imgUrl} alt={`${event.topic}`} />
                             {/* <!-- logged in user with available pieces--> */}
 
-                            {!expired &&
+                            {!expired && currentUser && !isOwner &&
                                 <div className="details-btn subscribe">
                                     <Link to="#/">Subscribe</Link>
                                     <p>You have already subscribed</p>
@@ -91,14 +100,16 @@ export const EventDetail = () => {
                             </div>
 
                             {/* <!-- if there is no registered user, do not display buttons--> */}
+                            {currentUser && isOwner && 
                             <div className="details-btn own">
 
-                                {/* <!-- Only for registered user and creator of the housing offer--> */}
-                                {/* <!-- Only if not expired--> */}
-                                {!expired &&  <Link to={`/event/${id}/edit`} className="edit">Edit</Link>}
-                               
-                                <Link to={`/event/${id}/delete`} className="remove">Delete</Link>
-                            </div>
+                            {/* <!-- Only for registered user and creator of the housing offer--> */}
+                            {/* <!-- Only if not expired--> */}
+                            {!expired &&  <Link to={`/event/${id}/edit`} className="edit">Edit</Link>}
+                           
+                            <Link to={`/event/${id}/delete`} className="remove">Delete</Link>
+                        </div>}
+                            
                         </div>
 
                     </>}
