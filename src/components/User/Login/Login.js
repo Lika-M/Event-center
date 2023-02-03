@@ -18,6 +18,7 @@ export const Login = () => {
         const { username, password } = Object.fromEntries(formData);
 
         if (username === '' || password === '') {
+            //TODO add notification
             return alert('All fields are required!');
         }
 

@@ -43,22 +43,24 @@
     margin-bottom: 80px;
 }
 
-.header-btn {
+.header-btn{
     font-size: 1.5em;
-    background-color: #dffd9a;
-    font-weight: bold;
-    border: none;
-    border-radius: 6px;
     padding: 15px 25px;
-    color: #284167;
+    border: 3px solid #fff;
+    color: #fff;
+    background-color: unset;
     margin-bottom: 50px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+.header-btn:hover {
+    background-color: #dffd9a;
+    border: none;
+    color: #284167;
+    border-radius: 4px;
 }
 
-.header-btn:hover {
-    border: 3px solid #fff;
-    background-color: unset;
-    color: #fff;
-}
+
 
 @media (max-width: 1200px) {
     .title {

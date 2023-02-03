@@ -23,8 +23,9 @@ export const Register = () => {
 
         const formData = new FormData(ev.target);
         const { username, email, password, rePass } = Object.fromEntries(formData);
-       
-        if(email === '' || password === ''){
+
+        if (email === '' || password === '') {
+            //TODO add notification
             return alert('All fields are required!');
         };
 
@@ -33,18 +34,26 @@ export const Register = () => {
                 ...state,
                 password: '',
                 repass: '',
-            }))
+            }));
+            //TODO add notification
             return alert('Passwords don\'t match');
         };
 
         register(username, email, password)
-        .then(data => {
-            console.log(data);
-            saveUserInfo(data);
-            return data;
-        })
-        .catch(err => alert(err.message));
-
+            .then(data => {
+                console.log(data);
+                saveUserInfo(data);
+                setInput(state => ({
+                    ...state,
+                    username,
+                    email,
+                    password: '',
+                    repass: '',
+                }));
+                return data;
+            })
+            .catch(err => alert(err.message));
+        //TODO error notification
         navigate('/');
     }
 
