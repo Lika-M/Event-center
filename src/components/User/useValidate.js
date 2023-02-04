@@ -1,4 +1,3 @@
-
 export const useValidate = (setError) => {
 
   let errMessage = '';
@@ -33,16 +32,9 @@ export const useValidate = (setError) => {
     }));
   }
 
-  function passwordsMatch(password, rePass) {
-    if (password !== rePass) {
-      errMessage = 'Passwords don\'t match';
-    }
-    setError(
-      state => ({
-        ...state,
-        passwords: errMessage
-      }));
-  }
-
-  return { setError, usernameValidator, emailValidator, passwordValidator, passwordsMatch };
+  return {
+    usernameValidator,
+    emailValidator,
+    passwordValidator
+  };
 }
