@@ -4,18 +4,20 @@
 }
 .register-box {
     color: white;
-    width: 360px;
+    width: 370px;
     height: 500px;
     margin: auto;
     background-color:  #042553;
     opacity:0.8;
     border: 3px solid white;
     border-radius: 20px;
+    padding: 10px 0 40px 0;
 }
+
+
 
 .register-box h1 {
     text-align: center;
-    padding-top: 15px;
 }
 
 .register-box form {
@@ -25,7 +27,7 @@
 
 .register-box form label {
     display: flex;
-    margin-top: 20px;
+    margin-top: 35px;
     margin-bottom: 5px;
     font-size: 18px;
 }
@@ -48,6 +50,7 @@
     background-color: #dffd9a;
     color: #042553;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .register-box div{

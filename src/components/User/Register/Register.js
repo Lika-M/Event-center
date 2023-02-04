@@ -30,7 +30,7 @@ export const Register = () => {
             setError(
                 state => ({
                     ...state,
-                    passwords: 'Passwords don\'t match'
+                    rePass: 'Passwords don\'t match'
                 }));
         }
 
@@ -126,11 +126,11 @@ export const Register = () => {
                             onFocus={onFocus}
                         // style={{ border: error.passwords ? '2px solid red' : 'none' }}
                         />
-                        {error.passwords && <p className="error">Passwords don't match</p>}
+                        {error.rePass && <p className="error">Passwords don't match</p>}
                     </div>
                     <input type="submit" value="Submit" />
+                    <p>Already have an account? <Link to="/login">Login here</Link></p>
                 </form>
-                <p>Already have an account? <Link to="/login">Login here</Link></p>
             </div>
 
         </section>
