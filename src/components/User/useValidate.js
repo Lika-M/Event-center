@@ -8,8 +8,10 @@ export const useValidate = (setError) => {
     }
     setError(state => ({
       ...state,
+      emptyFields: true,
       username: errMessage
     }));
+    
   }
 
   function emailValidator(email) {
