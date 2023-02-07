@@ -13,36 +13,34 @@ export const Login = () => {
     const { saveUserInfo } = useContext(AuthContext);
     const [input, setInput] = useState({});
     const [error, setError] = useState({});
+
     const onLoginHandler = (ev) => {
         ev.preventDefault();
 
         const formData = new FormData(ev.target);
         const { username, password } = Object.fromEntries(formData);
+        setInput(Object.fromEntries(formData));
 
         if (username === '' || password === '') {
             setError(
                 state => ({
                     ...state,
+                    emptyFields: true,
                     serverError: 'All fields are required!'
                 }));
-            return
+            return;
         }
 
         login(username, password)
             .then(data => {
                 saveUserInfo(data);
                 navigate('/');
-                // return data;
             })
             .catch(err => {
                 setError(state => ({
                     ...state,
-                    serverError: err.message
-                }));
-                setInput(state => ({
-                    ...state,
-                    username: '',
-                    password: '',
+                    serverError: err.message,
+                    emptyFields: true
                 }));
             });
     }
@@ -54,27 +52,57 @@ export const Login = () => {
         }));
     }
 
+    function onFocus(ev) {
+        setInput(state => ({
+            ...state,
+            [ev.target.name]: ''
+        }));
+        setError(state => ({
+            ...state,
+            [ev.target.name]: ''
+        }));
+    }
+
+    function onBlur(ev) {
+        if (input[ev.target.name] === '') {
+            setError(state => ({
+                ...state,
+                emptyFields: true
+            }));
+            setInput(state => ({
+                ...state,
+                [ev.target.name]: '',
+            }));
+        }
+    }
+
     const onClose = () => {
-        setError({serverError: ''});
+        setError({ serverError: '' });
     };
 
     return (
         <section className="login">
-             {error.serverError  &&
-                <Notify  message={error.serverError} onClose={onClose} />
+            {error.serverError &&
+                <Notify message={error.serverError} onClose={onClose} />
             }
             <div className="login-box">
                 <h1>Login</h1>
                 <form onSubmit={onLoginHandler}>
                     <label htmlFor='username'>Username</label>
                     <input type="text" name="username" id="username" placeholder="Username"
+                        style={{ border: error.emptyFields && input.username === '' ? '2px solid red' : 'none' }}
                         value={input.username || ''}
                         onChange={onChange}
+                        onFocus={onFocus}
+                        onBlur={onBlur}
                     />
                     <label htmlFor='password'>Password</label>
                     <input type="password" name="password" id="password" placeholder="Password"
+                        style={{ border: error.emptyFields && input.password === '' ? '2px solid red' : 'none' }}
                         value={input.password || ''}
                         onChange={onChange}
+                        onFocus={onFocus}
+                        onBlur={onBlur}
                     />
                     <input type="submit" value="Submit" />
                 </form>
