@@ -92,7 +92,6 @@ export const Register = () => {
                             onChange={onChange}
                             onBlur={validUsername}
                             onFocus={onFocus}
-                        // style={{ border: error.username ? '2px solid red' : 'none' }}
                         />
                         {error.username && <p className="error">Username must be 3 to 10 characters long</p>}
                     </div>
@@ -103,7 +102,6 @@ export const Register = () => {
                             onChange={onChange}
                             onBlur={validEmail}
                             onFocus={onFocus}
-                        // style={{ border: error.email ? '2px solid red' : 'none' }}
                         />
                         {error.email && <p className="error">Enter a valid email</p>}
                     </div>
@@ -114,7 +112,6 @@ export const Register = () => {
                             onChange={onChange}
                             onBlur={validPassword}
                             onFocus={onFocus}
-                        // style={{ border: error.password ? '2px solid red' : 'none' }}
                         />
                         {error.password && <p className="error">Password must be 3 to 10 characters long</p>}
                     </div>
@@ -124,7 +121,6 @@ export const Register = () => {
                             value={input.rePass || ''}
                             onChange={onChange}
                             onFocus={onFocus}
-                        // style={{ border: error.passwords ? '2px solid red' : 'none' }}
                         />
                         {error.rePass && <p className="error">Passwords don't match</p>}
                     </div>
