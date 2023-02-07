@@ -1,8 +1,9 @@
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { login } from '../../../services/authService.js'
 import { AuthContext } from '../../../contexts/AuthContext.js';
+import { Notify } from '../../common/Notify/Notify.js';
 
 import './Login.css';
 
@@ -12,7 +13,6 @@ export const Login = () => {
     const { saveUserInfo } = useContext(AuthContext);
     const [input, setInput] = useState({});
     const [error, setError] = useState({});
-
     const onLoginHandler = (ev) => {
         ev.preventDefault();
 
@@ -23,9 +23,8 @@ export const Login = () => {
             setError(
                 state => ({
                     ...state,
-                    emptyFields: 'All fields are required!'
+                    serverError: 'All fields are required!'
                 }));
-            //TODO add notification
             return
         }
 
@@ -36,18 +35,16 @@ export const Login = () => {
                 // return data;
             })
             .catch(err => {
-                alert(err.message)
                 setError(state => ({
                     ...state,
                     serverError: err.message
                 }));
                 setInput(state => ({
                     ...state,
+                    username: '',
                     password: '',
-                    repass: '',
                 }));
             });
-        //TODO error notification
     }
 
     function onChange(ev) {
@@ -57,9 +54,15 @@ export const Login = () => {
         }));
     }
 
+    const onClose = () => {
+        setError({serverError: ''});
+    };
 
     return (
         <section className="login">
+             {error.serverError  &&
+                <Notify  message={error.serverError} onClose={onClose} />
+            }
             <div className="login-box">
                 <h1>Login</h1>
                 <form onSubmit={onLoginHandler}>

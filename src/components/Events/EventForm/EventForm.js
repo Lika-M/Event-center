@@ -11,7 +11,6 @@ export const EventForm = ({ title, btnName, event }) => {
     const isEdit = title === 'Edit Event';
 
     const [values, setValues] = useFormControl(event, isEdit);
-    const [className, setClassName] = useState('notification');
     const [error, setError] = useState({
         emptyFields: false,
         errorMessage: ''
@@ -32,8 +31,6 @@ export const EventForm = ({ title, btnName, event }) => {
                 emptyFields: true,
                 errorMessage: 'All fields are required!'
             }));
-
-            setClassName('notification');
 
         } else {
 
@@ -59,7 +56,7 @@ export const EventForm = ({ title, btnName, event }) => {
                     })
                     .catch(err => setError({
                         emptyFields: false,
-                        errorMessage: err
+                        errorMessage: err.message
                     }));
 
             } else if (isEdit) {
@@ -87,15 +84,14 @@ export const EventForm = ({ title, btnName, event }) => {
         }));
       
     };
-
-    const showNotification = (className) => {
-        setClassName(className);
+    const onClose = () => {
+        setError({errorMessage: ''});
     };
 
     return (
         <section className="create-form-container">
             {error.errorMessage &&
-                <Notify className={className} message={error.errorMessage} showNotification={showNotification} />
+                <Notify  message={error.errorMessage}  onClose={onClose} />
             }
             <div className="create-form-container-box">
 
