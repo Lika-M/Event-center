@@ -21,6 +21,7 @@ export const Register = () => {
 
         const formData = new FormData(ev.target);
         const { username, email, password, rePass } = Object.fromEntries(formData);
+        setInput(Object.fromEntries(formData));
 
         if (Object.values(Object.fromEntries(formData)).some(x => x === '')) {
             setError(
@@ -29,7 +30,6 @@ export const Register = () => {
                     emptyFields: true,
                     serverError: 'All fields are required!'
                 }));
-            console.log(input)
             return;
         }
 
@@ -42,27 +42,25 @@ export const Register = () => {
             setError(
                 state => ({
                     ...state,
-                    rePass: 'Passwords don\'t match'
+                    rePass: 'Passwords don\'t match',
+                    emptyFields: true,
                 }));
             return;
         }
 
-
-        if (Object.values(error).every(x => x === '')) {
             register(username, email, password)
                 .then(data => {
-                    console.log(data)
                     saveUserInfo(data);
                     navigate('/');
                 })
                 .catch(err => {
                     setError(state => ({
                         ...state,
+                        emptyFields: true,
                         serverError: err.message
                     }));
-                    setInput(state => ({}));
+                    setInput({});
                 });
-        }
     }
 
     function onChange(ev) {
@@ -79,7 +77,8 @@ export const Register = () => {
         }));
         setError(state => ({
             ...state,
-            [ev.target.name]: ''
+            [ev.target.name]: '',
+            emptyFields: false
         }));
     }
 
@@ -90,6 +89,7 @@ export const Register = () => {
     const validUsername = (ev) => usernameValidator(ev.target.value);
     const validEmail = (ev) => emailValidator(ev.target.value);
     const validPassword = (ev) => passwordValidator(ev.target.value);
+
 
     return (
 
@@ -105,7 +105,7 @@ export const Register = () => {
                     <div>
                         <label htmlFor="username">Username</label>
                         <input type="text" name="username" id="username" placeholder="Username"
-                            style={{ border: error.emptyFields && !input.username ? '2px solid red' : 'none' }}
+                            style={{ border: error.emptyFields && input.username === '' ? '2px solid red' : 'none' }}
                             value={input.username || ''}
                             onChange={onChange}
                             onBlur={validUsername}
@@ -116,7 +116,7 @@ export const Register = () => {
                     <div>
                         <label htmlFor="email">Email</label>
                         <input type="text" name="email" id="email" placeholder="Email"
-                            style={{ border: error.emptyFields && !input.email ? '2px solid red' : 'none' }}
+                            style={{ border: error.emptyFields && input.email === '' ? '2px solid red' : 'none' }}
                             value={input.email || ''}
                             onChange={onChange}
                             onBlur={validEmail}
@@ -127,7 +127,7 @@ export const Register = () => {
                     <div>
                         <label htmlFor="password">Password</label>
                         <input type="password" name="password" id="password" placeholder="Password"
-                            style={{ border: error.emptyFields && !input.password ? '2px solid red' : 'none' }}
+                            style={{ border: error.emptyFields && input.password === '' ? '2px solid red' : 'none' }}
                             value={input.password || ''}
                             onChange={onChange}
                             onBlur={validPassword}
@@ -138,7 +138,7 @@ export const Register = () => {
                     <div>
                         <label htmlFor="rePass">Confirm Password</label>
                         <input type="password" name="rePass" id="rePass" placeholder="Confirm Password"
-                            style={{ border: error.emptyFields && !input.rePass ? '2px solid red' : 'none' }}
+                            style={{ border: error.emptyFields && input.rePass === '' ? '2px solid red' : 'none' }}
                             value={input.rePass || ''}
                             onChange={onChange}
                             onFocus={onFocus}
