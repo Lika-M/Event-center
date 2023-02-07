@@ -10,6 +10,8 @@ export const Login = () => {
 
     const navigate = useNavigate();
     const { saveUserInfo } = useContext(AuthContext);
+    const [input, setInput] = useState({});
+    const [error, setError] = useState({});
 
     const onLoginHandler = (ev) => {
         ev.preventDefault();
@@ -18,19 +20,43 @@ export const Login = () => {
         const { username, password } = Object.fromEntries(formData);
 
         if (username === '' || password === '') {
+            setError(
+                state => ({
+                    ...state,
+                    emptyFields: 'All fields are required!'
+                }));
             //TODO add notification
-            return alert('All fields are required!');
+            return
         }
 
         login(username, password)
             .then(data => {
                 saveUserInfo(data);
-                return data;
+                navigate('/');
+                // return data;
             })
-            .catch(err => alert(err.message));
+            .catch(err => {
+                alert(err.message)
+                setError(state => ({
+                    ...state,
+                    serverError: err.message
+                }));
+                setInput(state => ({
+                    ...state,
+                    password: '',
+                    repass: '',
+                }));
+            });
         //TODO error notification
-        navigate('/');
     }
+
+    function onChange(ev) {
+        setInput(state => ({
+            ...state,
+            [ev.target.name]: ev.target.value
+        }));
+    }
+
 
     return (
         <section className="login">
@@ -38,9 +64,15 @@ export const Login = () => {
                 <h1>Login</h1>
                 <form onSubmit={onLoginHandler}>
                     <label htmlFor='username'>Username</label>
-                    <input type="text" name="username" id="username" placeholder="Username" />
+                    <input type="text" name="username" id="username" placeholder="Username"
+                        value={input.username || ''}
+                        onChange={onChange}
+                    />
                     <label htmlFor='password'>Password</label>
-                    <input type="password" name="password" id="password" placeholder="Password" />
+                    <input type="password" name="password" id="password" placeholder="Password"
+                        value={input.password || ''}
+                        onChange={onChange}
+                    />
                     <input type="submit" value="Submit" />
                 </form>
                 <p>Not have an account? <Link to="/register">Register here</Link></p>
