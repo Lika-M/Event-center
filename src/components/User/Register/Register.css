@@ -11,13 +11,12 @@
     opacity:0.8;
     border: 3px solid white;
     border-radius: 20px;
-    padding: 20px 0 50px 0;
+    padding: 20px 0 70px 0;
 }
-
-
 
 .register-box h1 {
     text-align: center;
+    padding-top: 15px;
 }
 
 .register-box form {
@@ -44,7 +43,7 @@
 
 .register-box input[type="submit"] {
     width: 330px;
-    height: 35px;
+    height: 40px;
     margin-top: 40px;
     border: none;
     background-color: #dffd9a;

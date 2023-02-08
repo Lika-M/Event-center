@@ -1,23 +1,24 @@
-.login{
+.login {
     padding: 40px 0;
     background: url("https://images.unsplash.com/photo-1585637071663-799845ad5212?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80") no-repeat fixed center;
 }
+
 .login-box {
     color: white;
-    width: 360px;
+    width: 370px;
     height: 330px;
-    margin:  auto;
-    background-color:  #042553;
-    opacity:0.8;
+    margin: auto;
+    background-color: #042553;
+    opacity: 0.8;
     border: 3px solid white;
     border-radius: 20px;
+    padding: 20px 0 50px 0;
 }
 
 .login-box h1 {
     text-align: center;
     padding-top: 15px;
 }
-
 
 .login-box form {
     width: 300px;
@@ -26,7 +27,7 @@
 
 .login-box form label {
     display: flex;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 5px;
     font-size: 18px;
 }
@@ -34,7 +35,7 @@
 .login-box form input {
     width: 320px;
     height: 30px;
-    padding-left: 7px;
+    padding: 5px 5px 5px 7px;
     border: none;
     border: 1px solid gray;
     border-radius: 8px;
@@ -43,12 +44,17 @@
 
 .login-box input[type="submit"] {
     width: 330px;
-    height: 35px;
+    height: 40px;
     margin-top: 40px;
     border: none;
     background-color: #dffd9a;
     color: #042553;
     font-size: 15px;
+    cursor: pointer;
+}
+
+.login-box div {
+    position: relative;
 }
 
 .login-box p {
@@ -58,5 +64,5 @@
 }
 
 .login-box p>a {
-    color:  #dffd9a;
+    color: #dffd9a;
 }

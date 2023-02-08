@@ -88,22 +88,26 @@ export const Login = () => {
             <div className="login-box">
                 <h1>Login</h1>
                 <form onSubmit={onLoginHandler}>
-                    <label htmlFor='username'>Username</label>
-                    <input type="text" name="username" id="username" placeholder="Username"
-                        style={{ border: error.emptyFields && input.username === '' ? '2px solid red' : 'none' }}
-                        value={input.username || ''}
-                        onChange={onChange}
-                        onFocus={onFocus}
-                        onBlur={onBlur}
-                    />
-                    <label htmlFor='password'>Password</label>
-                    <input type="password" name="password" id="password" placeholder="Password"
-                        style={{ border: error.emptyFields && input.password === '' ? '2px solid red' : 'none' }}
-                        value={input.password || ''}
-                        onChange={onChange}
-                        onFocus={onFocus}
-                        onBlur={onBlur}
-                    />
+                    <div>
+                        <label htmlFor='username'>Username</label>
+                        <input type="text" name="username" id="username" placeholder="Username"
+                            style={{ border: error.emptyFields && input.username === '' ? '2px solid red' : 'none' }}
+                            value={input.username || ''}
+                            onChange={onChange}
+                            onFocus={onFocus}
+                            onBlur={onBlur}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor='password'>Password</label>
+                        <input type="password" name="password" id="password" placeholder="Password"
+                            style={{ border: error.emptyFields && input.password === '' ? '2px solid red' : 'none' }}
+                            value={input.password || ''}
+                            onChange={onChange}
+                            onFocus={onFocus}
+                            onBlur={onBlur}
+                        />
+                    </div>
                     <input type="submit" value="Submit" />
                 </form>
                 <p>Not have an account? <Link to="/register">Register here</Link></p>
