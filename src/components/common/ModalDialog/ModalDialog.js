@@ -1,17 +1,26 @@
+import { useNavigate } from 'react-router-dom';
+import { deleteEventById } from '../../../services/eventService';
 import './ModalDialog.css';
 
-export const ModalDialog = () => {
+export const ModalDialog = ({ id, modal, setModal }) => {
+    const navigate = useNavigate();
 
     const onDelete = () => {
-
+        // if (modal === 'show') {
+            deleteEventById(id)
+                .then(res => {
+                    //     removePlant(plantId);
+                    navigate('/calendar');
+                });
+        // }
     }
-    const onCancel =() => {
-
+    const onCancel = () => {
+        setModal(`hide`);
     }
 
     return (
-        <section id="modal" className="modal">
-            <div className="modal-backdrop"></div>
+
+        <div className="modal">
             <div className="container">
                 <h1> Do you really want to delete it?</h1>
                 <div className="buttons">
@@ -19,6 +28,7 @@ export const ModalDialog = () => {
                     <button onClick={onCancel} type="button" className="cancel-btn">NO</button>
                 </div>
             </div>
-        </section>
+
+        </div>
     );
 }
