@@ -5,7 +5,7 @@ import { PageNotFound } from '../../common/PageNotFound/PageNotFound.js';
 import { Loader } from '../../common/Loader/Loader.js';
 import './EventDetail.css';
 import { AuthContext } from '../../../contexts/AuthContext.js';
-import { ModalDialog } from '../../common/ModalDialog/ModalDialog.js';
+import { ModalDialog } from '../ModalDialog/ModalDialog.js';
 
 export const EventDetail = () => {
 
