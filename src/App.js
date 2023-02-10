@@ -14,6 +14,7 @@ import { Edit } from './components/Events/Edit/Edit.js';
 import { PageNotFound } from './components/common/PageNotFound/PageNotFound.js';
 import { EventDetail } from './components/Events/EventDetail/EventDetail.js';
 import './App.css';
+import { ModalDialog } from './components/common/ModalDialog/ModalDialog.js';
 
 function App() {
 
@@ -34,10 +35,12 @@ function App() {
           <Route path='/calendar/event/:id' element={<EventDetail />} />
           <Route path='/event/create' element={<Create />} />
           <Route path='/event/:id/edit' element={<Edit />} />
+          <Route path='/event/:id/delete' element={<ModalDialog />} />
           <Route path="*" element={<PageNotFound />} />
 
 
         </Routes>
+        
         <Footer />
       </div>
 
