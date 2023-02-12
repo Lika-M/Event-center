@@ -11,7 +11,7 @@ export const Edit = () => {
     const [error, setError] = useState('');
     const title = 'Edit Event';
     const { id } = useParams();
-    const btnName = 'Edit Event';
+    const btnName = 'EDIT EVENT';
 
     useEffect(() => {
         getEventById(id)

@@ -145,7 +145,7 @@ export const Register = () => {
                         />
                         {error.rePass && <p className="error">Passwords don't match</p>}
                     </div>
-                    <input type="submit" value="Submit" />
+                    <input type="submit" value="REGISTER" />
                     <p>Already have an account? <Link to="/login">Login here</Link></p>
                 </form>
             </div>

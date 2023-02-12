@@ -30,16 +30,16 @@
 
 .create-form-container form label {
     display: flex;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 5px;
     font-size: 18px;
 }
 
-.create-form-container input{
-    opacity: 1;
+.create-form-container input {
+    font-size: 16px;
     width: 320px;
-    height: 30px;
-    padding-left: 7px;
+    height: 35px;
+    padding: 5px;
     border: 1px solid gray;
     border-radius: 8px;
     outline: none;
@@ -48,16 +48,16 @@
 .create-form-container select {
     border: 1px solid gray;
     border-radius: 8px;
-    outline: none;
     cursor: pointer;
     line-height: 2;
-    width: 20em;
-    height: 3em;
-    padding: 0 1.5em 0 0;
+    height: 45px;
+    width: 330px;
+    outline: none;
+    font-size: 16px;
 }
 
 .create-form-container option {
-    background-color: lightgray;
+    background-color: rgb(237, 229, 229);
     width: 390px;
     color: #042553;
 }
@@ -70,31 +70,32 @@
     border: 1px solid gray;
     border-radius: 8px;
     outline: none;
+    font-size: 16px;
 }
 
-.create-form-container select {
-    width: 330px;
-    height: 35px;
-    outline: none;
-}
-.create-form-container input[type="date"], 
-.create-form-container input[type="time"]{
-    height: 35px;
+.create-form-container input[type="date"],
+.create-form-container input[type="time"] {
+    font-size: 16px;
+    padding: 5px;
 }
 
 ::placeholder {
+    font-size: 16px;
+    padding: 5px;
     color: rgb(43, 41, 41);
     opacity: 1;
 }
 
 .create-form-container form .btn {
     width: 330px;
-    height: 35px;
+    height: 45px;
     margin: 40px 0;
     border: none;
     background-color: #dffd9a;
     color: #042553;
-    font-size: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .create-form-container form p {

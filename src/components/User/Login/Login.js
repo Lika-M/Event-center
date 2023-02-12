@@ -108,7 +108,7 @@ export const Login = () => {
                             onBlur={onBlur}
                         />
                     </div>
-                    <input type="submit" value="Submit" />
+                    <input type="submit" value="LOGIN" />
                 </form>
                 <p>Not have an account? <Link to="/register">Register here</Link></p>
             </div>
