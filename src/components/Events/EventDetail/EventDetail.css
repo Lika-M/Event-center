@@ -16,7 +16,7 @@
     border-radius: 7px 0 0 7px;
 }
 
-.details-btn.subscribe a,
+.details-btn.subscribe button,
 .details-btn.subscribe p {
     font-size: 20px;
     background-color: #5979a9;
@@ -24,7 +24,11 @@
     border: 3px solid #fff;
 }
 
-.details-btn.subscribe a:hover {
+.details-btn.subscribe button{
+    cursor: pointer;
+}
+
+.details-btn.subscribe button:hover {
     background-color: #284167;
 }
 
@@ -107,6 +111,7 @@
 }
 
 
+.details-btn button,
 .details-btn a,
 .details-btn p {
     height: auto;

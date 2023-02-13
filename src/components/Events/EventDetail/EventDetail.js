@@ -1,11 +1,13 @@
 import { useState, useEffect, useContext } from 'react';
 import { useParams, Link, } from 'react-router-dom';
+
 import { getEventById } from '../../../services/eventService.js'
 import { PageNotFound } from '../../common/PageNotFound/PageNotFound.js';
 import { Loader } from '../../common/Loader/Loader.js';
-import './EventDetail.css';
 import { AuthContext } from '../../../contexts/AuthContext.js';
 import { ModalDialog } from '../ModalDialog/ModalDialog.js';
+import { bookEvent, getBookingEvents } from '../../../services/bookingService.js'
+import './EventDetail.css';
 
 export const EventDetail = () => {
 
@@ -15,6 +17,10 @@ export const EventDetail = () => {
     const { currentUser } = useContext(AuthContext);
     const [owner, setOwner] = useState({});
     const [modal, setModal] = useState('hide');
+    const [booking, setBooking] = useState({
+        participants: 0,
+        isBooked: false
+    });
 
     const { id } = useParams();
 
@@ -31,6 +37,22 @@ export const EventDetail = () => {
             })
     }, [id]);
 
+    useEffect(() => {
+        getBookingEvents(id)
+            .then(res => {
+                setBooking(state => ({
+                    ...state,
+                    participants: res.results.length,
+                }));
+                if (res.results.find(x => x.owner.objectId === currentUser._id)) {
+                    setBooking(state => ({
+                        ...state,
+                        isBooked: true
+                    }));
+                }
+            })
+    }, [id, currentUser])
+
     const isOwner = (currentUser && owner && owner.objectId === currentUser._id);
     const expired = new Date(event.date) < new Date();
 
@@ -44,10 +66,15 @@ export const EventDetail = () => {
         setModal('show');
     }
 
+    function onBooking() {
+        bookEvent(id, {})
+            .then(res => setBooking({ isBooked: true }))
+    }
+
     return (
 
         <>
-                {modal === 'show' &&  <div className="modal-backdrop"></div>}
+            {modal === 'show' && <div className="modal-backdrop"></div>}
             <section id="details-page">
                 <div className="details-wrapper">
 
@@ -60,8 +87,10 @@ export const EventDetail = () => {
 
                                 {!expired && currentUser && !isOwner &&
                                     <div className="details-btn subscribe">
-                                        <Link to="#/">Subscribe</Link>
-                                        <p>You have already subscribed</p>
+                                        {!isOwner && !booking.isBooked
+                                            ? <button onClick={onBooking}>Subscribe</button>
+                                            : <p>You have already subscribed</p>}
+
                                     </div>
                                 }
 
@@ -83,11 +112,9 @@ export const EventDetail = () => {
                                             <h1>Description: </h1>
                                             <p>{event.description}</p>
                                             <div className="details text-data">
-
-                                                <h2>List of participants: 102</h2>
-
-                                                {/* <!-- If not participants: --> */}
-                                                <h2>There are no participants yet</h2>
+                                                {booking.participants > 0
+                                                    ? <h2>Enrolled participants: {booking.participants}</h2>
+                                                    : <h2>There are no participants yet</h2>}
                                             </div>
                                         </div>
                                     </div>
@@ -116,7 +143,7 @@ export const EventDetail = () => {
 
                         </>}
                 </div>
-            {modal === 'show' && <ModalDialog id={id} setModal={setModal} /> }
+                {modal === 'show' && <ModalDialog id={id} setModal={setModal} />}
             </section>
         </>
     );
