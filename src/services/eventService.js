@@ -1,5 +1,5 @@
 import * as api from './api.js';
-import { getUserData } from './util.js';
+import { addOwner } from './util.js';
 
 const pageSize = 3;
 
@@ -11,23 +11,13 @@ const endpoints = {
     create: '/classes/Event',
 }
 
-function createPointer(className, objectId) {
-    return { __type: "Pointer", className, objectId };
-}
-
-function addOwner(collection) {
-    const { _id } = getUserData();
-    collection.owner = createPointer('_User', _id);
-    return collection;
-}
-
 export async function getLastEvents(page) {
 
     const [data, count] = await Promise.all([
         api.get(endpoints.all(page)),
         api.get(endpoints.count)
     ]);
-   
+
     return {
         data: data.results,
         pages: Math.ceil(count.results.length / pageSize)
@@ -38,15 +28,14 @@ export async function getEventById(id) {
     const result = await api.get(endpoints.getById(id));
     return result;
 }
-  
+
 export async function createEvent(eventData) {
     addOwner(eventData);
     return await api.post(endpoints.create, eventData);
-   
 }
 
-export async  function editEvent(id, data) {
-    return await  api.put(endpoints.eventById(id), data);
+export async function editEvent(id, data) {
+    return await api.put(endpoints.eventById(id), data);
 }
 
 export async function deleteEventById(id) {
