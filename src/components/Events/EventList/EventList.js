@@ -21,17 +21,15 @@ export const EventList = () => {
         setIsLoading(true);
         getLastEvents(page)
             .then(result => {
-                console.log(result)
                 const events = result.data.map(x => ({
                     ...x, date: new Date(x.date)
                 }));
-
                 setEvents(events);
                 setPages(result.pages);
                 setSearchParams({ page: page });
                 setIsLoading(false);
             })
-    }, [page, setSearchParams]);
+    }, [page]);
 
     let currentMonth = new Date(events[0]?.date).toLocaleString('default', { month: 'long' });
     let visible = true;
