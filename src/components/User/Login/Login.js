@@ -91,7 +91,7 @@ export const Login = () => {
                     <div>
                         <label htmlFor='username'>Username</label>
                         <input type="text" name="username" id="username" placeholder="Username"
-                            style={{ border: error.emptyFields && input.username === '' ? '2px solid red' : 'none' }}
+                            style={{ border: error.emptyFields && input.username === '' ? '2px solid rgb(217, 90, 90)' : 'none' }}
                             value={input.username || ''}
                             onChange={onChange}
                             onFocus={onFocus}
@@ -101,7 +101,7 @@ export const Login = () => {
                     <div>
                         <label htmlFor='password'>Password</label>
                         <input type="password" name="password" id="password" placeholder="Password"
-                            style={{ border: error.emptyFields && input.password === '' ? '2px solid red' : 'none' }}
+                            style={{ border: error.emptyFields && input.password === '' ? '2px solid  rgb(217, 90, 90)' : 'none' }}
                             value={input.password || ''}
                             onChange={onChange}
                             onFocus={onFocus}

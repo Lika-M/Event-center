@@ -48,19 +48,19 @@ export const Register = () => {
             return;
         }
 
-            register(username, email, password)
-                .then(data => {
-                    saveUserInfo(data);
-                    navigate('/');
-                })
-                .catch(err => {
-                    setError(state => ({
-                        ...state,
-                        emptyFields: true,
-                        serverError: err.message
-                    }));
-                    setInput({});
-                });
+        register(username, email, password)
+            .then(data => {
+                saveUserInfo(data);
+                navigate('/');
+            })
+            .catch(err => {
+                setError(state => ({
+                    ...state,
+                    emptyFields: true,
+                    serverError: err.message
+                }));
+                setInput({});
+            });
     }
 
     function onChange(ev) {
@@ -89,7 +89,10 @@ export const Register = () => {
     const validUsername = (ev) => usernameValidator(ev.target.value);
     const validEmail = (ev) => emailValidator(ev.target.value);
     const validPassword = (ev) => passwordValidator(ev.target.value);
-
+    const redBorder = '2px solid  rgb(217, 90, 90)';
+    const blueBorder = '2px solid #042553';
+    const redStyle = 'rgb(217, 90, 90)';
+    const blueStyle = '#042553';
 
     return (
 
@@ -105,45 +108,45 @@ export const Register = () => {
                     <div>
                         <label htmlFor="username">Username</label>
                         <input type="text" name="username" id="username" placeholder="Username"
-                            style={{ border: error.emptyFields && input.username === '' ? '2px solid red' : 'none' }}
+                            style={{ border: error.emptyFields && input.username === '' ? redBorder : blueBorder }}
                             value={input.username || ''}
                             onChange={onChange}
                             onBlur={validUsername}
                             onFocus={onFocus}
                         />
-                        {error.username && <p className="error">Username must be 3 to 10 characters long</p>}
+                        <p className="error" style={{ color: error.username ? redStyle : blueStyle }}>Username must be 3 to 10 characters long</p>
                     </div>
                     <div>
                         <label htmlFor="email">Email</label>
                         <input type="text" name="email" id="email" placeholder="Email"
-                            style={{ border: error.emptyFields && input.email === '' ? '2px solid red' : 'none' }}
+                            style={{ border: error.emptyFields && input.email === '' ? redBorder : blueBorder }}
                             value={input.email || ''}
                             onChange={onChange}
                             onBlur={validEmail}
                             onFocus={onFocus}
                         />
-                        {error.email && <p className="error">Enter a valid email</p>}
+                        <p className="error" style={{ color: error.email ? redStyle : blueStyle }}>Enter a valid email</p>
                     </div>
                     <div>
                         <label htmlFor="password">Password</label>
                         <input type="password" name="password" id="password" placeholder="Password"
-                            style={{ border: error.emptyFields && input.password === '' ? '2px solid red' : 'none' }}
+                            style={{ border: error.emptyFields && input.password === '' ? redBorder : blueBorder }}
                             value={input.password || ''}
                             onChange={onChange}
                             onBlur={validPassword}
                             onFocus={onFocus}
                         />
-                        {error.password && <p className="error">Password must be 3 to 10 characters long</p>}
+                        <p className="error" style={{ color: error.password ? redStyle : blueStyle }}>Password must be 3 to 10 characters long</p>
                     </div>
                     <div>
                         <label htmlFor="rePass">Confirm Password</label>
                         <input type="password" name="rePass" id="rePass" placeholder="Confirm Password"
-                            style={{ border: error.emptyFields && input.rePass === '' ? '2px solid red' : 'none' }}
+                            style={{ border: error.emptyFields && input.rePass === '' ? redBorder : blueBorder }}
                             value={input.rePass || ''}
                             onChange={onChange}
                             onFocus={onFocus}
                         />
-                        {error.rePass && <p className="error">Passwords don't match</p>}
+                        <p className="error" style={{ color: error.rePass ? redStyle : blueStyle }}>Passwords don't match</p>
                     </div>
                     <input type="submit" value="REGISTER" />
                     <p>Already have an account? <Link to="/login">Login here</Link></p>

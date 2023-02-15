@@ -10,13 +10,14 @@ export const Header = () => {
 
   const userNav = (
       <>
-        <li><NavLink to="#" className="navigation-link" title="Contact">GALLERY</NavLink></li>
+        <li><NavLink to="/event/create" className="navigation-link" title="Contact">EVENT RESERVATION</NavLink></li>
         <li><NavLink to="/logout" className="navigation-link" title="Contact">LOGOUT</NavLink></li>
       </>
   );
-
+  
   const guestNav = (
     <>
+    <li><NavLink to="/gallery" className="navigation-link" title="Contact">GALLERY</NavLink></li>
       <li><NavLink to="/register" className="navigation-link" title="Contact">REGISTER</NavLink></li>
       <li><NavLink to="/login" className="navigation-link" title="Contact">LOGIN</NavLink></li>
     </>
