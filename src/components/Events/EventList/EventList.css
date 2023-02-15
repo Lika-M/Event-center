@@ -44,9 +44,12 @@
 }
 
 .events-pages a {
+    display: inline-block;
     padding: 8px 24px 8px 20px;
     background-color: #5979a9;
     color: #fff;
+    margin: 0 5px;
+    width: 130px;
 }
 
 .events-date {
