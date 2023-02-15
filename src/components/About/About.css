@@ -6,8 +6,8 @@
 }
 
 .perfect-title {
-    padding: 20px 30px;
-    font-size: 3em;
+    padding: 0 30px;
+    font-size: 1.8em;
     color:#284167;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .perfect-offer>h3, .perfect-offer-card>h3{
-    font-size: 2em;
+    font-size: 1.6em;
     color: #284167;
     margin-bottom: 15px;
 }
