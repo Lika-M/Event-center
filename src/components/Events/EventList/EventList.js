@@ -84,7 +84,7 @@ export const EventList = () => {
                         {pages > page
                             ? <Link to={`/calendar?page=${page + 1}`}>&lt;&lt; Previous</Link>
                             : null}
-                        {pages === page
+                        {page !== 1
                             ? <Link to={`/calendar?page=${page - 1}`}>Next &gt;&gt;</Link>
                             : null}
                     </div>

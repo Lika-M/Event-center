@@ -25,8 +25,7 @@ export async function getLastEvents(page) {
 }
 
 export async function getEventById(id) {
-    const result = await api.get(endpoints.getById(id));
-    return result;
+    return await api.get(endpoints.getById(id));
 }
 
 export async function createEvent(eventData) {
