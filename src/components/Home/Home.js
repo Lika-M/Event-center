@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Home.css';
 
 export const Home = () => {
@@ -14,7 +15,7 @@ export const Home = () => {
                 Modern Event space. Multifunctional halls.Combining art, design & technology.
 
             </p>
-            <button className="header-btn">BOOK EVENT</button>
+            <Link to="/event/create" className="header-btn">EVENT RESERVATION</Link>
 
         </section>
     )
