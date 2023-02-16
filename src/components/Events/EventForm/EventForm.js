@@ -100,21 +100,21 @@ export const EventForm = ({ title, btnName, event }) => {
                     <label htmlFor="topic">Topic</label>
                     <input type="text" name="topic" id="topic" placeholder="Title"
                         onChange={onChange}
-                        value={values.topic}
+                        value={values.topic || ''}
                         style={{ border: error.emptyFields && values.topic === '' ? '2px solid  rgb(217, 90, 90)' : 'none' }}
                     />
 
                     <label htmlFor="imgUrl">Image URL</label>
                     <input type="text" name="imgUrl" id="imgUrl" placeholder="Image"
                         onChange={onChange}
-                        value={values.imgUrl}
+                        value={values.imgUrl || ''}
                         style={{ border: error.emptyFields && values.imgUrl === '' ? '2px solid  rgb(217, 90, 90)' : 'none' }}
                     />
 
                     <label htmlFor="location">Location</label>
                     <select type="location" id="location" name="location"
                         onChange={onChange}
-                        value={values.location}
+                        value={values.location  || ''}
                         style={{ border: error.emptyFields && values.location === '' ? '2px solid  rgb(217, 90, 90)' : 'none' }}
                     >
                         <option defaultValue={"Library hall"}>Library hall</option>
@@ -129,7 +129,7 @@ export const EventForm = ({ title, btnName, event }) => {
                     <input type="date" name="date" id="date"
                         min={new Date().toISOString().split('T')[0]}
                         onChange={onChange}
-                        value={values.date}
+                        value={values.date  || ''}
                         style={{ border: error.emptyFields && values.date === '' ? '2px solid  rgb(217, 90, 90)' : 'none' }}
                     />
 
@@ -137,7 +137,7 @@ export const EventForm = ({ title, btnName, event }) => {
                     <input type="time" name="time" id="time"
                         min="09:00" max="18:00"
                         onChange={onChange}
-                        value={values.time}
+                        value={values.time  || ''}
                         style={{ border: error.emptyFields && values.time === '' ? '2px solid  rgb(217, 90, 90)' : 'none' }}
                     />
 
@@ -146,7 +146,7 @@ export const EventForm = ({ title, btnName, event }) => {
                         rows="4" cols="42" maxLength="250"
                         placeholder="Enter Description"
                         onChange={onChange}
-                        value={values.description}
+                        value={values.description  || ''}
                         style={{ border: error.emptyFields && values.description === '' ? '2px solid  rgb(217, 90, 90)' : 'none' }}
                     >
                     </textarea>
@@ -156,21 +156,21 @@ export const EventForm = ({ title, btnName, event }) => {
                     <label htmlFor="address">Address</label>
                     <input type="text" name="address" id="address" placeholder="Enter address"
                         onChange={onChange}
-                        value={values.address}
+                        value={values.address  || ''}
                         style={{ border: error.emptyFields && values.address === '' ? '2px solid  rgb(217, 90, 90)' : 'none' }}
                     />
 
                     <label htmlFor="email">Email</label>
                     <input type="email" name="email" id="email" placeholder="Enter email"
                         onChange={onChange}
-                        value={values.email}
+                        value={values.email  || ''}
                         style={{ border: error.emptyFields && values.email === '' ? '2px solid  rgb(217, 90, 90)' : 'none' }}
                     />
 
                     <label htmlFor='phone'>Phone</label>
                     <input type="tel" name="phone" id="phone" placeholder="Enter phone number"
                         onChange={onChange}
-                        value={values.phone}
+                        value={values.phone  || ''}
                         style={{ border: error.emptyFields && values.phone === '' ? '2px solid  rgb(217, 90, 90)' : 'none' }}
                     />
 
