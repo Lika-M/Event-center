@@ -6,7 +6,7 @@ import './Home.css';
 export const Home = () => {
 
     const { currentUser } = useContext(AuthContext);
-    console.log(currentUser)
+
     return (
         <section className='home'>
 

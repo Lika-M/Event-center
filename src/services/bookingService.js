@@ -12,8 +12,8 @@ export async function bookEvent(eventId, data) {
     return await api.post(endpoints.book, data)
 }
 
-export async function getBookingEvents(eventId) {
-    return await api.get(endpoints.bookingByEventId(eventId))
+export async function getBookingEvent(eventId) {
+    return await api.get(endpoints.bookingByEventId(eventId));
 }
 
 
