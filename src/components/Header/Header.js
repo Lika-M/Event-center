@@ -9,15 +9,14 @@ export const Header = () => {
   const { currentUser } = useContext(AuthContext);
 
   const userNav = (
-      <>
-        <li><NavLink to="/event/create" className="navigation-link" title="Contact">EVENT RESERVATION</NavLink></li>
-        <li><NavLink to="/logout" className="navigation-link" title="Contact">LOGOUT</NavLink></li>
-      </>
+    <>
+      <li><NavLink to="/event/create" className="navigation-link" title="Contact">EVENT RESERVATION</NavLink></li>
+      <li><NavLink to="/logout" className="navigation-link" title="Contact">LOGOUT</NavLink></li>
+    </>
   );
-  
+
   const guestNav = (
     <>
-    <li><NavLink to="/gallery" className="navigation-link" title="Contact">GALLERY</NavLink></li>
       <li><NavLink to="/register" className="navigation-link" title="Contact">REGISTER</NavLink></li>
       <li><NavLink to="/login" className="navigation-link" title="Contact">LOGIN</NavLink></li>
     </>
@@ -46,8 +45,9 @@ export const Header = () => {
             <li><NavLink to="/about/space">Our space</NavLink></li>
           </ul>
         </li>
-
         <li><NavLink to="/calendar" className="navigation-link">CALENDAR</NavLink></li>
+        <li><NavLink to="/gallery" className="navigation-link" title="Contact">GALLERY</NavLink></li>
+
         {currentUser ? userNav : guestNav}
 
         <div className="clear"></div>
