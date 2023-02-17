@@ -15,6 +15,7 @@ import { PageNotFound } from './components/common/PageNotFound/PageNotFound.js';
 import { EventDetail } from './components/Events/EventDetail/EventDetail.js';
 import { UserRouteGuard } from './guards/UserRouteGuard.js';
 import './App.css';
+import { Gallery } from './components/Gallery/Gallery.js';
 
 function App() {
 
@@ -28,13 +29,14 @@ function App() {
 
           <Route path='/' element={<Home />} />
           <Route path='/about/*' element={<About />} />
+          <Route path='/gallery' element={<Gallery />} />
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
           <Route element={<UserRouteGuard />}>
             <Route path='logout' element={<Logout />} />
             <Route path='/event/create' element={<Create />} />
             <Route path='/event/:id/edit' element={<Edit />} />
-          </Route >
+          </Route>
           <Route path='/calendar' element={<EventList />} />
           <Route path='/calendar/event/:id' element={<EventDetail />} />
           <Route path="*" element={<PageNotFound />} />
