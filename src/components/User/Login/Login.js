@@ -82,15 +82,15 @@ export const Login = () => {
 
     return (
         <section className="login">
-            {error.serverError &&
-                <Notify message={error.serverError} onClose={onClose} />
-            }
             <div className="login-box">
+                {error.serverError &&
+                    <Notify message={error.serverError} onClose={onClose} />
+                }
                 <h1>Login</h1>
                 <form onSubmit={onLoginHandler}>
                     <div>
                         <label htmlFor='username'>Username</label>
-                        <input type="text" name="username" id="username" placeholder="Username"
+                        <input type="text" name="username" id="username"
                             style={{ border: error.emptyFields && input.username === '' ? '2px solid rgb(217, 90, 90)' : 'none' }}
                             value={input.username || ''}
                             onChange={onChange}
@@ -100,7 +100,7 @@ export const Login = () => {
                     </div>
                     <div>
                         <label htmlFor='password'>Password</label>
-                        <input type="password" name="password" id="password" placeholder="Password"
+                        <input type="password" name="password" id="password"
                             style={{ border: error.emptyFields && input.password === '' ? '2px solid  rgb(217, 90, 90)' : 'none' }}
                             value={input.password || ''}
                             onChange={onChange}
@@ -110,7 +110,7 @@ export const Login = () => {
                     </div>
                     <input type="submit" value="LOGIN" />
                 </form>
-                <p>Not have an account? <Link to="/register">Register here</Link></p>
+                <p className="redirect">Not have an account? <Link to="/register">Register here</Link></p>
             </div>
         </section>
     );
