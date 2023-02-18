@@ -97,17 +97,16 @@ export const Register = () => {
     return (
 
         <section className="register">
+            <div className="register-box">
             {error.serverError &&
                 <Notify message={error.serverError} onClose={onClose} />
             }
-            <div className="register-box">
-
                 <h1>Register</h1>
 
                 <form onSubmit={onRegisterHandler}>
                     <div>
                         <label htmlFor="username">Username</label>
-                        <input type="text" name="username" id="username" placeholder="Username"
+                        <input type="text" name="username" id="username" 
                             style={{ border: error.emptyFields && input.username === '' ? redBorder : blueBorder }}
                             value={input.username || ''}
                             onChange={onChange}
@@ -118,7 +117,7 @@ export const Register = () => {
                     </div>
                     <div>
                         <label htmlFor="email">Email</label>
-                        <input type="text" name="email" id="email" placeholder="Email"
+                        <input type="text" name="email" id="email"
                             style={{ border: error.emptyFields && input.email === '' ? redBorder : blueBorder }}
                             value={input.email || ''}
                             onChange={onChange}
@@ -129,7 +128,7 @@ export const Register = () => {
                     </div>
                     <div>
                         <label htmlFor="password">Password</label>
-                        <input type="password" name="password" id="password" placeholder="Password"
+                        <input type="password" name="password" id="password" 
                             style={{ border: error.emptyFields && input.password === '' ? redBorder : blueBorder }}
                             value={input.password || ''}
                             onChange={onChange}
@@ -140,7 +139,7 @@ export const Register = () => {
                     </div>
                     <div>
                         <label htmlFor="rePass">Confirm Password</label>
-                        <input type="password" name="rePass" id="rePass" placeholder="Confirm Password"
+                        <input type="password" name="rePass" id="rePass" 
                             style={{ border: error.emptyFields && input.rePass === '' ? redBorder : blueBorder }}
                             value={input.rePass || ''}
                             onChange={onChange}
@@ -149,7 +148,7 @@ export const Register = () => {
                         <p className="error" style={{ color: error.rePass ? redStyle : blueStyle }}>Passwords don't match</p>
                     </div>
                     <input type="submit" value="REGISTER" />
-                    <p>Already have an account? <Link to="/login">Login here</Link></p>
+                    <p className="redirect">Already have an account? <Link to="/login">Login here</Link></p>
                 </form>
             </div>
 
