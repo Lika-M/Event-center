@@ -1,9 +1,7 @@
 .notification {
-    position: fixed;
+    position: sticky;
     padding: 10px 20px;
     top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background-color:  rgb(217, 90, 90);
     color: #fff;
     border-radius: 8px;
@@ -13,6 +11,7 @@
 
 .notify-message {
     justify-content: center;
+    margin: 0 auto;
     padding: 0 15px;
 }
 
