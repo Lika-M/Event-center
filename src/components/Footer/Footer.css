@@ -123,15 +123,6 @@
 @media (max-width: 800px){
     
     .footer-cards p{
-        font-size: 13px;
-    }
-
-    .footer-cards .link i{
-        padding: 8px;
-        font-size: 14px;
-    }
-
-    .footer-cards .card{
-        margin-inline: 20px;
-    }
+        font-size: 0.85em;
+    } 
 }

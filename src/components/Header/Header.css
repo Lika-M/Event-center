@@ -71,10 +71,6 @@
   margin-right: 5px;
 }
 
-/* .active {
-  background-color:#fff;
-} */
-
 .navigation li {
   float: left;
 }
@@ -83,10 +79,7 @@
   background-color: #5979a9;
 }
 
-/* .navigation li:first-child {
-  -webkit-border-radius: 5px 5px 0 0;
-  border-radius: 5px 0 0 5px;
-} */
+
 
 .navigation li a {
   font-size: 1.2em;
@@ -147,7 +140,7 @@
 }
 
 @media all and (max-width : 1000px) {
- .navigation li a {
+  .navigation li a {
     font-size: 0.98em;
     padding: 0 10px;
   }
@@ -159,8 +152,16 @@
   }
 
   .navigation li a {
-     font-size: 0.85em;
+    font-size: 0.85em;
     padding: 0 8px;
+  }
+
+  .top-contact span{
+    display: block;
+  }
+
+  .top{
+    padding: 0 20px
   }
 }
 
@@ -173,17 +174,19 @@
   }
 
   .navigation ul {
-    /* display: none; */
+    display: none;
     position: absolute;
     margin-left: -3px;
     padding: 0;
     overflow: hidden;
   }
+
   .navigation li a {
-    padding: 0 15px;
-    font-size: .8em;
+    padding: 0 10px;
+    font-size: 1em;
     line-height: 30px;
   }
+
   .navigation li:hover>ul {
     position: absolute;
     top: 30px;
@@ -213,8 +216,33 @@
     padding: 20px 0;
   }
 
+  .navigation-logo-text,
+  .top-contact span {
+      font-size: 0.9em;
+  }
+
+  .navigation li:hover>ul li {
+    display: block;
+  }
+  .navigation li>ul {
+    margin-left: 40%;
+  }
+}
+
+@media all and (max-width : 400px) {
+  .navigation li ul li a {
+    display: block;
+   width: 100%;
+  }
+
+  .top{
+    min-height: 20px;
+  }
+
   .top-contact span {
     display: block;
-    font-size: 18px;
+    /* font-size: 18px; */
   }
+
+  
 }
