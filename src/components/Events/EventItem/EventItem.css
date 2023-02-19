@@ -14,7 +14,6 @@
 .event-card-content {
     position: relative;
     min-height: 1px;
-    padding: 0 15px;
     width: 70%;
     vertical-align: middle;
 }
@@ -23,7 +22,6 @@
     color: grey;
     font-style: italic;
     flex-grow: 1;
-    padding: 10px  0 0 30px;
 }
 
 .event-card-content-date {
@@ -31,7 +29,7 @@
     background-color: #284167;
     float: left;
     margin-right: 10px;
-    margin-bottom: 2px;
+    margin-bottom: 10px;
     color: #fff;
     width: 52px;
     padding: 0 0 10px;
@@ -50,23 +48,31 @@
 }
 
 .event-card-content-title {
-    margin-top: 0;
-    /* margin-bottom: 10px; */
+    margin-top: 10px;
+    display: inline;
     font-weight: 700;
-    font-size:1.1em;
+    font-size: 1.1em;
     text-transform: uppercase;
     padding-top: 10px;
     line-height: 1.5;
     letter-spacing: 0.08em;
 }
 
+.event-card-content-detail {
+    display: inline-block;
+    margin-left: 0px;
+}
+
+.event-card-content-detail span {
+    float: left;
+    margin-right: 5px;
+}
+
 .event-expired {
-    position: relative;
-    top: -3px;
     background-color: #5979a9;
     color: #fff;
-    font-size: 10px;
-    font-weight:100;
+    font-size: 14px;
+    font-weight: 100;
     padding: 3px 5px;
     margin-left: 15px;
 }
@@ -89,20 +95,69 @@
     }
 }
 
-@media (max-width: 820px) {
+@media (max-width: 1000px) {
     .event-card {
         flex-direction: column;
+        position: relative;
     }
-
-    .event-card-content{
+    .event-card-content-title {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+    .event-card-content {
         width: 100%;
     }
-
-    .event-card-content-detail{
+    .event-card-content-detail {
+        margin-top: 20px;
+        width: 160px;
+        position: absolute;
+        bottom: 20px;
+        left: 25px;
+    }
+    .event-card-btn-wrapper {
         margin-top: 20px;
     }
+}
 
+@media (max-width: 800px) {
     .event-card-link {
-        margin-top: 30px;
+        padding: 10px 20px;
     }
+    .event-card-content-detail {
+        font-size: 0.9em;
+    }
+    .event-expired {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .event-card-content-title {
+        width: 100%;
+        font-size: 1em;
+        display: block;
+        text-overflow: clip;
+    }
+    .event-card-content-detail {
+        position: relative;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        /* margin: 20px auto; */
+    }
+    .event-card-link {
+        position: relative;
+        bottom: 20;
+        left: 100;
+        margin-top: 30px;
+        padding: 8px 15px;
+    }
+    .event-card-content-detail span{
+        float: unset;
+    }
+    .events-pages a{
+        padding:  0;
+    }
+
 }
