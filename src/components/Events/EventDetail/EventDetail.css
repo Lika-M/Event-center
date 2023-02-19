@@ -1,6 +1,7 @@
-#details-page{
+#details-page {
     height: 100%;
 }
+
 .details-wrapper {
     margin: 50px 30px;
     border-radius: 7px 7px 7px 7px;
@@ -16,7 +17,7 @@
     border-radius: 7px 0 0 7px;
 }
 
-.details-btn.subscribe button,
+.details-btn.subscribe .btn,
 .details-btn.subscribe p {
     font-size: 20px;
     background-color: #5979a9;
@@ -24,24 +25,29 @@
     border: 3px solid #fff;
 }
 
-.details-btn.subscribe button{
+.details-btn.subscribe button {
     cursor: pointer;
+    display: inline-block;
 }
 
-.details-btn.subscribe button:hover {
+.details-btn.subscribe p {
+    display: inline-block;
+}
+
+.details-btn.subscribe .btn:hover {
     background-color: #284167;
 }
 
 .details-btn.own {
-    margin: 0 20px;
+    width: 80%;
+    margin: 0 auto;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .details-btn.own a,
 .details-btn.own p {
-    margin: 80px auto;
+    margin: 30px auto 50px auto;
     flex-basis: 30%;
 }
 
@@ -60,11 +66,12 @@
     font-size: 10px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-transform: uppercase;
-    color: #aaa9a9;;
+    color: #aaa9a9;
+    ;
     letter-spacing: 0.2em;
 }
 
-.details-text.organizer h1{
+.details-text.organizer h1 {
     font-size: 20px;
 }
 
@@ -130,11 +137,11 @@
 
 .details-btn {
     text-align: center;
-    margin: 4em 0;
+    margin: 2em 0;
 }
 
 
-.details-btn button,
+.details-btn .btn,
 .details-btn a,
 .details-btn p {
     height: auto;
@@ -147,7 +154,7 @@
     letter-spacing: 0.05em;
     color: white;
     display: block;
-    margin: 30px 50px;
+    margin: 30px auto;
     border: none;
 }
 
@@ -186,14 +193,17 @@
     opacity: 0.8;
 }
 
-@media all and (max-width :1250px){
-    .details-text-data, .details-text-content {
+@media all and (max-width :1250px) {
+
+    .details-text-data,
+    .details-text-content {
         padding-bottom: 20px;
     }
+
 }
 
 @media all and (max-width :900px) {
-    
+
     .details-wrapper {
         flex-direction: column;
         position: relative;
@@ -222,4 +232,49 @@
         width: 100%;
     }
 
+}
+
+@media all and (max-width : 800px) {
+
+    .events-title {
+        font-size: 2.5em;
+    }
+
+    .details-btn.subscribe .btn,
+    .details-btn.subscribe p {
+        font-size: 2em;
+    }
+
+
+}
+
+@media all and (max-width : 600px) {
+
+    .events-title {
+        font-size: 2em;
+    }
+
+    .details-btn.subscribe .btn,
+    .details-btn.subscribe p {
+        display: inline-block;
+        font-size: 1.5em;
+    }
+
+    .details-text>p,
+    .details-text-content p {
+        font-size: 1.1em;
+    }
+}
+
+
+@media all and (max-width : 400px) {
+
+    .details-btn.subscribe .btn,
+    .details-btn.subscribe p {
+        font-size: 1em;
+    }
+
+    .details-text.organizer {
+        width: 100%;
+    }
 }
