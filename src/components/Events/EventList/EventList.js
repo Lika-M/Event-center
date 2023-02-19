@@ -29,7 +29,7 @@ export const EventList = () => {
                 setSearchParams({ page: page });
                 setIsLoading(false);
             })
-    }, [page]);
+    }, [page, setSearchParams]);
 
     let currentMonth = new Date(events[0]?.date).toLocaleString('default', { month: 'long' });
     let visible = true;
@@ -73,13 +73,15 @@ export const EventList = () => {
             <div className="events-title">Calendar</div>
 
             {isLoading
-                ? <Loader/>
+                ? <Loader />
                 : <>
-                    {events.length > 0
-                        ? currentEvents
-                        : <p style={{ fontSize: "25px", color: "red", padding: "50px 0" }}>
-                            {`No events in Database`}
-                        </p>}
+                    <div>
+                        {events.length > 0
+                            ? currentEvents
+                            : <p style={{ fontSize: "25px", color: "red", padding: "50px 0" }}>
+                                {`No events in Database`}
+                            </p>}
+                    </div>
                     <div className="events-pages">
                         {pages > page
                             ? <Link to={`/calendar?page=${page + 1}`}>&lt;&lt; Previous</Link>
@@ -88,6 +90,7 @@ export const EventList = () => {
                             ? <Link to={`/calendar?page=${page - 1}`}>Next &gt;&gt;</Link>
                             : null}
                     </div>
+
                 </>}
         </section>
     );

@@ -80,3 +80,40 @@
     border: none;
 
 }
+
+.events-pages{
+    margin-top: 20px;
+}
+
+@media (max-width: 800px){
+    .events-date>span{
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 600px){
+    .events-img{
+        height: 14.5em;
+    }
+
+    .events-date>span{
+        font-size: 1.3em;
+    }
+
+   
+}
+
+@media (max-width: 400px){
+    .events-img{
+        height: 11.5em;
+    }
+
+    .events-date>span{
+        font-size: 1.2em;
+    }
+
+    .events-date {
+        margin: 20px;
+    }
+}
+
