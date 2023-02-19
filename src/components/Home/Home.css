@@ -44,7 +44,7 @@
     margin-bottom: 80px;
 }
 
-.header-btn{
+.header-btn {
     font-family: 'Mukta', sans-serif;
     font-size: 1.5em;
     padding: 15px 25px;
@@ -55,6 +55,7 @@
     border-radius: 6px;
     font-weight: bold;
 }
+
 .header-btn:hover {
     background-color: #dffd9a;
     border: none;
@@ -78,25 +79,86 @@
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .title {
-     margin: 80px 0 30px 0;
+        margin: 80px 0 30px 0;
+        font-size: 2.8em;
     }
 
     .subtitle {
-     margin-bottom: 40px;
-     margin-inline: 20px;
+        margin-bottom: 80px;
+        margin-inline: 20px;
+        font-size: 1.3em;
     }
 
     .home {
         height: 25em;
     }
 
-
+    .header-btn {
+        padding: 10px 20px;
+    }
 }
 
-@media (max-width: 700px){
+@media (max-width: 800px) {
     .home {
-        height: 20em;
+        height: 22em;
+    }
+
+    .header-btn {
+        font-size: 1.2em;
+    }
+
+    .title {
+        font-size: 2.6em;
+        margin: 60px 0 30px 0;
+    }
+
+    .subtitle {
+        font-size: 1.2em;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .home {
+        height: 14.5em;
+    }
+
+    .header-btn {
+        font-size: 0.8em;
+        padding: 8px 15px;
+    }
+
+    .title {
+        font-size: 2.2em;
+        margin: 40px 0 20px 0;
+    }
+
+    .subtitle {
+        font-size: 1em;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 400px) {
+    .home {
+        height: 11em;
+    }
+
+    .header-btn {
+        font-size: 0.7em;
+        padding: 8px 10px;
+    }
+
+    .title {
+        font-size: 1.7em;
+        margin: 30px 0 15px 0;
+    }
+
+    .subtitle {
+        font-size: 0.8em;
+        margin-inline: 10px;
+        margin-bottom: 20px;
     }
 }
