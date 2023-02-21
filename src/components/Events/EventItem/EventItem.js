@@ -13,7 +13,7 @@ export const EventItem = ({
 
         <article className="event-card">
             <div className="event-card-content">
-                <div>
+                <div className="event-card-content-wrapper">
                     <div className="event-card-content-date">
                         <span>{day}</span>{month.slice(0, 3)}
                     </div>
@@ -28,13 +28,13 @@ export const EventItem = ({
                             : ''
                         }
                     </h4>
-                </div>
 
-            </div>
-            <div className="event-card-btn-wrapper">
-                <Link to={`/calendar/event/${objectId}`} className="event-card-link">
-                    EVENT DETAIL
-                </Link>
+                </div>
+                <div className="event-card-btn-wrapper">
+                    <Link to={`/calendar/event/${objectId}`} className="event-card-link">
+                        EVENT DETAIL
+                    </Link>
+                </div>
             </div>
             <div className="event-card-content-detail">
                 <span> {weekDay}, </span><span>{location}</span>

@@ -115,5 +115,11 @@
     .events-date {
         margin: 20px;
     }
+
+    .events-pages a {
+        font-size: 14px;
+        margin-bottom: 5px;
+        padding: 5px ;
+    }
 }
 
