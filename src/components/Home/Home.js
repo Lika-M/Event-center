@@ -8,9 +8,9 @@ export const Home = () => {
     const { currentUser } = useContext(AuthContext);
 
     return (
-        <section className='home'>
+        <section className="home">
 
-            <div className="img-wrapper">
+            <div className="home img-wrapper">
                 <img src="/images/hall-1.jpg" alt="hall-1" />
             </div>
             <h1 className="title">

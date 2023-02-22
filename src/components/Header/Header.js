@@ -24,7 +24,7 @@ export const Header = () => {
 
 
   return (
-    <section>
+    <section className="hero">
       <div className="top">
         <div className="navigation-logo">
           <img src="/images/logo.png" alt='logo' />
@@ -40,8 +40,8 @@ export const Header = () => {
         <li><NavLink to="/" className="navigation-link" title="Home">HOME</NavLink></li>
         <li><NavLink className="navigation-link" title="About us">ABOUT</NavLink>
           <ul>
-            <li><NavLink to="/about/content">What we offer</NavLink></li>
-            <li><NavLink to="/about/offer">Services</NavLink></li>
+            <li><NavLink to="/about/content">Services</NavLink></li>
+            <li><NavLink to="/about/offer">What we offer</NavLink></li>
             <li><NavLink to="/about/space">Our space</NavLink></li>
           </ul>
         </li>
