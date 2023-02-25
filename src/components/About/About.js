@@ -8,9 +8,11 @@ export const About = () => {
     return (
         <>
             <section className="perfect">
-                <h2 className="perfect-title">WHAT WE OFFER</h2>
-            
+                <div className="perfect img-wrapper">
+                    <img src="/images/team.jpg" alt="Team" />
+                </div>
             </section>
+            
             <Routes>
                 <Route path='offer' element={<Offer />} />
                 <Route path='content' element={<Content />} />

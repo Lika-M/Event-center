@@ -1,9 +1,10 @@
-
 export const Space = () => {
     return (
-        <div className="perfect">
-            <h2 className="perfect-text">To be continued</h2>
-        </div>
-
+        <>
+            <h2 className="perfect-title">ABOUT/our space</h2>
+            <article className="spaces">
+                <p>To be continued...</p>
+            </article>
+        </>
     );
 }

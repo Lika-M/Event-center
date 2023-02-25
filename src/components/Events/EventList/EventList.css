@@ -9,7 +9,7 @@
 .events-img {
     position: relative;
     top: 0;
-    height: 20em;
+    height: 25em;
     overflow: hidden;
 }
 
@@ -34,7 +34,7 @@
 .events-title {
     position: relative;
     left: 50%;
-    transform: translate(-50%, -360%);
+    transform: translate(-50%, -450%);
     text-transform: uppercase;
     font-size: 3em;
     font-weight: bold;

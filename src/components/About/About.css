@@ -1,91 +1,109 @@
 .perfect {
-    grid-area: perfect;
+    background-color: #fff;
+    position: relative;
+    z-index: 0;
     text-align: center;
-    padding: 40px 100px 0px 100px;
-    background-color: #d4d4d4;
+}
+
+.perfect.img-wrapper {
+    position: relative;
+    top: 0;
+    height: 25em;
+    overflow: hidden;
+}
+
+.perfect.img-wrapper img {
+    width: 100%;
+    position: relative;
+    top: -150px;
+}
+
+.perfect.img-wrapper::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #284167;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    z-index: 1;
 }
 
 .perfect-title {
-    padding: 0 30px;
-    font-size: 1.8em;
-    color:#284167;
-}
-
-.perfect-text{
-    padding: 30px 0;
-}
-
-.perfect-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 60px auto;
-    justify-content: space-around;
-}
-
-.perfect-content-card {
-    flex-basis: 30%;
-    margin-bottom: 20px;
-}
-
-.perfect-content-card>p, .perfect>p {
-    color: #284167;
-    font-size: 1.2em;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -450%);
+    text-transform: uppercase;
+    font-size: 3em;
     font-weight: bold;
+    color: #fff;
+    z-index: 10;
+    text-shadow: 1px 3px 3px black;
 }
 
-.perfect-content-card>img {
-    width: 280px;
-    height: 180px;
-    overflow: hidden;
-    margin-bottom: 10px;
-    box-shadow: 0px 0px 5px grey;
-    border: 4px solid #fff;
-    border-radius: 6px;
-}
-.perfect-content-card>img:hover {
-    box-shadow: 0px 10px 15px #000;
-}
-
-.perfect-offer{
-    margin: 0 auto;
-    padding: 0 0 60px 0;
-}
-
-.perfect-offer-card{
-    position: relative;
-}
-
-.perfect-offer>h3, .perfect-offer-card>h3{
-    font-size: 1.6em;
+h1.perfect-offer{
+    font-size: 1.4em;
     color: #284167;
-    margin-bottom: 15px;
+    margin: 50px 25px;
+    text-align: center;
 }
 
-.perfect-offer-card::before{
-    content: '';
-    display: block;
-    width: 3px;
-    height: 60px;
-    background-color: #fff;
-    position: relative;
-    top: 113px;
+.offer p, .content p, .spaces p{
+    padding: 50px;
+    text-align: center;
 }
 
-.perfect-offer-card>p{
-    text-align: left;
-    padding-left: 45px;
-    color: grey;
-    font-size: 1.2em;
+@media (max-width: 1200px) {
+    .perfect.img-wrapper img{
+        top: -100px;
+    }
 }
 
-@media all and (max-width :900px) {
-    .perfect-offer-card::before{
-        background-color:#d4d4d4;;
+@media (max-width: 1000px) {
+    .perfect.img-wrapper img{
+        top: -50px;
+    }
+}
+
+ @media (max-width: 800px) {
+     .perfect.img-wrapper {
+        height: 21.05em;
     }
 
-    .perfect {
-      
-        padding: 40px 40px 0px 40px;
+    .perfect.img-wrapper img{
+        top: 0px;
+    }
+
+    .perfect-title {
+        font-size: 2em;
+        margin-top: -70px;
+    }
+} 
+
+@media (max-width: 600px) {
+    .perfect.img-wrapper {
+        height: 14.5em;
+    }
+    .perfect.img-wrapper img{
+        top: 0px;
+    }
+
+     .perfect-title {
+        font-size: 1.5em;
+        margin-top: -20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .perfect.img-wrapper {
+        height: 10.5em;
+    }
+
+      .perfect-title {
+        font-size: 1.5em;
+        margin-top: 10px;
     }
 }
