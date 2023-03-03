@@ -1,17 +1,54 @@
+import { Link } from 'react-router-dom';
+import './Offer.css'
+
 export const Offer = () => {
     return (
         <>
             <h2 className="perfect-title">ABOUT/offer</h2>
-            <article className="offer">
-                <div className="">
-                    <h1 className="perfect-offer">When you book your event, these services and amenities are included.</h1>
-                    <p>To be continued...</p>
-                    <ul className="perfect-offer">
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </article>
+            <section className="offer">
+                <article className="offer-for-organizers">
+                    <div className="offer-container-title">
+                        <h1>For event organizers</h1>
+                    </div>
+                    <div className="offer-container">
+                        <Link  to="#" className="offer-stack">
+                            <div className="card">
+                                <div className="card-content">
+                                    <img src="/images/spaces.png" alt="" />
+                                    <h3>Spaces and halls</h3>
+                                </div>
+                            </div>
+                        </Link>
+                        <Link to="#" className="offer-stack">
+                            <div className="card">
+                                <div className="card-content">
+                                    <img src="/images/equipment.png" alt="" />
+                                    <h3>Technical equipment</h3>
+                                </div>
+                            </div>
+                        </Link>
+                        <Link to="/calendar" className="offer-stack">
+                            <div className="card">
+                                <div className="card-content">
+                                    <img src="/images/events.png" alt="" />
+                                    <h3>Events</h3>
+                                </div>
+                            </div>
+                        </Link>
+                        <Link to="#" className="offer-stack">
+                            <div className="card">
+                                <div className="card-content">
+                                    <img src="/images/services.png" alt="" />
+                                    <h3>Additional services</h3>
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+                </article>
+                <article className="offer-for-visitors">
+                    
+                </article>
+            </section>
         </>
     );
 }

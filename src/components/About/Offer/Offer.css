@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800;900&display=swap');
+
+.offer {
+    font-family: "Inter", sans-serif;
+    line-height: 1.5;
+    margin: 0% auto;
+    min-height: 400px;
+    align-items: center;
+    background-color: #fefefe;
+    text-transform: uppercase;
+    font-family: Rubik, sans-serif;
+    color: #284167;
+}
+
+.offer-for-organizers {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 50px 0;
+}
+
+.offer-container {
+    flex-basis: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end
+}
+
+.offer-container-title {
+    flex-basis: 40%;
+}
+
+.offer-container-title h1 {
+    font-weight: 900;
+    font-size: 2.5em;
+    text-align: center;
+    padding: 50px 15px;
+}
+
+.card-content img {
+    display: block;
+    max-width: 100%;
+}
+
+.card-content h3 {
+    margin: 20px 5px;
+}
+
+.offer-stack {
+    min-width: 250px;
+    margin: 0 5px 25px 5px;
+    transition: .25s ease;
+}
+
+.offer-stack:hover {
+    transform: rotate(5deg);
+}
+
+.offer-stack:hover .card:before {
+    transform: translate(-2%) rotate(-4deg);
+}
+
+.offer-stack:hover .card:after {
+    transform: translate(2%) rotate(4deg);
+}
+
+.offer .card {
+    width: 200px;
+    border: 3px solid #284167;
+    background-color: #dffd9a;
+    position: relative;
+    transition: .15s ease;
+    cursor: pointer;
+    padding: 5%;
+}
+
+.offer .card:before,
+.offer .card:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    /* background-color: pink; */
+    transform-origin: center center;
+    z-index: -1;
+    transition: .15s ease;
+    top: 0;
+    left: 0;
+}
+
+.offer .card:before {
+    border: 3px solid #284167;
+    transform: translate(-2%) rotate(-6deg);
+}
+
+.offer .card:after {
+    border: 3px solid #284167;
+    transform: translate(2%) rotate(6deg);
+}
+
+.offer .card-content {
+    min-height: 170px;
+    border: 3px solid #fff;
+    background-color: #EEE;
+    /* aspect-ratio: 1 / 1; */
+    position: relative;
+    text-align: center;
+}
+
+.offer .card-content img {
+    margin: 10px auto;
+}
