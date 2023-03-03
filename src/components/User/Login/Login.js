@@ -86,7 +86,7 @@ export const Login = () => {
                 {error.serverError &&
                     <Notify message={error.serverError} onClose={onClose} />
                 }
-                <h1>Login</h1>
+                <h3>Login</h3>
                 <form onSubmit={onLoginHandler}>
                     <div>
                         <label htmlFor='username'>Username</label>

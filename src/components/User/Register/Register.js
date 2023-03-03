@@ -101,7 +101,7 @@ export const Register = () => {
             {error.serverError &&
                 <Notify message={error.serverError} onClose={onClose} />
             }
-                <h1>Register</h1>
+                <h3>Register</h3>
 
                 <form onSubmit={onRegisterHandler}>
                     <div>

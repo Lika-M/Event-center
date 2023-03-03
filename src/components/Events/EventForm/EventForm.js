@@ -95,7 +95,7 @@ export const EventForm = ({ title, btnName, event }) => {
                 }
 
                 <form onSubmit={onSubmit}>
-                <h1>{title}</h1>
+                <h3>{title}</h3>
 
                     <label htmlFor="topic">Topic</label>
                     <input type="text" name="topic" id="topic" placeholder="Title"
