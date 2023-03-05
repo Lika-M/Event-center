@@ -12,26 +12,49 @@
     color: #284167;
 }
 
-.offer-for-organizers {
+.offer-for-organizers,
+.offer-for-visitors {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
-    padding: 50px 0;
 }
 
-.offer-container {
+.offer-for-visitors {
+    background-color: #EEE;
+  
+}
+
+.offer-container{
+    display: flex;
+    flex-basis: 55%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: ;
+    margin: 40px 10px 20px 10px;
+}
+
+.offer-container-visitors {
     flex-basis: 60%;
+    justify-content: center;
+    align-items: center;
+}
+
+.offer-container>div {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end
+    flex-direction: column;
+    margin-right: 10px;
 }
+.offer-container div:nth-child(2){
+    margin-top: 50px;
+} 
 
 .offer-container-title {
-    flex-basis: 40%;
+    flex-basis: 35%;
 }
 
-.offer-container-title h1 {
+.offer-container-title h2 {
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
@@ -47,21 +70,21 @@
     margin: 20px 5px;
 }
 
-.offer-stack {
-    min-width: 250px;
-    margin: 0 5px 25px 5px;
+.organizer-link {
+    min-width: 246px;
+    margin-bottom: 10%;
     transition: .25s ease;
 }
 
-.offer-stack:hover {
+.organizer-link:hover {
     transform: rotate(5deg);
 }
 
-.offer-stack:hover .card:before {
+.organizer-link:hover .card:before {
     transform: translate(-2%) rotate(-4deg);
 }
 
-.offer-stack:hover .card:after {
+.organizer-link:hover .card:after {
     transform: translate(2%) rotate(4deg);
 }
 
@@ -105,11 +128,71 @@
     min-height: 170px;
     border: 3px solid #fff;
     background-color: #EEE;
-    /* aspect-ratio: 1 / 1; */
     position: relative;
     text-align: center;
 }
 
 .offer .card-content img {
     margin: 10px auto;
+}
+
+.visitor-btn {
+   float: right;
+    font-size: 1.3em;
+    padding: 10px 25px;
+    border: 3px solid #284167;
+    color: #fff;
+    background-color: #284167;
+    margin-right: 100px;
+    border-radius: 6px;
+    font-weight: bold;
+    box-shadow: 5px 5px 10px grey;
+}
+
+.visitor-btn:hover {
+    color: #284167;
+    background-color: #dffd9a;
+    border: 3px solid #284167;
+}
+
+@media (max-width: 1000px) {
+
+    .offer-for-organizers,
+    .offer-for-visitors {
+        flex-direction: column;
+    }
+
+    .offer-container {
+        justify-content: center;
+        margin: 0 0 20px 10px;
+    }
+
+    .visitor-btn{
+        margin-bottom: 50px;
+        margin-right:0;
+    }
+}
+
+@media (max-width: 800px) {
+    .offer-container-title h1 {
+        font-size: 2em;
+        padding: 15px;
+    }
+
+    .offer-container>div {
+        flex-direction: column;
+        justify-content: center
+    }
+}
+
+@media (max-width: 600px) {
+    .offer-container-title h1 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 400px) {
+    .offer-container-title h1 {
+        font-size: 1.5em;
+    }
 }

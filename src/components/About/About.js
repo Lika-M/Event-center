@@ -2,7 +2,7 @@ import './About.css';
 import { Routes, Route } from 'react-router-dom';
 import { Content } from './Content/Content.js';
 import { Offer } from './Offer/Offer.js';
-import { Space } from './Spaces.js';
+import { Spaces } from './Spaces.js';
 
 export const About = () => {
     return (
@@ -16,7 +16,7 @@ export const About = () => {
             <Routes>
                 <Route path='offer' element={<Offer />} />
                 <Route path='content' element={<Content />} />
-                <Route path='space' element={<Space />} />
+                <Route path='space' element={<Spaces />} />
             </Routes>
         </>
     )
