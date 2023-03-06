@@ -70,7 +70,7 @@ export const EventList = () => {
             <div className="events-img">
                 <img src="https://www.onecalendar.nl/images/onecalendar.jpg" alt="calendar" />
             </div>
-            <div className="events-title">Calendar</div>
+            <h1 className="events-title">Calendar</h1>
 
             {isLoading
                 ? <Loader />
