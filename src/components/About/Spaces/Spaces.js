@@ -12,6 +12,7 @@ export const Spaces = () => {
     const showContent = (ev) => {
         ev.preventDefault();
         isChecked = false;
+
         if (ev.target.tagName === 'BUTTON') {
             isChecked = true;
             setHall({});
@@ -25,8 +26,8 @@ export const Spaces = () => {
                 setHall({ chosen: 'openSpace' })
             }
         }
-
     }
+    
     return (
         <>
             <h1 className="perfect-title">ABOUT/our spaces</h1>
@@ -56,13 +57,11 @@ export const Spaces = () => {
                         </div>
                     </div>
                 </div>
-
                 <div className="spaces-nav" onClick={showContent}>
-                    <button>Conference Hall</button>
-                    <button>Library Hall</button>
-                    <button>Four seasons hall</button>
-                    <button>Open Space Zone</button>
-                    <div className="animation start"></div>
+                    <button style={{ backgroundColor: hall.chosen === 'conference' ? '#5979a9': ''}}>Conference Hall</button>
+                    <button style={{ backgroundColor: hall.chosen === 'library' ? '#5979a9': '#284167' }}>Library Hall</button>
+                    <button style={{ backgroundColor: hall.chosen === 'fourSeasons' ? '#5979a9': '#284167' }}>Four seasons hall</button>
+                    <button style={{ backgroundColor: hall.chosen === 'openSpace' ? '#5979a9': '#284167' }}>Open Space Zone</button>
                 </div>
             </article>
 
