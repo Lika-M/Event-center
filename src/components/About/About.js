@@ -2,7 +2,7 @@ import './About.css';
 import { Routes, Route } from 'react-router-dom';
 import { Content } from './Content/Content.js';
 import { Offer } from './Offer/Offer.js';
-import { Spaces } from './Spaces.js';
+import { Spaces } from './Spaces/Spaces.js';
 
 export const About = () => {
     return (

@@ -76,10 +76,12 @@
 }
 
 .navigation li:hover {
+  
   background-color: #5979a9;
 }
 
-.navigation li a {
+.navigation li a,
+.navigation li div {
   font-size: 1.2em;
   font-family: 'Mukta', sans-serif;
   font-weight: lighter;
@@ -116,8 +118,20 @@
   border-radius: 0 0 5px 5px;
 }
 
+
+.navigation li li a {
+  background-color: #284167;
+}
+
 .navigation li li a:hover {
-  background: #385a8e;
+  background-color: #385a8e;
+}
+
+.navigation a.active{
+  background-color:#5979a9;
+}
+.navigation li li a.active{
+  background-color: #5979a9;
 }
 
 .navigation ul li:last-child a,
@@ -125,6 +139,8 @@
   -webkit-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
 }
+
+
 
 @media all and (max-width : 1200px) {
   .navigation {
@@ -138,7 +154,8 @@
 }
 
 @media all and (max-width : 1000px) {
-  .navigation li a {
+  .navigation li a,
+  .navigation li div {
     font-size: 0.98em;
     padding: 0 10px;
   }
@@ -149,7 +166,8 @@
     padding: 0 5px;
   }
 
-  .navigation li a {
+  .navigation li a,
+  .navigation li div {
     font-size: 0.85em;
     padding: 0 8px;
   }
@@ -178,7 +196,8 @@
     overflow: hidden;
   }
 
-  .navigation li a {
+  .navigation li a,
+  .navigation li div {
     padding: 0 10px;
     font-size: 0.9em;
     line-height: 30px;
