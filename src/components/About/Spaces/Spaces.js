@@ -1,33 +1,25 @@
 import { useState } from 'react';
-import { ConferenceHall } from './halls/ConferenceHall';
-import { LibraryHall } from './halls/LibraryHall';
-import { FourSeasonsHall } from './halls/FourSeasonsHall';
-import { OpenSpaceHall } from './halls/OpenSpaceHall';
+import { Hall } from './halls/Hall';
+import { halls } from './halls/halls.js';
 import './Spaces.css'
 
 export const Spaces = () => {
-    const [hall, setHall] = useState({ chosen: 'conference' });
-    let isChecked = true;
+    const [hall, setHall] = useState(halls[0])
 
-    const showContent = (ev) => {
+    const showHall = (ev) => {
         ev.preventDefault();
-        isChecked = false;
 
-        if (ev.target.tagName === 'BUTTON') {
-            isChecked = true;
-            setHall({});
-            if (ev.target.textContent === 'Conference Hall') {
-                setHall({ chosen: 'conference' })
-            } else if (ev.target.textContent === 'Library Hall') {
-                setHall({ chosen: 'library' })
-            } else if (ev.target.textContent === 'Four seasons hall') {
-                setHall({ chosen: 'fourSeasons' })
-            } else if (ev.target.textContent === 'Open Space Zone') {
-                setHall({ chosen: 'openSpace' })
-            }
+        if (ev.target.tagName === "BUTTON") {
+            const chosen = halls.find(x => x.title === ev.target.textContent);
+            setHall(chosen);
+
+            halls.map(x => x !== chosen
+                ? x.style = { backgroundColor: '#284167' }
+                : x.style = { backgroundColor: '#5979a9' }
+            );
         }
     }
-    
+
     return (
         <>
             <h1 className="perfect-title">ABOUT/our spaces</h1>
@@ -57,19 +49,14 @@ export const Spaces = () => {
                         </div>
                     </div>
                 </div>
-                <div className="spaces-nav" onClick={showContent}>
-                    <button style={{ backgroundColor: hall.chosen === 'conference' ? '#5979a9': ''}}>Conference Hall</button>
-                    <button style={{ backgroundColor: hall.chosen === 'library' ? '#5979a9': '#284167' }}>Library Hall</button>
-                    <button style={{ backgroundColor: hall.chosen === 'fourSeasons' ? '#5979a9': '#284167' }}>Four seasons hall</button>
-                    <button style={{ backgroundColor: hall.chosen === 'openSpace' ? '#5979a9': '#284167' }}>Open Space Zone</button>
+                <div className="spaces-nav" onClick={showHall}>
+                    {halls.map(x =>
+                        <button key={x._id} style={x.style}>
+                            {x.title}
+                        </button>)}
                 </div>
             </article>
-
-            {(isChecked && hall.chosen === 'conference') ? <ConferenceHall /> : null}
-            {(isChecked && hall.chosen === 'library') ? <LibraryHall /> : null}
-            {(isChecked && hall.chosen === 'openSpace') ? <OpenSpaceHall /> : null}
-            {(isChecked && hall.chosen === 'fourSeasons') ? <FourSeasonsHall /> : null}
-
+            <Hall hall={hall} />
 
         </>
     );
