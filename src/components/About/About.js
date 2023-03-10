@@ -16,7 +16,7 @@ export const About = () => {
             <Routes>
                 <Route path='offer' element={<Offer />} />
                 <Route path='content' element={<Content />} />
-                <Route path='space' element={<Spaces />} />
+                <Route path='spaces' element={<Spaces />} />
             </Routes>
         </>
     )

@@ -12,10 +12,10 @@ export const Offer = () => {
                     </div>
                     <div className="offer-container">
                         <div>
-                            <Link to="#" className="organizer-link">
+                            <Link to="/about/spaces" className="organizer-link">
                                 <div className="card">
                                     <div className="card-content">
-                                        <img src="/images/spaces.png" alt="" />
+                                        <img src="/images/spaces.png" alt="Spaces" />
                                         <h3>Spaces and halls</h3>
                                     </div>
                                 </div>

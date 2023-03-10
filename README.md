@@ -1,4 +1,4 @@
-[View Live]( https://event-center-eb631.web.app)
+[View Live]( https://event-center-eb631.web.app) the project I'm currently working on.
 
 ## Getting Started with Create React App
 
