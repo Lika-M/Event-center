@@ -1,0 +1,53 @@
+.offer-card {
+    text-align: center;
+    width: 100%;
+    height: auto;
+}
+
+.offer-card>div{
+    background-color:#EEE;
+}
+
+.offer-card-title{
+    text-transform: uppercase;
+}
+
+.offer-card-description{
+}
+
+.offer-card-subtitle{
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 20px;
+}
+
+.offer-card-images{
+display: flex;
+flex-wrap: wrap;
+}
+
+.offer-card-img{
+    margin: 20px auto;
+width: 200px;
+height: 200px;
+}
+
+.offer-card-img img {
+width: 100%;
+height: 100%;
+}
+
+.offer-card button{
+    margin: 50px auto;
+    color: #284167;
+    background-color: #dffd9a;
+    border: 3px solid #284167;
+    font-size: 1.3em;
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.offer-card button:hover{
+    box-shadow: 5px 5px 10px rgb(183, 181, 181);
+}
