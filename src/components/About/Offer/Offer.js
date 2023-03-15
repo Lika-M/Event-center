@@ -1,28 +1,20 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Offer.css'
 import { OfferCard } from './OfferCard/OfferCard.js';
+import {service, equipment} from './offers.js'
+import './Offer.css'
 
 export const Offer = () => {
     const [isShown, setIsShown] = useState(false);
-    const [content, setContent] = useState({})
-
+    const [content, setContent] = useState({});
 
     const clickHandler = (ev) => {
         if (ev.currentTarget.tagName === 'BUTTON') {
             setIsShown(true);
             if (ev.currentTarget.children[0].children[0].children[1].textContent === 'Technical equipment') {
-                setContent({
-                    title: 'Technical equipment',
-                    description: 'The latest high tech solutions in the field of communication equipment for maximum security of your event',
-                    subtitle: 'Our team will provide you with full technical support according to the concept of each event. All activities related to sound, lighting, projection, translation or technical specification will be realized thanks to the team of professionals of The Innovative Event Center.',
-                    images: ["/public/images/entire-center.jpg", "/public/images/conference-hal.jpg"]
-                })
+                setContent(equipment)
             } else if (ev.currentTarget.children[0].children[0].children[1].textContent === 'Additional services') {
-                setContent({
-                    title: 'Services',
-                    images: []
-                })
+                setContent(service)
             }
         } else {
             setIsShown(false)
@@ -30,10 +22,8 @@ export const Offer = () => {
     }
 
     const onClose = (state) => {
-        console.log(state)
         setIsShown(state);
     }
-
 
     return (
         <>
@@ -83,7 +73,7 @@ export const Offer = () => {
                     </div>
                 </article>
 
-                {isShown && <OfferCard content={content} onClose={onClose}/>}
+                {isShown && <OfferCard content={content} onClose={onClose} />}
 
                 <article className="offer-for-visitors">
                     <div className="offer-container-title">
