@@ -42,7 +42,7 @@ export const Header = () => {
           <ul>
             <li><NavLink to="/about/offer">What we offer</NavLink></li>
             <li><NavLink to="/about/content">Services</NavLink></li>
-            <li><NavLink to="/about/space">Our space</NavLink></li>
+            <li><NavLink to="/about/spaces">Our space</NavLink></li>
           </ul>
         </li>
         <li><NavLink to="/calendar" className="navigation-link">CALENDAR</NavLink></li>
