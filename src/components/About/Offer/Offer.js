@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { OfferCard } from './OfferCard/OfferCard.js';
-import {service, equipment} from './offers.js'
+import { Search } from './Search/Search.js';
+import { service, equipment } from './offers.js'
 import './Offer.css'
 
 export const Offer = () => {
@@ -76,12 +77,10 @@ export const Offer = () => {
                 {isShown && <OfferCard content={content} onClose={onClose} />}
 
                 <article className="offer-for-visitors">
-                    <div className="offer-container-title">
-                        <h2>For visitors</h2>
-                    </div>
-                    <div className="offer-container-visitors">
-                        <Link to="/calendar" className="visitor-btn">All events</Link>
-                    </div>
+                    <h2 className="offer-container-title">For visitors</h2>
+                    <Link to="/calendar" className="visitor-btn">See all events</Link>
+
+                    <Search />
                 </article>
 
             </section>
