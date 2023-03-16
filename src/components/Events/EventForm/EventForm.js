@@ -36,7 +36,7 @@ export const EventForm = ({ title, btnName, event }) => {
 
             const eventData = {
                 imgUrl: data.imgUrl,
-                topic: data.topic,
+                topic: data.topic.toLowerCase(),
                 location: data.location,
                 date: data.date,
                 time: data.time,

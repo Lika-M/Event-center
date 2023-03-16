@@ -105,6 +105,12 @@
     font-size: 24px;
     color: #474747;
 }
+.details-text h1>span{
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 22px;
+}
 
 .details-text.organizer h1 {
     margin-bottom: 20px;

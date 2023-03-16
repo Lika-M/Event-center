@@ -102,7 +102,7 @@ export const EventDetail = () => {
                 <div className="details-text">
                   <div className="details-text">
                     <div className="details-text-data">
-                      <h1>Topic: {event.topic}</h1>
+                      <h1>Topic: <span>{event.topic}</span></h1>
                       <h2>Location: {event.location}</h2>
                       <h2>Date: {event.date}</h2>
                       <h2>Time: {event.time}</h2>
