@@ -9,6 +9,7 @@ const endpoints = {
     getById: (id) => `/classes/Event/${id}?include=owner`,
     eventById: (id) => `/classes/Event/${id}`,
     create: '/classes/Event',
+    search: (type, param) => `/classes/Event?where={"${type}":{"$regex": "${param}"}}`
 }
 
 export async function getLastEvents(page) {
@@ -39,4 +40,9 @@ export async function editEvent(id, data) {
 
 export async function deleteEventById(id) {
     return await api.delete(endpoints.eventById(id));
+}
+
+export async function searchEvent(type, param) {
+    const result = await api.get(endpoints.search(type, param));
+    return result.results;
 }
