@@ -1,0 +1,132 @@
+.search-form {
+    display: flex;
+    justify-content: space-between;
+    height: 3rem;
+    background-color: #284167;
+    border-radius: 10px;
+    border: 3px solid#fff;
+    color: #fff;
+    padding: 20px;
+}
+
+.fa-solid {
+    font-size: 1.5em;
+}
+
+.search-input-container {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    position: relative;
+}
+
+.search-form input,
+.search-form select {
+    background: transparent;
+    outline: none;
+    color: white;
+    border: 1px solid  #3e68a8;
+}
+
+.search-form select {
+    font-size: 18px;
+    flex-grow: 1;
+    border: none;
+    padding: 10px 5px;
+    border-bottom: 1px solid #284167;
+}
+
+.search-form input {
+    background: white;
+    border-right: none;
+    width: 100%;
+    padding: 0px 10px;
+    color: rgb(57, 53, 53);
+    border: 1px solid #fff;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.search-form select option {
+    color: rgb(60, 59, 59);
+    font-size: 16px;
+    text-align: center;
+}
+
+
+.search-form select:hover,
+.search-form select:focus {
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.search-form input:hover,
+.search-form input:focus {
+    border: 1px solid #ccc;
+    border-right: none;
+}
+
+.search-form input:hover+button,
+.search-form input:focus+button {
+    border: 1px solid #ccc;
+    border-left: none;
+}
+
+.search-form .icon {
+    color: white;
+    position: relative;
+}
+
+.search-form .btn {
+    background: transparent;
+    border: 2px solid #fff;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: white;
+    padding: 0.5rem;
+    height: auto;
+}
+
+.search-form .close-btn {
+    background-color: #dffd9a;
+    color: #284167;
+    border-block: 2px solid #fff;
+    border-inline: none;
+}
+
+.filter {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.filter>span {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.criteria {
+    margin-right: 20px;
+}
+
+@media (max-width: 768px) {
+    .search-form {
+        flex-direction: column;
+        height: 6rem;
+    }
+
+    .search-form h2 {
+        display: none;
+    }
+
+    .search-input-container {
+        width: 100%;
+    }
+
+    .filter {
+        justify-content: center;
+    }
+}
