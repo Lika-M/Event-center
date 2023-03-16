@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800;900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800;900&display=swap');
 
 .offer {
     font-family: Rubik, sans-serif;
@@ -11,8 +11,7 @@
     color: #284167;
 }
 
-.offer-for-organizers,
-.offer-for-visitors {
+.offer-for-organizers {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,6 +20,8 @@
 
 .offer-for-visitors {
     background-color: #EEE;
+    padding: 50px;
+    text-align: center;
 
 }
 
@@ -30,12 +31,6 @@
     justify-content: center;
     flex-wrap: wrap;
     margin: 40px 10px 20px 10px;
-}
-
-.offer-container-visitors {
-    flex-basis: 60%;
-    justify-content: center;
-    align-items: center;
 }
 
 .offer-container>div {
@@ -50,7 +45,9 @@
 }
 
 .offer-container-title {
-    flex-basis: 35%;
+    display: inline-block;
+    margin-right: 100px;
+    margin-bottom: 15px;
 }
 
 .offer-container-title h2 {
@@ -146,7 +143,8 @@
 }
 
 .visitor-btn {
-    float: right;
+    display: inline-block;
+    margin: 20px auto 80px auto;
     font-size: 1.3em;
     padding: 10px 25px;
     border: 3px solid #284167;
