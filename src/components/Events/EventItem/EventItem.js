@@ -15,9 +15,9 @@ export const EventItem = ({
             <div className="event-card-content">
                 <div className="event-card-content-wrapper">
                     <div className="event-card-content-date">
-                        <span>{day}</span>{month.slice(0, 3)}
+                        <span>{day}</span><span>{month.slice(0, 3)}</span>
                     </div>
-                    <h4 className="event-card-content-title">
+                    <h1 className="event-card-content-title">
                         {/* <Link to="/calendar/details"> */}
                         {topic}
                         {/* </Link> */}
@@ -27,7 +27,7 @@ export const EventItem = ({
                             </span>
                             : ''
                         }
-                    </h4>
+                    </h1>
 
                 </div>
                 <div className="event-card-btn-wrapper">

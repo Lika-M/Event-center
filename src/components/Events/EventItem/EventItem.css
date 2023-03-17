@@ -12,7 +12,6 @@
 }
 
 .event-card-content {
-    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -20,7 +19,9 @@
 }
 
 .event-card-content-wrapper {
-    width: 75%;
+    display: flex;
+    flex-basis: 80%;
+    justify-content: space-between;
 }
 
 .event-card-content-detail {
@@ -30,14 +31,12 @@
 }
 
 .event-card-content-date {
-    position: relative;
-    background-color: #284167;
-    float: left;
-    margin-right: 10px;
+
     margin-bottom: 10px;
     color: #fff;
     width: 52px;
-    padding: 0 0 10px;
+    height: 80px;
+    margin: 0 0 10px;
     text-align: center;
     text-transform: uppercase;
 }
@@ -48,23 +47,39 @@
     font-size: 24px;
     font-weight: 700;
     text-align: center;
-    padding-bottom: 4px;
-    padding: 5px 0;
-    margin-bottom: 7px;
+    padding: 7px 0;
+}
+
+.event-card-content-date span:nth-child(2) {
+    background-color: #284167;
+    font-size: 18px;
+    padding: 10px 0;
 }
 
 .event-card-content-title {
+    flex-grow: 1;
+    width: 75%;
+    text-align: start;
     margin-top: 10px;
     font-weight: 700;
     font-size: 1.1em;
+    color: #000;
     text-transform: uppercase;
-    padding-top: 10px;
+    padding: 10px 15px;
     line-height: 1.5;
     letter-spacing: 0.08em;
 }
 
+.event-card-content-btn {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
 .event-card-content-detail {
     display: inline-block;
+    margin-top: 10px;
 }
 
 .event-card-content-detail span {
@@ -73,6 +88,7 @@
 }
 
 .event-expired {
+    display: inline-block;
     background-color: #5979a9;
     color: #fff;
     font-size: 14px;
@@ -84,8 +100,7 @@
 .event-card-btn-wrapper {
     text-align: center;
     text-transform: uppercase;
-    margin-top: 30px;
-    margin-left: 20px;
+    margin-top: 50px;
 }
 
 .event-card-link {
@@ -98,10 +113,14 @@
     .event-card {
         padding: 25px;
     }
+
+    .event-card-content-wrapper {
+        flex-basis: 75%;
+        flex-grow: 1;
+    }
 }
 
 @media (max-width: 1000px) {
-
     .event-card {
         padding: 20px;
     }
@@ -117,21 +136,18 @@
     }
 
     .event-card-content-wrapper {
-        width: 70%;
-    }
-
-    .event-card-btn-wrapper {
-        margin: 30px auto 0px auto;
+        flex-basis: 70%;
     }
 }
 
 @media (max-width: 800px) {
-  
     .event-card-content-wrapper {
-        width: 100%;
+        flex-basis: 100%;
     }
 
     .event-card-btn-wrapper {
+        flex-basis: 100%;
+        flex-grow: 1;
         font-size: 1em;
         margin-top: 15px;
     }
@@ -151,8 +167,12 @@
         width: 48px;
     }
 
-    .event-card-content-date span {
+    .event-card-content-date span:nth-child(1) {
         font-size: 18px;
+    }
+
+    .event-card-content-date span:nth-child(2) {
+        font-size: 14px;
     }
 
     .event-expired {
@@ -161,7 +181,6 @@
 }
 
 @media (max-width: 600px) {
-
     .event-card-content-title {
         width: 100%;
         font-size: 1em;
@@ -179,7 +198,6 @@
     }
 
     .event-card-link {
-        position: relative;
         bottom: 20;
         left: 100;
         margin-top: 30px;
