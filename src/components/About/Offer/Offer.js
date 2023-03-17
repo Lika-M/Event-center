@@ -58,7 +58,7 @@ export const Offer = () => {
                                 <div className="card">
                                     <div className="card-content">
                                         <img src="/images/events.png" alt="" />
-                                        <h3>Events</h3>
+                                        <h3>Event reservation</h3>
                                     </div>
                                 </div>
                             </Link>

@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { searchEvent } from '../../../../services/eventService.js';
 import './Search.css';
 
@@ -6,11 +7,7 @@ export const Search = () => {
 
     const [search, setSearch] = useState('');
     const [criteria, setCriteria] = useState('');
-
-    // useEffect(() => {
-    //     searchEvent(search.type, search.param)
-    //         .then(res => console.log(res))
-    // }, [search.type, search.param])
+    const navigate = useNavigate();
 
     const onSearchChange = (ev) => {
         setSearch(ev.target.value)
@@ -22,11 +19,17 @@ export const Search = () => {
 
     const onSubmitSearch = (ev) => {
         ev.preventDefault();
+
+        if (criteria === '') {
+            navigate('/calendar');
+            return;
+        }
+
         searchEvent(criteria, search.toLowerCase())
-        .then(res => {
-            console.log(res.map(x => x.topic))
-        })
-        .catch(res => alert(res))
+            .then(res => {
+                console.log(res.map(x => x.topic))
+            })
+            .catch(res => alert(res))
         console.log(search);
         console.log(criteria);
 

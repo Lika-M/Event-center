@@ -14,10 +14,10 @@ export const OfferCard = ({ content, onClose }) => {
             </div>
 
             {content.text.map(x => (
-                <article>
+                <article key={x.title}>
                     {x.title && <h3 className="offer-card-subtitle">{x.title}</h3>}
                     {x.description && <p className="offer-card-description">{x.description}</p>}
-                    <div div className="offer-card-images" >
+                    <div className="offer-card-images" >
                         {
                             x.images && x.images
                                 .map(x => (<span className="offer-card-img" key={x} >
