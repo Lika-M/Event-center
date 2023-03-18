@@ -25,7 +25,7 @@
     background: transparent;
     outline: none;
     color: white;
-    border: 1px solid  #3e68a8;
+    border: 1px solid #3e68a8;
 }
 
 .search-form select {
@@ -95,7 +95,7 @@
 }
 
 .filter {
-    width: 40%;
+    flex-basis: 40%;
     display: flex;
     align-items: center;
     padding: 5px;
@@ -109,7 +109,22 @@
 }
 
 .criteria {
+    max-width: 250px;
     margin-right: 20px;
+}
+
+.search-event-list {
+    margin-top: 50px;
+}
+
+@media (max-width: 1000px) {
+    .filter>span{
+        display: none;
+    }
+
+    .offer-container-title {
+        font-size: 2em;
+    }
 }
 
 @media (max-width: 768px) {
@@ -126,7 +141,15 @@
         width: 100%;
     }
 
-    .filter {
+    .search-form select {
         justify-content: center;
+    }
+   
+}
+
+@media (max-width: 525px){
+
+    .search-form input::placeholder{
+        color:transparent;
     }
 }

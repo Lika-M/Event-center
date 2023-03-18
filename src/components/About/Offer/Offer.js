@@ -31,8 +31,8 @@ export const Offer = () => {
             <h1 className="perfect-title">ABOUT/offer</h1>
             <section className="offer">
                 <article className="offer-for-organizers">
-                    <div className="offer-container-title">
-                        <h2>For event organizers</h2>
+                    <div>
+                        <h2 className="offer-container-title">For event organizers</h2>
                     </div>
                     <div className="offer-container">
                         <div>
@@ -81,6 +81,7 @@ export const Offer = () => {
                     <Link to="/calendar" className="visitor-btn">See all events</Link>
 
                     <Search />
+                    
                 </article>
 
             </section>

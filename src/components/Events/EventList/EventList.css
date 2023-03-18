@@ -32,7 +32,7 @@
 }
 
 .events-title {
-    position: relative;
+    position:absolute;
     left: 50%;
     transform: translate(-50%, -350%);
     text-transform: uppercase;

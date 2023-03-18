@@ -47,11 +47,10 @@
 .offer-container-title {
     display: inline-block;
     text-transform: uppercase;
-    margin-right: 100px;
     margin-bottom: 15px;
 }
 
-.offer-container-title h2 {
+.offer-container-title {
     text-transform: uppercase;
     font-weight: 900;
     font-size: 2.5em;
@@ -82,8 +81,6 @@
     border: none;
     background-color: #fff;
 }
-
-
 
 .organizer-link:hover {
     transform: rotate(5deg);
@@ -151,6 +148,7 @@
     border: 3px solid #284167;
     color: #fff;
     background-color: #284167;
+    margin-left: 100px;
     margin-right: 100px;
     border-radius: 6px;
     font-weight: bold;
