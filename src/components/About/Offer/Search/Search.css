@@ -1,4 +1,6 @@
 .search-form {
+    margin: 0 auto;
+    max-width: 800px;
     display: flex;
     justify-content: space-between;
     height: 3rem;
@@ -7,6 +9,10 @@
     border: 3px solid#fff;
     color: #fff;
     padding: 20px;
+}
+
+.search-result{
+    min-height: 55px;
 }
 
 .fa-solid {
@@ -94,6 +100,10 @@
     border-inline: none;
 }
 
+.search p{
+    padding: 15px 0;
+}
+
 .filter {
     flex-basis: 40%;
     display: flex;
@@ -122,12 +132,9 @@
         display: none;
     }
 
-    .offer-container-title {
-        font-size: 2em;
-    }
 }
 
-@media (max-width: 768px) {
+@media (max-width:800px) {
     .search-form {
         flex-direction: column;
         height: 6rem;

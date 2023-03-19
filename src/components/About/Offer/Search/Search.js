@@ -9,44 +9,49 @@ export const Search = () => {
 
     const [search, setSearch] = useState('');
     const [criteria, setCriteria] = useState('');
-    const [selected, setSelected] = useState([]);
+    const [selected, setSelected] = useState({ items: [], style: { display: 'none' } });
     const [isLoad, setIsLoad] = useState(false);
     const navigate = useNavigate();
 
     const onSearchChange = (ev) => {
         setSearch(ev.target.value);
-        setSelected([]);
+        setSelected({ items: [], style: { display: 'none' } });
     };
 
     const onCriteriaChange = (ev) => {
         setCriteria(ev.target.value);
-        setSelected([]);
+        setSearch('');
+        setSelected({ items: [], style: { display: 'none' } });
     };
 
     const onSubmitSearch = (ev) => {
         ev.preventDefault();
 
-        if (criteria === '') {
-            navigate('/calendar');
+        if (criteria === '' || search === '') {
+            setIsLoad(false);
+            setSelected({ items: [], style: { display: 'block' } });
             return;
         }
+
         setIsLoad(true);
 
         searchEvent(criteria, search.toLowerCase())
             .then(res => {
-                setSelected(res);
                 setIsLoad(false);
-                console.log(res)
+                if (res.length > 0) {
+                    setSelected({ items: res, style: { display: 'none' } });
+                } else {
+                    setSelected({ items: [], style: { display: 'block' } })
+                }
             })
             .catch(res => alert(res))
-        setSearch('');
-        setCriteria('');
     }
 
     const onCloseBtn = () => {
         setSearch('')
     };
-
+    console.log(selected.style)
+    console.log(selected.items)
     return (
         <section className="search">
             <form className="search-form" onSubmit={onSubmitSearch}>
@@ -79,12 +84,13 @@ export const Search = () => {
                 </div>
             </form>
             {isLoad && <Loader />}
-            {selected.length > 0
-                ? (<ul className="search-event-list">
-                    {selected.map(x => <EventItem key={x.objectId} {...x} />)}
-                </ul>)
-
-                : <p>No results found.</p>}
+            {selected.items.length > 0 &&
+                (<ul className="search-event-list">
+                    {selected.items.map(x => <EventItem key={x.objectId} {...x} />)}
+                </ul>)}
+            <div className="search-result">
+                <p style={selected.style}>No results found.</p>
+            </div>
         </section>
     );
 };
