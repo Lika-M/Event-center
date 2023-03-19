@@ -78,9 +78,8 @@ export const Offer = () => {
 
                 <article className="offer-for-visitors">
                     <h2 className="offer-container-title">For visitors</h2>
-                    <Link to="/calendar" className="visitor-btn">See all events</Link>
-
                     <Search />
+                    <Link to="/calendar" className="visitor-btn">See all events</Link>
                     
                 </article>
 

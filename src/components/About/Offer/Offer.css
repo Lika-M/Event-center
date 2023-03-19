@@ -22,7 +22,7 @@
     background-color: #EEE;
     padding: 50px;
     text-align: center;
-
+    min-height: 400px;
 }
 
 .offer-container {
@@ -144,21 +144,21 @@
     display: inline-block;
     margin: 20px auto 80px auto;
     font-size: 1.3em;
-    padding: 10px 25px;
-    border: 3px solid #284167;
-    color: #fff;
-    background-color: #284167;
-    margin-left: 100px;
-    margin-right: 100px;
-    border-radius: 6px;
-    font-weight: bold;
-    box-shadow: 5px 5px 10px grey;
-}
-
-.visitor-btn:hover {
+    padding: 10px 50px;
     color: #284167;
     background-color: #dffd9a;
     border: 3px solid #284167;
+    margin-top: 50px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.visitor-btn:hover {
+  
+    color: #fff;
+    background-color: #284167;
+  
+    box-shadow: 5px 5px 10px grey;
 }
 
 @media (max-width: 1000px) {
@@ -171,6 +171,10 @@
     .offer-container {
         justify-content: center;
         margin: 0 0 20px 10px;
+    }
+
+    .offer-container-title {
+        font-size: 2em;
     }
 
     .visitor-btn {
