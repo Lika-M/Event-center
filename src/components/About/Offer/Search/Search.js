@@ -1,5 +1,4 @@
 import { useState, } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { searchEvent } from '../../../../services/eventService.js';
 import { Loader } from '../../../common/Loader/Loader.js';
 import { EventItem } from '../../../Events/EventItem/EventItem.js';
@@ -11,7 +10,6 @@ export const Search = () => {
     const [criteria, setCriteria] = useState('');
     const [selected, setSelected] = useState({ items: [], style: { display: 'none' } });
     const [isLoad, setIsLoad] = useState(false);
-    const navigate = useNavigate();
 
     const onSearchChange = (ev) => {
         setSearch(ev.target.value);
