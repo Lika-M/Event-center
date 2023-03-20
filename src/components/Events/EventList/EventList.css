@@ -2,7 +2,6 @@
     background-color: #fff;
     position: relative;
     z-index: 0;
-    padding-bottom: 30px;
     text-align: center;
 }
 
@@ -39,6 +38,13 @@
     color: #fff;
     z-index: 10;
     text-shadow: 1px 3px 3px black;
+}
+
+.events-list{
+    margin-top: 30px;
+}
+.events-pages {
+    height: 60px;
 }
 
 .events-pages a {
@@ -97,8 +103,6 @@
     .events-date>span{
         font-size: 1.3em;
     }
-
-   
 }
 
 @media (max-width: 400px){

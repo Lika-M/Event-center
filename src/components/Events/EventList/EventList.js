@@ -4,6 +4,7 @@ import { useSearchParams, Link } from 'react-router-dom';
 import { getLastEvents } from '../../../services/eventService.js';
 import { EventItem } from "../EventItem/EventItem.js";
 import { Loader } from "../../common/Loader/Loader.js";
+import { PageNotFound } from "../../common/PageNotFound/PageNotFound.js";
 
 import './EventList.css';
 
@@ -12,7 +13,7 @@ export const EventList = () => {
     const [events, setEvents] = useState([]);
     const [pages, setPages] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
-
+    const [err, setErr] = useState('');
     const [searchParams, setSearchParams] = useSearchParams({});
 
     const page = Number(searchParams.get('page') || 1);
@@ -26,9 +27,12 @@ export const EventList = () => {
                 }));
                 setEvents(events);
                 setPages(result.pages);
-                setSearchParams({ page: page });
                 setIsLoading(false);
             })
+            .catch(err => {
+                setErr(err.message);
+                setIsLoading(false);
+            });
     }, [page, setSearchParams]);
 
     let currentMonth = new Date(events[0]?.date).toLocaleString('default', { month: 'long' });
@@ -64,6 +68,13 @@ export const EventList = () => {
         );
     });
 
+    // if (err) {
+    //     return (
+    //         <PageNotFound err={err} />
+    //     );
+    // }
+    console.log(!isLoading)
+    console.log(err)
     return (
 
         <section className="events">
@@ -71,27 +82,30 @@ export const EventList = () => {
                 <img src="https://www.onecalendar.nl/images/onecalendar.jpg" alt="calendar" />
             </div>
             <h1 className="events-title">Calendar</h1>
-
+            {(!isLoading && err) && <PageNotFound err={err} />}
             {isLoading
                 ? <Loader />
-                : <>
-                    <div>
-                        {events.length > 0
-                            ? currentEvents
-                            : <p style={{ fontSize: "25px", color: "red", padding: "50px 0" }}>
-                                {`No events in Database`}
-                            </p>}
-                    </div>
-                    <div className="events-pages">
-                        {pages > page
-                            ? <Link to={`/calendar?page=${page + 1}`}>&lt;&lt; Previous</Link>
-                            : null}
-                        {page !== 1
-                            ? <Link to={`/calendar?page=${page - 1}`}>Next &gt;&gt;</Link>
-                            : null}
-                    </div>
-
-                </>}
+                : <div className="events-content">
+                    {events.length > 0 &&
+                        <article className="events-list">
+                            {currentEvents}
+                        </article>
+                    }
+                    {(events === [] && !err) &&
+                        <p style={{ fontSize: "25px", color: "red", padding: "50px 0" }}>
+                            {`No events in Database`}
+                        </p>}
+                        { events.length > 0 &&
+                          <article className="events-pages">
+                          {pages > page
+                              ? <Link to={`/calendar?page=${page + 1}`}>&lt;&lt; Previous</Link>
+                              : null}
+                          {page !== 1
+                              ? <Link to={`/calendar?page=${page - 1}`}>Next &gt;&gt;</Link>
+                              : null}
+                      </article>}
+                </div>
+            }
         </section>
     );
 }
