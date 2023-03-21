@@ -48,6 +48,10 @@ export const Register = () => {
             return;
         }
 
+        if (error.username !== '' || error.password !== '' || error.rePass !== '' || error.email !== '') {
+            return;
+        }
+
         register(username, email, password)
             .then(data => {
                 saveUserInfo(data);
@@ -98,15 +102,15 @@ export const Register = () => {
 
         <section className="register">
             <div className="register-box">
-            {error.serverError &&
-                <Notify message={error.serverError} onClose={onClose} />
-            }
+                {error.serverError &&
+                    <Notify message={error.serverError} onClose={onClose} />
+                }
                 <h3>Register</h3>
 
                 <form onSubmit={onRegisterHandler}>
                     <div>
                         <label htmlFor="username">Username</label>
-                        <input type="text" name="username" id="username" 
+                        <input type="text" name="username" id="username"
                             style={{ border: error.emptyFields && input.username === '' ? redBorder : blueBorder }}
                             value={input.username || ''}
                             onChange={onChange}
@@ -128,7 +132,7 @@ export const Register = () => {
                     </div>
                     <div>
                         <label htmlFor="password">Password</label>
-                        <input type="password" name="password" id="password" 
+                        <input type="password" name="password" id="password"
                             style={{ border: error.emptyFields && input.password === '' ? redBorder : blueBorder }}
                             value={input.password || ''}
                             onChange={onChange}
@@ -139,7 +143,7 @@ export const Register = () => {
                     </div>
                     <div>
                         <label htmlFor="rePass">Confirm Password</label>
-                        <input type="password" name="rePass" id="rePass" 
+                        <input type="password" name="rePass" id="rePass"
                             style={{ border: error.emptyFields && input.rePass === '' ? redBorder : blueBorder }}
                             value={input.rePass || ''}
                             onChange={onChange}
