@@ -1,38 +1,47 @@
-#error {
-    background-color: #5979a9;
-}
-
-.hit-the-floor {
-    padding: 200px 50px;
-    color: #fff;
-    font-size: 4em;
-    font-weight: bold;
-    text-shadow:
-        0 1px 0 #ccc,
-        0 2px 0 #c9c9c9,
-        0 3px 0 #bbb,
-        0 4px 0 #b9b9b9,
-        0 5px 0 #aaa,
-        0 6px 1px rgba(0, 0, 0, .1),
-        0 0 5px rgba(0, 0, 0, .1),
-        0 1px 3px rgba(0, 0, 0, .3),
-        0 3px 5px rgba(0, 0, 0, .2),
-        0 5px 10px rgba(0, 0, 0, .25),
-        0 10px 10px rgba(0, 0, 0, .2),
-        0 20px 20px rgba(0, 0, 0, .15);
-}
-
-.hit-the-floor {
+.not-found-page {
+    width: 100%;
+    color: #284167;
+    background-color: #EEE;
+    min-height: 250px;
     text-align: center;
+    vertical-align: middle;
 }
 
-@media all and (max-width :1000px) {
-    .hit-the-floor {
-        padding: 150px 20px;
-    }
+.not-found-page-container {
+    vertical-align: middle;
+    padding: 50px 150px;
 }
-@media all and (max-width :800px) {
-    .hit-the-floor {
-        padding: 100px 20px;
-    }
+
+.not-found-page-container div {
+    width: 500px;
+    margin: 0 auto;
+    padding: 50px;
+    color: #fff;
+    background-color: #5979a9;
+    border-radius: 12px;
+    border: 3px solid #fff;
+}
+
+.not-found-page-container h1 {
+    font-size: 4.2em;
+    font-weight: 900;
+}
+
+.not-found-page-container h2 {
+    font-size: 30px;
+    text-align: center;
+    margin: 8px 0;
+}
+
+.not-found-page-container p {
+    text-align: center;
+    margin-top: 4px;
+    padding-bottom: 2em;
+    font-size: 20px;
+}
+
+.not-found-page-container p a {
+    color:#dffd9a;;
+    font-weight: bold;
+    text-decoration: underline;
 }

@@ -1,11 +1,21 @@
 import './PageNotFound.css'
 export const PageNotFound = (props) => {
+    console.log(props)
     return (
-        <section id="error">
-            <div className="hit-the-floor">
-                <p>{props.err}</p>
-            </div>
-            <div className="alternative-versions absolute bottom-0 w-full flex justify-center underline space-x-4 p-12">
+        <section className="not-found-page">
+            <div className="not-found-page-container">
+                {!props.err
+                    ? <div>
+                        <h1>404</h1>
+                        <h2>Page Not Found</h2>
+                        <p>The Page you are looking for doesn't exist or another error occurred. Go to <a href="/">Home page</a>.</p>
+                    </div >
+                    : <div>
+                        <h1>Error: </h1>
+                        <h2>{props.err}</h2>
+                        <h2>Page Not Found</h2>
+                        <p>The Page you are looking for doesn't exist or another error occurred. Go to <a href="/">Home page</a>.</p>
+                    </div>}
 
             </div>
         </section>
