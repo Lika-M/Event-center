@@ -26,7 +26,7 @@ export const Edit = () => {
                     address: event.organizer.address,
                     email: event.organizer.email,
                     phone: event.organizer.phone
-                })
+                });
             })
             .catch(err => {
                 console.log(err);

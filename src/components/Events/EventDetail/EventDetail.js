@@ -33,13 +33,12 @@ export const EventDetail = () => {
       })
       .catch(err => {
         setErr(err.message);
-      })
+      });
   }, [id]);
 
   useEffect(() => {
     getBookingEvent(id)
       .then(res => {
-        console.log(res.results.length,)
           setBooking(state => ({
             ...state,
             participants: res.results.length,
