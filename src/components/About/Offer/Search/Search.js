@@ -1,7 +1,10 @@
 import { useState, } from 'react';
+import { Link } from 'react-router-dom';
+
 import { searchEvent } from '../../../../services/eventService.js';
 import { Loader } from '../../../common/Loader/Loader.js';
 import { EventItem } from '../../../Events/EventItem/EventItem.js';
+import { PageNotFound } from '../../../common/PageNotFound/PageNotFound.js';
 import './Search.css';
 
 export const Search = () => {
@@ -10,6 +13,7 @@ export const Search = () => {
     const [criteria, setCriteria] = useState('');
     const [selected, setSelected] = useState({ items: [], style: { display: 'none' } });
     const [isLoad, setIsLoad] = useState(false);
+    const [err, setErr] = useState('');
 
     const onSearchChange = (ev) => {
         setSearch(ev.target.value);
@@ -42,14 +46,22 @@ export const Search = () => {
                     setSelected({ items: [], style: { display: 'block' } })
                 }
             })
-            .catch(res => alert(res))
+            .catch(error => {
+                setErr(error.message)
+            })
     }
 
     const onCloseBtn = () => {
-        setSearch('')
+        setSearch('');
+        setSelected({ items: [], style: { display: 'none' } });
     };
-    console.log(selected.style)
-    console.log(selected.items)
+
+    if (err) {
+        return (
+            <PageNotFound err={err} />
+        );
+    }
+
     return (
         <section className="search">
             <form className="search-form" onSubmit={onSubmitSearch}>
@@ -73,8 +85,7 @@ export const Search = () => {
                     {search.length > 0 &&
                         <button className="close-btn" onClick={onCloseBtn}>
                             <i className="fa-solid fa-xmark"></i>
-                        </button>
-                    }
+                        </button>}
 
                     <button type="submit" className="btn" title="Please, select the search criteria">
                         <i className="fa-solid fa-magnifying-glass"></i>
@@ -86,9 +97,13 @@ export const Search = () => {
                 (<ul className="search-event-list">
                     {selected.items.map(x => <EventItem key={x.objectId} {...x} />)}
                 </ul>)}
-            <div className="search-result">
-                <p style={selected.style}>No results found.</p>
-            </div>
+            {!isLoad &&
+                <>
+                    <div className="search-result">
+                        <p style={selected.style}>No results found.</p>
+                    </div>
+                    <Link to="/calendar" className="visitor-btn">See all events</Link>
+                </>}
         </section>
     );
 };
