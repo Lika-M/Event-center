@@ -96,8 +96,8 @@
 }
 
 .hall .hall-title {
-   font-size: 2.4em;
-   padding-top: 30px;
+    font-size: 2.4em;
+    padding-top: 30px;
 }
 
 .hall p {
@@ -123,20 +123,20 @@
     color: #4A6297;
 }
 
-.hall-content-capacity span:nth-child(1){
+.hall-content-capacity span:nth-child(1) {
     font-size: 1em;
 }
 
-.hall-content-capacity span:nth-child(2){
+.hall-content-capacity span:nth-child(2) {
     font-size: 3em;
 }
 
-.hall-content-capacity span:nth-child(3){
+.hall-content-capacity span:nth-child(3) {
     font-size: 20px;
     font-weight: 600;
 }
 
-.hall-content-schema h2{
+.hall-content-schema h2 {
     font-size: 2em;
 }
 
@@ -145,8 +145,91 @@
     margin-bottom: 25px;
 }
 
-.hall-content-schema img{
-    width:200px;
+.hall-content-schema img {
+    width: 200px;
     height: auto;
 }
 
+@media (max-width: 1200px){
+    .spaces-card {
+        width: 220px;
+    }
+
+    .spaces-card p {
+        padding: 5px;
+    }
+
+    .spaces-card-container {
+        padding: 10px;
+    }
+
+    .spaces-card h3 {
+        font-size: 1.3em;
+        margin: 10px 5px 5px 5px;
+    }
+
+}
+
+@media (max-width: 1000px) {
+    .spaces {
+        min-height: 300px;
+    }
+
+    .spaces-wrapper {
+        gap: 2%;
+        padding: 50px 10px 30px 10px;
+    }
+
+    .spaces-card {
+        width: 200px;
+    }
+
+    .spaces-card h3 {
+        font-size: 1.3em;
+        margin: 10px 5px 5px 5px;
+    }
+
+    .spaces-nav button {
+        font-size: 0.85em;
+        padding: 10px 5px;
+    }
+
+    .hall-content {
+        padding: 30px 150px;
+    }
+
+    .hall .hall-title {
+        font-size: 2em;
+    }
+
+    .hall-content-schema h2 {
+        font-size: 1.8em;
+    }
+
+    .hall-content-capacity span:nth-child(2) {
+        font-size: 2.2em;
+    }
+}
+
+@media (max-width: 800px) {
+    .spaces-card-container {
+        height: 130px;
+    }
+
+    .spaces-card {
+        width: 160px;
+    }
+
+    .spaces-card img {
+        width: 30px;
+    }
+
+    .spaces-card h3 {
+        font-size: 1em;
+        margin: 10px 5px 0 5px;
+    }
+
+    .spaces-card p {
+        font-size: 14px;
+    }
+}
