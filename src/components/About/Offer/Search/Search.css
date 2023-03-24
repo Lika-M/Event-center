@@ -135,6 +135,12 @@
 }
 
 @media (max-width:800px) {
+    .filter{
+        justify-content: center;
+    }
+    .filter>span {
+        display: block;
+    }
     .search-form {
         flex-direction: column;
         height: 6rem;
@@ -149,12 +155,16 @@
     }
 
     .search-form select {
-        justify-content: center;
+        flex-grow: 0;
     }
 }
 
 @media (max-width: 525px) {
     .search-form input::placeholder {
         color: transparent;
+    }
+
+    .filter>span {
+        display:none;
     }
 }
