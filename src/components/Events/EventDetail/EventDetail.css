@@ -65,15 +65,14 @@
     margin: 25px auto 0 auto;
     padding: 10px 0;
     font-size: 10px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-transform: uppercase;
+  
     color: #aaa9a9;
     ;
     letter-spacing: 0.2em;
 }
 
 .details-text.organizer h1 {
-    font-size: 20px;
+    font-size: 24px;
 }
 
 .details-text-content.organizer {
@@ -107,9 +106,9 @@
 }
 .details-text h1>span{
     text-transform: uppercase;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
+    font-weight: 800;
     font-size: 22px;
+    color: #aaa9a9;
 }
 
 .details-text.organizer h1 {
@@ -133,6 +132,16 @@
     font-size: 1.2rem;
     font-weight: lighter;
     overflow: hidden;
+}
+
+.details-text-content h3{
+    text-transform: uppercase; 
+    font-weight: 800;
+    margin-bottom: 20px;
+    margin-left: 15px;
+    font-size: 2em;
+    text-align: left;
+    color:  #aaa9a9;
 }
 
 .details-text-content h4 {

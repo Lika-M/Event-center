@@ -17,13 +17,9 @@
     border: 1px solid rgb(217, 90, 90);
 }
 
-.create-form-container form h1{
+.create-form-container form h3{
     padding-top: 25px;
     text-align: center;
-}
-
-.create-form-container form h3 {
-    padding-top: 15px;
 }
 
 .create-form-container form {
@@ -117,6 +113,7 @@
 }
 
 @media (max-width: 1200px) {
+    
 
     .create-form-container form label{
         font-size: 18px;
@@ -144,10 +141,42 @@
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
+    .create-form-container-box{
+        max-width: 320px;
+        padding: 20px 0 30px 0;
+    }
+
+    .create-form-container-box h3{
+        font-size: 1.3em;
+    }
     
+    .create-form-container form h3{
+        padding-top: 10px;
+
+    }
+
+    .create-form-container form label{
+        font-size: 1.1em;
+        margin-top: 20px;
+    }
 }
 
-@media (max-width: 600px) {
-    
+@media (max-width: 400px) {
+    .create-form-container-box{
+        max-width: 300px;
+        padding: 20px 0 30px 0;
+    }
+
+    .create-form-container-box h3{
+        font-size: 1.1em;
+    }
+    .create-form-container form h3{
+        padding-top: 5px;
+
+    }
+    .create-form-container form label{
+        font-size: 1em;
+        margin-top: 15px;
+    }
 }

@@ -90,6 +90,7 @@ export const EventDetail = () => {
                 <div className="details-text organizer">
                   <div className="details-text-content organizer">
                     <h1>Organizer: </h1>
+                    <h3>Company: {event.company}</h3>
                     <h4>Address: {event.organizer?.address}</h4>
                     <h4>Email: {event.organizer?.email}</h4>
                     <h4>Phone: {event.organizer?.phone}</h4>
@@ -101,7 +102,7 @@ export const EventDetail = () => {
                 <div className="details-text">
                   <div className="details-text">
                     <div className="details-text-data">
-                      <h1>Topic: <span>{event.topic}</span></h1>
+                      <h1>Topic: <span>"{event.topic}"</span></h1>
                       <h2>Location: {event.location}</h2>
                       <h2>Date: {event.date}</h2>
                       <h2>Time: {event.time}</h2>

@@ -33,7 +33,7 @@ export const EventForm = ({ title, btnName, event }) => {
             }));
 
         } else {
-
+            console.log(data.company)
             const eventData = {
                 imgUrl: data.imgUrl,
                 topic: data.topic.toLowerCase(),
@@ -41,6 +41,7 @@ export const EventForm = ({ title, btnName, event }) => {
                 date: data.date,
                 time: data.time,
                 description: data.description,
+                company: data.company.toLowerCase(),
                 organizer: {
                     address: data.address,
                     email: data.email,
@@ -95,7 +96,7 @@ export const EventForm = ({ title, btnName, event }) => {
                 }
 
                 <form onSubmit={onSubmit}>
-                <h3>{title}</h3>
+                    <h3>{title}</h3>
 
                     <label htmlFor="topic">Topic</label>
                     <input type="text" name="topic" id="topic" placeholder="Title"
@@ -152,6 +153,13 @@ export const EventForm = ({ title, btnName, event }) => {
                     </textarea>
 
                     <h3>Organizer</h3>
+
+                    <label htmlFor="company">Company</label>
+                    <input type="text" name="company" id="company" placeholder="Enter company name"
+                        onChange={onChange}
+                        value={values.company || ''}
+                        style={{ border: error.emptyFields && values.company === '' ? '2px solid  rgb(217, 90, 90)' : 'none' }}
+                    />
 
                     <label htmlFor="address">Address</label>
                     <input type="text" name="address" id="address" placeholder="Enter address"

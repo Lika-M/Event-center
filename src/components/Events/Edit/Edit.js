@@ -23,6 +23,7 @@ export const Edit = () => {
                     date: event.date,
                     time: event.time,
                     description: event.description,
+                    company: event.company,
                     address: event.organizer.address,
                     email: event.organizer.email,
                     phone: event.organizer.phone
