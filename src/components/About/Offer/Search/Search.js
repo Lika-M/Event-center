@@ -71,6 +71,7 @@ export const Search = () => {
                         <option value="">Select option</option>
                         <option value="date">Date</option>
                         <option value="topic">Topic</option>
+                        <option value="company">Company</option>
 
                     </select>
                 </div>
@@ -80,6 +81,8 @@ export const Search = () => {
                     {criteria === 'topic' && <input type="text" placeholder="Please, enter the topic or key word"
                         name="search" onChange={onSearchChange} value={search} />}
                     {criteria === 'date' && <input type="date"
+                        name="search" onChange={onSearchChange} value={search} />}
+                    {criteria === 'company' && <input type="text" placeholder="Please, enter the company name"
                         name="search" onChange={onSearchChange} value={search} />}
 
                     {search.length > 0 &&
