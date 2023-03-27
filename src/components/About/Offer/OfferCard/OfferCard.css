@@ -4,14 +4,14 @@
     height: auto;
 }
 
-.offer-card article:nth-child(n),
+.offer-card article,
 .offer-card>div {
-    padding: 50px;
+    padding: 50px 20px;
     background-color: #fff;
 }
 
 .offer-card article:nth-child(2n + 2) {
-    padding: 50px;
+    padding: 50px 20px;
     background-color: #EEE;
 }
 
@@ -22,8 +22,7 @@
 .offer-card .offer-card-subtitle {
     font-weight: 800;
     text-transform: uppercase;
-    padding: 20px;
-    padding: 10px 50px;
+    padding: 0;
 }
 
 .offer-card .offer-card-description {
@@ -31,7 +30,7 @@
 }
 
 .offer-card-images {
-    margin: 0 auto;
+    margin: 5% auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -40,16 +39,16 @@
 }
 
 .offer-card-img {
-    margin: 3% 0;
+    margin: 1% 0;
     width: 400px;
-    height: 250px;
-    overflow: hidden;
+    aspect-ratio: 16 / 9;
     border-radius: 6px;
 }
 
 .offer-card-img img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .offer-card button {
@@ -65,4 +64,85 @@
 
 .offer-card button:hover {
     box-shadow: 5px 5px 10px rgb(183, 181, 181);
+}
+
+@media (max-width: 1200px) {
+    .offer-card article {
+        padding: 50px 20px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .offer-card>div {
+        padding: 20px;
+    }
+
+    .offer-card-title {
+        font-size: 1.8em;
+    }
+
+    .offer-card .offer-card-description {
+        padding: 20px 30px;
+    }
+
+    .offer-card-img {
+        width: 320px;
+    }
+}
+
+@media (max-width: 800px) {
+    .offer-card article,
+    .offer-card article:nth-child(2n + 2) {
+        padding: 20px;
+    }
+
+    .offer-card-title {
+        font-size: 1.6em;
+    }
+
+    .offer-card .offer-card-subtitle {
+        font-size: 1.2em;
+    }
+
+    .offer-card .offer-card-description {
+        padding: 20px;
+    }
+}
+
+@media(max-width: 600px) {
+    .offer-card-title {
+        font-size: 1.4em;
+    }
+    .offer-card .offer-card-subtitle {
+        font-size: 1.1em;
+    }
+
+    .offer-card button{
+        font-size: 1em;
+    }
+
+    .offer-card>div{
+        padding: 20px 10px;
+    }
+
+    .offer-card .offer-card-description {
+        padding: 20px 0;
+    }
+}
+
+@media(max-width: 400px) {
+    .offer-card-title {
+        font-size: 1.2em;
+    }
+    .offer-card .offer-card-subtitle {
+        font-size: 1em;
+    }
+
+    .offer-card button{
+        font-size: 0.85em;
+    }
+
+    .offer-card .offer-card-description{
+        font-size: 14px;
+    }
 }

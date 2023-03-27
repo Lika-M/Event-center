@@ -43,15 +43,13 @@
   font-size: 10px;
 }
 
-.navigation {
+.menu {
   list-style: none;
-  padding: 0 80px;
   margin: 0;
   background-color: #284167;
-  border-top: solid 3px #fff;
-  border-bottom: solid 3px #fff;
   position: relative;
   z-index: 20;
+  color: #fff;
 }
 
 .navigation-logo {
@@ -71,17 +69,28 @@
   margin-right: 5px;
 }
 
-.navigation li {
+.nav-link.left {
   float: left;
 }
 
+.nav-link.right {
+  float: right;
+}
+
+.menu-nav {
+  display: none;
+}
+
+.navigation {
+  border-top: solid 3px #fff;
+  border-bottom: solid 3px #fff;
+}
+
 .navigation li:hover {
-  
   background-color: #5979a9;
 }
 
-.navigation li a,
-.navigation li div {
+.navigation li a {
   font-size: 1.2em;
   font-family: 'Mukta', sans-serif;
   font-weight: lighter;
@@ -89,6 +98,7 @@
   padding: 0 20px;
   line-height: 40px;
   color: #fff;
+  padding: 0 25px;
 }
 
 .navigation ul {
@@ -118,7 +128,6 @@
   border-radius: 0 0 5px 5px;
 }
 
-
 .navigation li li a {
   background-color: #284167;
 }
@@ -127,10 +136,11 @@
   background-color: #385a8e;
 }
 
-.navigation a.active{
-  background-color:#5979a9;
+.navigation a.active {
+  background-color: #5979a9;
 }
-.navigation li li a.active{
+
+.navigation li li a.active {
   background-color: #5979a9;
 }
 
@@ -140,11 +150,9 @@
   border-radius: 0 0 5px 5px;
 }
 
-
-
 @media all and (max-width : 1200px) {
   .navigation {
-    padding: 0 15px;
+    padding: 0 50px;
   }
 
   .navigation li a {
@@ -154,6 +162,10 @@
 }
 
 @media all and (max-width : 1000px) {
+  .navigation {
+    padding: 0 50px;
+  }
+
   .navigation li a,
   .navigation li div {
     font-size: 0.98em;
@@ -166,8 +178,7 @@
     padding: 0 5px;
   }
 
-  .navigation li a,
-  .navigation li div {
+  .navigation li a {
     font-size: 0.85em;
     padding: 0 8px;
   }
@@ -183,7 +194,7 @@
 
 @media all and (max-width : 600px) {
   .navigation {
-    display: flex;
+    display: none;
     flex-direction: column;
     padding: 0;
   }
@@ -196,16 +207,16 @@
     overflow: hidden;
   }
 
-  .navigation li a,
-  .navigation li div {
+  .navigation li a {
     padding: 0 10px;
     font-size: 0.9em;
+    font-weight: 400;
     line-height: 30px;
   }
 
   .navigation li:hover>ul {
     position: absolute;
-    top: 30px;
+    top: 33px;
     border: none;
     border-radius: unset;
   }
@@ -238,6 +249,41 @@
 
   .navigation li>ul {
     margin-left: 20%;
+  }
+
+  .menu-nav {
+    display: block;
+    border: none;
+    color: #fff;
+    background-color: #284167;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    z-index: 50;
+  }
+  
+  .menu-nav>i {
+    font-size: 20px;
+    padding: 4px;
+    position: relative;
+    top: 0;
+    right: 0px;
+  }
+
+  .menu-nav.mark{
+    top: 3px;
+  }
+
+  .menu-nav.bar{
+    position: relative;
+    border-top: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    display: block;
+    width: 100%;
+  }
+
+  .menu-nav.bar>i{
+    float: right;
   }
 }
 

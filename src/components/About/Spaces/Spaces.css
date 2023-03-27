@@ -20,20 +20,20 @@
 
 .spaces-card {
     width: 250px;
+    height: 250px;
     border: 3px solid #284167;
     background-color: #dffd9a;
     position: relative;
-    padding: 15px;
+    padding: 2%;
     justify-content: center;
 }
 
 .spaces-card-container {
-    height: 170px;
+    height: 87%;
     border: 3px solid #fff;
     background-color: #EEE;
     position: relative;
     text-align: center;
-    padding: 30px 15px;
 }
 
 .spaces-card {
@@ -150,9 +150,10 @@
     height: auto;
 }
 
-@media (max-width: 1200px){
+@media (max-width: 1200px) {
     .spaces-card {
         width: 220px;
+        height: 220px;
     }
 
     .spaces-card p {
@@ -160,7 +161,7 @@
     }
 
     .spaces-card-container {
-        padding: 10px;
+        padding: 5%;
     }
 
     .spaces-card h3 {
@@ -212,12 +213,9 @@
 }
 
 @media (max-width: 800px) {
-    .spaces-card-container {
-        height: 130px;
-    }
-
     .spaces-card {
         width: 160px;
+        height: 160px;
     }
 
     .spaces-card img {
@@ -230,6 +228,87 @@
     }
 
     .spaces-card p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .spaces {
+        min-height: 200px;
+    }
+
+    .spaces-card-container {
+        padding: 5px;
+    }
+
+    .spaces-card {
+        width: 130px;
+        height: 130px;
+        padding: 10px;
+    }
+
+    .spaces-card img {
+        width: 20px;
+    }
+
+    .spaces-card h3 {
+        font-size: 1em;
+        margin: 10px 5px 0 5px;
+    }
+
+    .spaces-card p {
+        font-size: 13px;
+        padding: 0;
+    }
+
+    .hall .hall-title {
+        font-size: 1.8em;
+    }
+
+    .hall-content-schema h2 {
+        font-size: 1.5em;
+    }
+
+    .hall-content-capacity span:nth-child(1) {
+        font-size: 0.85em;
+    }
+
+    .hall-content-capacity span:nth-child(2) {
+        font-size: 2em;
+    }
+
+    .hall-content-capacity span:nth-child(3) {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 400px) {
+    .spaces-nav button {
+        display: block;
+        width: 100%;
+    }
+
+    .hall{
+        padding: 0 15px;
+    }
+    .hall .hall-title {
+        font-size: 1.5em;
+    }
+
+    .hall-content-schema h2 {
+        font-size: 1.2em;
+    }
+
+    .hall-content-capacity span:nth-child(1) {
+        font-size: 0.65em;
+    }
+
+    .hall-content-capacity span:nth-child(2) {
+        font-size: 1.8em;
+    }
+
+    .hall-content-capacity span:nth-child(3) {
         font-size: 14px;
     }
 }

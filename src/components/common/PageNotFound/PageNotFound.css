@@ -1,5 +1,4 @@
 .not-found-page {
-    width: 100%;
     color: #284167;
     background-color: #EEE;
     min-height: 250px;
@@ -9,11 +8,11 @@
 
 .not-found-page-container {
     vertical-align: middle;
-    padding: 50px 150px;
+    padding: 50px 100px;
 }
 
 .not-found-page-container div {
-    width: 500px;
+    max-width: 400px;
     margin: 0 auto;
     padding: 50px;
     color: #fff;
@@ -28,7 +27,7 @@
 }
 
 .not-found-page-container h2 {
-    font-size: 30px;
+    font-size: 2.2em;
     text-align: center;
     margin: 8px 0;
 }
@@ -44,4 +43,76 @@
     color:#dffd9a;;
     font-weight: bold;
     text-decoration: underline;
+}
+
+@media (max-width: 1200px){
+    .not-found-page-container h1{
+        font-size: 4em;
+    }
+
+    .not-found-page-container h2{
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 1000px){
+    .not-found-page-container h1{
+        font-size: 3em;
+    }
+
+    .not-found-page-container h2{
+        font-size: 1.8em;
+    }
+
+    .not-found-page-container p{
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 800px){
+    .not-found-page-container{
+        padding: 30px 50px;
+    }
+
+    .not-found-page-container div{
+        padding: 40px;
+    }
+
+    .not-found-page-container h1{
+        font-size: 2.5em;
+    }
+
+    .not-found-page-container h2{
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 600px){
+    .not-found-page-container{
+        padding: 30px;
+    }
+    .not-found-page-container h1{
+        font-size: 2em;
+    }
+
+    .not-found-page-container div{
+        padding: 30px;
+    }
+
+    .not-found-page-container h2{
+        font-size: 1.2em;
+    }
+
+    .not-found-page-container p{
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 400px){
+    .not-found-page-container{
+        padding: 20px 15px;
+    }
+    .not-found-page-container div{
+        padding: 20px;
+    }
 }

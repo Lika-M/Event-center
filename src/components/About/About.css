@@ -35,10 +35,9 @@
 .perfect-title {
     width: inherit;
     text-align: center;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
+    position:absolute;
     left: 50%;
+    transform: translate(-50%, -350%);
     text-transform: uppercase;
     color: #fff;
     z-index: 10;
@@ -84,8 +83,7 @@ h1.perfect-offer{
     }
 
     .perfect-title {
-        font-size: 3em;
-        margin-top: -10px;
+        font-size: 2.7em;
     }
 } 
 
@@ -98,8 +96,7 @@ h1.perfect-offer{
     }
 
      .perfect-title {
-        font-size: 2em;
-        margin-top: 100px;
+        font-size: 1.8em;
     }
 }
 
@@ -110,6 +107,5 @@ h1.perfect-offer{
 
       .perfect-title {
         font-size: 1.5em;
-        margin-top: 70px;
     }
 }

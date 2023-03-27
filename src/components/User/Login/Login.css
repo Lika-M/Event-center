@@ -6,7 +6,7 @@
 .login-box {
     color: white;
     max-width: 370px;
-    height: 380px;
+    height: 360px;
     margin: auto;
     background-color: #042553;
     opacity: 0.8;
@@ -15,9 +15,8 @@
     padding: 20px 0 50px 0;
 }
 
-.login-box h1 {
+.login-box h3 {
     text-align: center;
-    padding-top: 15px;
 }
 
 .login-box form {
@@ -69,15 +68,16 @@
     .login-box {
         padding: 20px 0 50px 0;
     }
-    .login-box h1{
+
+    .login-box h3 {
         font-size: 1.4em;
     }
 
-    .login-box form label{
+    .login-box form label {
         font-size: 16px;
     }
 
-    .login-box p{
+    .login-box p {
         font-size: 14px;
     }
 }
@@ -85,16 +85,37 @@
 @media (max-width: 600px) {
 
     .login-box {
+        max-width: 320px;
         padding: 20px 0 30px 0;
     }
-    .login-box h1{
+
+    .login-box h3 {
         font-size: 1.3em;
     }
-    .login-box form input{
+
+    .login-box form label{
+        margin-top: 10px;
+    }
+
+    .login-box form input {
         font-size: 14px;
     }
 
-    .login-box p.redirect{
+    .login-box p.redirect {
         font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .login-box {
+        max-width: 300px;
+    }
+
+    .login-box h3 {
+        font-size: 1.1em;
+    }
+
+    .login-box form label{
+        margin-top: 5px;
     }
 }

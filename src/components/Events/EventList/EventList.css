@@ -89,13 +89,27 @@
     margin-top: 20px;
 }
 
+@media (max-width: 1000px){
+    .events-title {
+        font-size: 4em;
+    }
+}
+
 @media (max-width: 800px){
+    
+    .events-title {
+        font-size: 3.5em;
+    }
     .events-date>span{
         font-size: 1.5em;
     }
 }
 
 @media (max-width: 600px){
+    .events-title {
+        font-size: 2em;
+    }
+
     .events-img{
         height: 14.5em;
     }
@@ -117,6 +131,11 @@
     .events-date {
         margin: 20px;
     }
+
+    .events-title {
+        font-size: 1.5em;
+    }
+
 
     .events-pages a {
         font-size: 14px;

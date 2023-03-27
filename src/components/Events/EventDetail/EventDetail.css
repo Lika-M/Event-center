@@ -242,11 +242,6 @@
 }
 
 @media all and (max-width : 800px) {
-
-    .events-title {
-        font-size: 2.5em;
-    }
-
     .details-btn.subscribe .btn,
     .details-btn.subscribe p {
         font-size: 2em;
@@ -256,11 +251,6 @@
 }
 
 @media all and (max-width : 600px) {
-
-    .events-title {
-        font-size: 2em;
-    }
-
     .details-btn.subscribe .btn,
     .details-btn.subscribe p {
         display: inline-block;
@@ -275,7 +265,6 @@
 
 
 @media all and (max-width : 400px) {
-
     .details-btn.subscribe .btn,
     .details-btn.subscribe p {
         font-size: 1em;

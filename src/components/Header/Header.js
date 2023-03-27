@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext.js';
 
@@ -7,21 +8,37 @@ import './Header.css';
 export const Header = () => {
 
   const { currentUser } = useContext(AuthContext);
+  const [style, setStyle] = useState({})
+  const [mark, setMark] = useState({})
+  const [bar, setBar] = useState({})
 
   const userNav = (
     <>
-      <li><NavLink to="/event/create" className="navigation-link" title="Contact">EVENT RESERVATION</NavLink></li>
-      <li><NavLink to="/logout" className="navigation-link" title="Contact">LOGOUT</NavLink></li>
+      <li className="nav-link left"><NavLink to="/event/create">EVENT RESERVATION</NavLink></li>
+      <li className="nav-link right" ><NavLink to="/logout" title="Contact">LOGOUT</NavLink></li>
     </>
   );
 
   const guestNav = (
     <>
-      <li><NavLink to="/register" className="navigation-link" title="Contact">REGISTER</NavLink></li>
-      <li><NavLink to="/login" className="navigation-link" title="Contact">LOGIN</NavLink></li>
+      <li className="nav-link right"><NavLink to="/register" >REGISTER</NavLink></li>
+      <li className="nav-link right"><NavLink to="/login" >LOGIN</NavLink></li>
     </>
   );
 
+
+  function onToggle() {
+    if (style.display === 'flex') {
+      setStyle({ display: 'none' });
+      setMark({ display: 'none' })
+      setBar({ display: 'block' })
+    } else {
+      setStyle({ display: 'flex' });
+      setMark({ display: 'block' })
+      setBar({ display: 'none' })
+    }
+    console.log(style)
+  }
 
   return (
     <section className="hero">
@@ -36,22 +53,32 @@ export const Header = () => {
         </div>
       </div>
 
-      <ul className="navigation">
-        <li><NavLink to="/" className="navigation-link" title="Home">HOME</NavLink></li>
-        <li><div className="navigation-link" title="About us">ABOUT</div>
-          <ul>
-            <li><NavLink to="/about/offer">What we offer</NavLink></li>
-            <li><NavLink to="/about/content">Services</NavLink></li>
-            <li><NavLink to="/about/spaces">Our space</NavLink></li>
-          </ul>
-        </li>
-        <li><NavLink to="/calendar" className="navigation-link">CALENDAR</NavLink></li>
-        <li><NavLink to="/gallery" className="navigation-link" title="Contact">GALLERY</NavLink></li>
+      <div className="menu">
+        <button className="menu-nav mark" onClick={onToggle} style={mark}>
+          <i className="fas fa-xmark"></i>
+        </button>
+        <button className="menu-nav bar" onClick={onToggle} style={bar}>
+          <i className="fas fa-bars"></i>
+        </button>
 
-        {currentUser ? userNav : guestNav}
+        <ul className="navigation" style={style}>
+          <li className="nav-link left"><NavLink to="/">HOME</NavLink></li>
+          <li className="nav-link left"><NavLink to="/about">ABOUT</NavLink>
+            <ul>
+              <li><NavLink to="/about/offer">What we offer</NavLink></li>
+              <li><NavLink to="/about/content">Services</NavLink></li>
+              <li><NavLink to="/about/spaces">Our space</NavLink></li>
+            </ul>
+          </li>
+          <li className="nav-link left"><NavLink to="/calendar">CALENDAR</NavLink></li>
+          <li className="nav-link left"><NavLink to="/gallery">GALLERY</NavLink></li>
 
-        <div className="clear"></div>
-      </ul>
+          {currentUser ? userNav : guestNav}
+
+          <div className="clear"></div>
+        </ul>
+
+      </div>
 
     </section>
   )
