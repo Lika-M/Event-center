@@ -163,7 +163,7 @@
 
 @media all and (max-width : 1000px) {
   .navigation {
-    padding: 0 50px;
+    padding: 0 20px;
   }
 
   .navigation li a,
@@ -179,7 +179,7 @@
   }
 
   .navigation li a {
-    font-size: 0.85em;
+    font-size: 0.8em;
     padding: 0 8px;
   }
 
