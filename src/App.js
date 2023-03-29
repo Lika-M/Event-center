@@ -14,40 +14,42 @@ import { Edit } from './components/Events/Edit/Edit.js';
 import { PageNotFound } from './components/common/PageNotFound/PageNotFound.js';
 import { EventDetail } from './components/Events/EventDetail/EventDetail.js';
 import { UserRouteGuard } from './guards/UserRouteGuard.js';
-import './App.css';
 import { Gallery } from './components/Gallery/Gallery.js';
+import ErrorBoundary from './components/common/ErrorBoundary .js';
+import './App.css';
 
 function App() {
 
 
   return (
-    <AuthProvider>
+    <ErrorBoundary>
+      <AuthProvider>
 
-      <div className="wrapper">
-        <Header />
-        <Routes>
+        <div className="wrapper">
+          <Header />
+          <Routes>
 
-          <Route path='/' element={<Home />} />
-          <Route path='/about/*' element={<About />} />
-          <Route path='/gallery' element={<Gallery />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/login' element={<Login />} />
-          <Route element={<UserRouteGuard />}>
-            <Route path='logout' element={<Logout />} />
-            <Route path='/event/create' element={<Create />} />
-            <Route path='/event/:id/edit' element={<Edit />} />
-          </Route>
-          <Route path='/calendar' element={<EventList />} />
-          <Route path='/calendar/event/:id' element={<EventDetail />} />
-          <Route path="*" element={<PageNotFound />} />
+            <Route path='/' element={<Home />} />
+            <Route path='/about/*' element={<About />} />
+            <Route path='/gallery' element={<Gallery />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/login' element={<Login />} />
+            <Route element={<UserRouteGuard />}>
+              <Route path='logout' element={<Logout />} />
+              <Route path='/event/create' element={<Create />} />
+              <Route path='/event/:id/edit' element={<Edit />} />
+            </Route>
+            <Route path='/calendar' element={<EventList />} />
+            <Route path='/calendar/event/:id' element={<EventDetail />} />
+            <Route path="*" element={<PageNotFound />} />
+            
+          </Routes>
 
+          <Footer />
+        </div>
 
-        </Routes>
-
-        <Footer />
-      </div>
-
-    </AuthProvider>
+      </AuthProvider>
+    </ErrorBoundary>
   );
 }
 
