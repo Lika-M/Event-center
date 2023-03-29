@@ -1,6 +1,6 @@
 import './About.css';
 import { Routes, Route } from 'react-router-dom';
-import { Content } from './Content/Content.js';
+import { Services } from './Services/Services.js';
 import { Offer } from './Offer/Offer.js';
 import { Spaces } from './Spaces/Spaces.js';
 
@@ -15,7 +15,7 @@ export const About = () => {
             
             <Routes>
                 <Route path='offer' element={<Offer />} />
-                <Route path='content' element={<Content />} />
+                <Route path='services' element={<Services />} />
                 <Route path='spaces' element={<Spaces />} />
             </Routes>
         </>
