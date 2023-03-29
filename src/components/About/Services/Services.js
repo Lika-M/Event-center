@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import './Services.css';
 export const Services = () => {
 
@@ -27,16 +28,111 @@ export const Services = () => {
 
                 </article>
                 <div>
-                <article className="services-image">
-                    <div className="services-image-wrapper">
+                    <article className="services-image">
+                        <div className="services-image-wrapper">
 
-                        <img src="/images/entire-center.jpg" alt="Center img" />
-                    </div>
-                </article>
-                <article className="icon">
-                    <img src="/images/icon.png" alt="Icon" />
-                    <span>EVENT CENTER</span>
-                </article>
+                            <img src="/images/entire-center.jpg" alt="Center img" />
+                        </div>
+                    </article>
+                    <article className="icon">
+                        <img src="/images/icon.png" alt="Icon" />
+                        <span>EVENT CENTER</span>
+                    </article>
+                </div>
+            </section>
+            <section className="team">
+                <h1>Event center team</h1>
+                <div className="team-cards">
+                    <article className="team-card">
+                        <div className="team-card-image">
+                            <img src="/images/team-manager.jpg" alt="Manager" />
+                        </div>
+                        <div className="team-card-content">
+                            <h2>Vassilena Vassileva</h2>
+                            <h3>Chief manager</h3>
+                            <div className="team-card-buttons">
+                                <a href="mailto:someone@events.com" className="team-card-btn">
+                                    <i className="fas fa-phone"></i>
+                                </a>
+                                <a href="tel:+359888555555" className="team-card-btn">
+                                    <i className="fas fa-envelope"></i>
+
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    <article className="team-card">
+                        <div className="team-card-image">
+                            <img src="/images/team-branding.jpg" alt="Manager" />
+                        </div>
+                        <div className="team-card-content">
+                            <h2>Evgeny Troyanov</h2>
+                            <h3>Design and branding</h3>
+                            <div className="team-card-buttons">
+                                <a href="mailto:someone@events.com" className="team-card-btn">
+                                    <i className="fas fa-phone"></i>
+                                </a>
+                                <a href="tel:+359888555555" className="team-card-btn">
+                                    <i className="fas fa-envelope"></i>
+
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    <article className="team-card">
+                        <div className="team-card-image">
+                            <img src="/images/team-pr.jpg" alt="Manager" />
+                        </div>
+                        <div className="team-card-content">
+                            <h2>Mairiam Dobrovsky</h2>
+                            <h3>Public relationships</h3>
+                            <div className="team-card-buttons">
+                                <a href="mailto:someone@events.com" className="team-card-btn">
+                                    <i className="fas fa-phone"></i>
+                                </a>
+                                <a href="tel:+359888555555" className="team-card-btn">
+                                    <i className="fas fa-envelope"></i>
+
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    <article className="team-card">
+                        <div className="team-card-image">
+                            <img src="/images/team-catering.jpg" alt="Manager" />
+                        </div>
+                        <div className="team-card-content">
+                            <h2>Aneta Ganeva</h2>
+                            <h3>Catering</h3>
+                            <div className="team-card-buttons">
+                                <a href="mailto:someone@events.com" className="team-card-btn">
+                                    <i className="fas fa-phone"></i>
+                                </a>
+                                <a href="tel:+359888555555" className="team-card-btn">
+                                    <i className="fas fa-envelope"></i>
+
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    <article className="team-card">
+                        <div className="team-card-image">
+                            <img src="/images/team-economics.jpg" alt="Manager" />
+                        </div>
+                        <div className="team-card-content">
+                            <h2>Kiril Daskalov</h2>
+                            <h3>Economic management</h3>
+                            <div className="team-card-buttons">
+                                <a href="mailto:someone@events.com" className="team-card-btn">
+                                    <i className="fas fa-phone"></i>
+                                </a>
+                                <a href="tel:+359888555555" className="team-card-btn">
+                                    <i className="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                   
                 </div>
             </section>
         </>

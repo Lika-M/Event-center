@@ -2,13 +2,13 @@
     display: flex;
     flex-wrap: wrap;
     max-width: 90%;
-    margin: 50px auto;
+    margin: 30px auto 0px auto;
     justify-content: space-evenly;
     gap: 5%;
 }
 
-.services div{
-    position:relative;
+.services div {
+    position: relative;
 }
 
 .services-text {
@@ -21,7 +21,9 @@
     margin: 60px auto 30px auto;
 }
 
-.services-text h1 {
+.services-text h1,
+.team h1 {
+    color: #284167;
     text-transform: uppercase;
     font-size: 1.5em;
     margin-bottom: 20px;
@@ -46,7 +48,7 @@
 .services-image-wrapper {
     width: 288px;
     height: 318px;
-    margin:  auto;
+    margin: auto;
     display: flex;
     position: relative;
     top: 30px;
@@ -80,29 +82,84 @@
     padding-bottom: 5px;
 }
 
-@media (max-width: 600px){
-    .services{
-        margin: 20px auto;
-    }
-    .services-image{
-        width: 400px;
-        height: 380px;
-    }
-
-    .icon{
-        display: none;
-    }
+.team {
+    background-color: #284167;
 }
 
-@media (max-width: 400px){
-    
-    .services-image{
-        width: 300px;
-        height: 320px;
-    }
-
-    .services-image-wrapper {
-        width: 240px;
-        height: 265px;
-    }
+.team>h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 900;
+    padding: 50px 30px 30px 30px;
+    margin: 0;
 }
+
+.team-cards {
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    justify-content:center;
+}
+
+.team-card {
+    width: 250px;
+    background-color: #dffd9a;
+    border-radius: 12px;
+    margin-bottom: 35px;
+    border: 3px solid #fff;
+}
+
+.team-card-image {
+    width: 200px;
+    height: 250px;
+    margin: 8% auto;
+    border-radius: 12px;
+    border: 3px solid #fff;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.team-card-image img {
+    width: 100%;
+}
+
+.team-card-content {
+    text-align: center;
+    color:  #284167;
+    padding: 0 15px 15px 15px;
+}
+
+.team-card-content h2 {
+    width: 80%;
+    font-size: 1.6em;
+    margin: 0 auto 15px auto;
+}
+
+.team-card-content h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.team-card-buttons {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content:space-evenly;
+}
+
+.team-card-btn {
+    font-size: 16px;
+    font-weight: bold;
+    background-color:  #5979a9;
+    color: #fff;
+    border:3px solid #fff;
+    border-radius: 50%;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
