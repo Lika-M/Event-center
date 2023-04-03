@@ -68,13 +68,12 @@ export const EventList = () => {
         );
     });
 
-    // if (err) {
-    //     return (
-    //         <PageNotFound err={err} />
-    //     );
-    // }
-    console.log(!isLoading)
-    console.log(err)
+    if (err) {
+        return (
+            <PageNotFound err={err} />
+        );
+    }
+   
     return (
 
         <section className="events">

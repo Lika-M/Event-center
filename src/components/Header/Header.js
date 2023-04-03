@@ -37,7 +37,6 @@ export const Header = () => {
       setMark({ display: 'block' })
       setBar({ display: 'none' })
     }
-    console.log(style)
   }
 
   return (

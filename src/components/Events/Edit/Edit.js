@@ -1,19 +1,24 @@
-import { useParams, } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { Navigate, useParams, } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
 
 import { EventForm } from '../EventForm/EventForm.js';
 import { getEventById } from '../../../services/eventService.js';
 import { PageNotFound } from '../../common/PageNotFound/PageNotFound.js';
+import { AuthContext } from '../../../contexts/AuthContext.js';
 
 export const Edit = () => {
 
     const [data, setData] = useState({});
     const [error, setError] = useState('');
+    const {currentUser }= useContext(AuthContext);
     const title = 'Edit Event';
     const { id } = useParams();
     const btnName = 'EDIT EVENT';
 
     useEffect(() => {
+        // if(!currentUser._id){
+        //     setError('Log in first')
+        // }
         getEventById(id)
             .then(event => {
                 return setData({
@@ -26,14 +31,18 @@ export const Edit = () => {
                     company: event.company,
                     address: event.organizer.address,
                     email: event.organizer.email,
-                    phone: event.organizer.phone
+                    phone: event.organizer.phone,
+                    owner: event.owner.objectId
                 });
             })
             .catch(err => {
-                console.log(err);
                 setError(err)
             });
-    }, [id])
+    }, [id]);
+
+    if(data.owner && currentUser._id !== data.owner){
+        return <PageNotFound/>
+    }
 
     if (error) {
         return (

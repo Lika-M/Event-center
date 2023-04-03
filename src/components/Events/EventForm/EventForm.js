@@ -33,7 +33,6 @@ export const EventForm = ({ title, btnName, event }) => {
             }));
 
         } else {
-            console.log(data.company)
             const eventData = {
                 imgUrl: data.imgUrl,
                 topic: data.topic.toLowerCase(),

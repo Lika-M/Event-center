@@ -19,7 +19,6 @@ export async function register(username, email, password) {
 }
 
 export async function login(username, password) {
-    // const result = await post(endpoints.login, { email, password }); TODO change login form
     const result = await post(endpoints.login, { username, password });
     const userData = {
         _id: result.objectId,

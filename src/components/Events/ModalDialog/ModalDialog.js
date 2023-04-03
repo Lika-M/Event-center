@@ -6,13 +6,10 @@ export const ModalDialog = ({ id, modal, setModal }) => {
     const navigate = useNavigate();
 
     const onDelete = () => {
-        // if (modal === 'show') {
             deleteEventById(id)
                 .then(res => {
-                    //     removePlant(plantId);
                     navigate('/calendar');
                 });
-        // }
     }
     const onCancel = () => {
         setModal(`hide`);
