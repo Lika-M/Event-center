@@ -61,7 +61,76 @@
     border-radius: 4px;
 }
 
+.grid {
+    width: 90%;
+    margin: 80px auto;
+    display: flex;
+    gap: 3%;
+}
 
+.grid-text {
+    flex-basis: 50%;
+    color: #284167;
+    margin-bottom: 15px;
+}
+
+.grid h1 {
+    font-size: 2em;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.grid-container>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #ffeead;
+}
+
+.grid-container>div>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    border-radius: 8px;
+}
+
+.grid-text>p {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.grid-text>ul {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+.grid-text>ul>li {
+    margin-bottom: 15px;
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 8px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-auto-rows: 125px;
+    grid-auto-flow: dense;
+}
+
+.horizontal {
+    grid-column: span 2;
+}
+
+.vertical {
+    grid-row: span 2;
+}
+
+.big {
+    grid-column: span 2;
+    grid-row: span 2;
+}
 
 @media (max-width: 1200px) {
     .home {
@@ -74,6 +143,10 @@
 
     .subtitle {
         margin-inline: 100px;
+    }
+
+    .grid {
+        margin: 50px auto;
     }
 }
 
@@ -96,16 +169,23 @@
     .header-btn {
         padding: 10px 20px;
     }
+
+    .grid {
+        margin: 30px auto;
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 800px) {
     .home {
         height: 22em;
     }
+
     .title {
         font-size: 2.7em;
         margin: 90px 0 30px 0;
     }
+
     .subtitle {
         font-size: 1.2em;
         margin-bottom: 50px;
@@ -113,7 +193,7 @@
 
     .header-btn {
         font-size: 1.2em;
-    } 
+    }
 }
 
 @media (max-width: 600px) {
@@ -134,7 +214,15 @@
     .header-btn {
         font-size: 0.8em;
         padding: 8px 15px;
-    } 
+    }
+
+    .grid h1{
+        font-size: 1.5em;
+    }
+
+    .grid-text>p{
+        font-size: 20px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -156,5 +244,13 @@
     .header-btn {
         font-size: 0.7em;
         padding: 8px 10px;
+    }
+
+    .grid h1{
+        font-size: 1.2em;
+    }
+
+    .grid-text>p{
+        font-size: 18px;
     }
 }
