@@ -1,4 +1,4 @@
-import { Navigate, useParams, } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 
 import { EventForm } from '../EventForm/EventForm.js';

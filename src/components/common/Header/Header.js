@@ -62,7 +62,7 @@ export const Header = () => {
 
         <ul className="navigation" style={style}>
           <li className="nav-link left"><NavLink to="/">HOME</NavLink></li>
-          <li className="nav-link left"><NavLink to="/about">ABOUT</NavLink>
+          <li className="nav-link left"><div>ABOUT</div>
             <ul>
               <li><NavLink to="/about/offer">What we offer</NavLink></li>
               <li><NavLink to="/about/services">Services</NavLink></li>

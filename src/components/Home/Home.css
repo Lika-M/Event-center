@@ -69,12 +69,17 @@
 }
 
 .grid-text {
-    flex-basis: 50%;
-    color: #284167;
+    flex-basis: 40%;
     margin-bottom: 15px;
 }
 
+.grid-container{
+    flex-grow: 1;
+    font-size: 16px;
+}
+
 .grid h1 {
+    color: #284167;
     font-size: 2em;
     text-transform: uppercase;
     font-weight: 900;
@@ -86,7 +91,7 @@
     justify-content: center;
     align-items: center;
     font-size: 2em;
-    color: #ffeead;
+    /* color: #ffeead; */
 }
 
 .grid-container>div>img {
@@ -98,6 +103,7 @@
 }
 
 .grid-text>p {
+    color: grey;
     font-size: 20px;
     margin-bottom: 15px;
 }
@@ -109,6 +115,7 @@
 
 .grid-text>ul>li {
     margin-bottom: 15px;
+    color: grey;
 }
 
 .grid-container {
@@ -253,4 +260,5 @@
     .grid-text>p{
         font-size: 18px;
     }
+
 }

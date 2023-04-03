@@ -1,6 +1,9 @@
 @import url("https://use.fontawesome.com/releases/v6.1.1/css/all.css");
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,200,300,100,500,700,600,800,900);
 
+.hero{
+  user-select: none
+}
 .clear {
   clear: both;
 }
@@ -87,13 +90,14 @@
 }
 
 .navigation li:hover {
-  background-color: #5979a9;
+  background-color: #385a8e;
 }
 
-.navigation li a {
+.navigation li a,
+.navigation li div {
   font-size: 1.2em;
   font-family: 'Mukta', sans-serif;
-  font-weight: lighter;
+  /* font-weight: lighter; */
   display: block;
   padding: 0 20px;
   line-height: 40px;
@@ -124,6 +128,7 @@
 }
 
 .navigation li:hover>ul li:hover {
+  background-color: #385a8e;
   -webkit-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
 }
@@ -136,11 +141,9 @@
   background-color: #385a8e;
 }
 
-.navigation a.active {
-  background-color: #5979a9;
-}
-
-.navigation li li a.active {
+.navigation a.active,
+.navigation li li a.active,
+.navigation div.active {
   background-color: #5979a9;
 }
 
@@ -155,7 +158,8 @@
     padding: 0 50px;
   }
 
-  .navigation li a {
+  .navigation li a,
+  .navigation li div {
     padding: 0 15px;
     font-size: 1em;
   }
@@ -178,7 +182,8 @@
     padding: 0 5px;
   }
 
-  .navigation li a {
+  .navigation li a,
+  .navigation li div {
     font-size: 0.8em;
     padding: 0 8px;
   }
@@ -207,7 +212,8 @@
     overflow: hidden;
   }
 
-  .navigation li a {
+  .navigation li a,
+  .navigation li div {
     padding: 0 10px;
     font-size: 0.9em;
     font-weight: 400;
@@ -261,7 +267,7 @@
     right: 0px;
     z-index: 50;
   }
-  
+
   .menu-nav>i {
     font-size: 20px;
     padding: 4px;
@@ -270,11 +276,11 @@
     right: 0px;
   }
 
-  .menu-nav.mark{
+  .menu-nav.mark {
     top: 3px;
   }
 
-  .menu-nav.bar{
+  .menu-nav.bar {
     position: relative;
     border-top: 3px solid #fff;
     border-bottom: 3px solid #fff;
@@ -282,7 +288,7 @@
     width: 100%;
   }
 
-  .menu-nav.bar>i{
+  .menu-nav.bar>i {
     float: right;
   }
 }
