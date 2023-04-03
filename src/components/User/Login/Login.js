@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, Navigate } from 'react-router-dom';
 
 import { login } from '../../../services/authService.js'
 import { AuthContext } from '../../../contexts/AuthContext.js';
@@ -10,9 +10,13 @@ import './Login.css';
 export const Login = () => {
 
     const navigate = useNavigate();
-    const { saveUserInfo } = useContext(AuthContext);
+    const { currentUser, saveUserInfo } = useContext(AuthContext);
     const [input, setInput] = useState({});
     const [error, setError] = useState({});
+
+    if(currentUser._id){
+        return <Navigate to="/"/>
+    }
 
     const onLoginHandler = (ev) => {
         ev.preventDefault();
