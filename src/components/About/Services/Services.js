@@ -1,5 +1,3 @@
-
-import { Link } from 'react-router-dom';
 import './Services.css';
 export const Services = () => {
 
@@ -51,12 +49,11 @@ export const Services = () => {
                             <h2>Vassilena Vassileva</h2>
                             <h3>Chief manager</h3>
                             <div className="team-card-buttons">
-                                <a href="mailto:someone@events.com" className="team-card-btn">
-                                    <i className="fas fa-phone"></i>
+                                <a href="mailto:someone@event.bg" className="team-card-btn">
+                                    <i className="fas fa-envelope"></i>
                                 </a>
                                 <a href="tel:+359888555555" className="team-card-btn">
-                                    <i className="fas fa-envelope"></i>
-
+                                    <i className="fas fa-phone"></i>
                                 </a>
                             </div>
                         </div>
@@ -69,12 +66,11 @@ export const Services = () => {
                             <h2>Evgeny Troyanov</h2>
                             <h3>Design and branding</h3>
                             <div className="team-card-buttons">
-                                <a href="mailto:someone@events.com" className="team-card-btn">
-                                    <i className="fas fa-phone"></i>
+                                <a href="mailto:someone@event.bg" className="team-card-btn">
+                                    <i className="fas fa-envelope"></i>
                                 </a>
                                 <a href="tel:+359888555555" className="team-card-btn">
-                                    <i className="fas fa-envelope"></i>
-
+                                    <i className="fas fa-phone"></i>
                                 </a>
                             </div>
                         </div>
@@ -84,15 +80,14 @@ export const Services = () => {
                             <img src="/images/team-pr.jpg" alt="Manager" />
                         </div>
                         <div className="team-card-content">
-                            <h2>Mairiam Dobrovsky</h2>
+                            <h2>Miriam Dobrovsky</h2>
                             <h3>Public relationships</h3>
                             <div className="team-card-buttons">
-                                <a href="mailto:someone@events.com" className="team-card-btn">
-                                    <i className="fas fa-phone"></i>
+                                <a href="mailto:someone@event.bg" className="team-card-btn">
+                                    <i className="fas fa-envelope"></i>
                                 </a>
                                 <a href="tel:+359888555555" className="team-card-btn">
-                                    <i className="fas fa-envelope"></i>
-
+                                    <i className="fas fa-phone"></i>
                                 </a>
                             </div>
                         </div>
@@ -105,12 +100,11 @@ export const Services = () => {
                             <h2>Aneta Ganeva</h2>
                             <h3>Catering</h3>
                             <div className="team-card-buttons">
-                                <a href="mailto:someone@events.com" className="team-card-btn">
-                                    <i className="fas fa-phone"></i>
+                                <a href="mailto:someone@event.bg" className="team-card-btn">
+                                    <i className="fas fa-envelope"></i>
                                 </a>
                                 <a href="tel:+359888555555" className="team-card-btn">
-                                    <i className="fas fa-envelope"></i>
-
+                                    <i className="fas fa-phone"></i>
                                 </a>
                             </div>
                         </div>
@@ -123,16 +117,16 @@ export const Services = () => {
                             <h2>Kiril Daskalov</h2>
                             <h3>Economic management</h3>
                             <div className="team-card-buttons">
-                                <a href="mailto:someone@events.com" className="team-card-btn">
-                                    <i className="fas fa-phone"></i>
+                                <a href="mailto:someone@event.bg" className="team-card-btn">
+                                    <i className="fas fa-envelope"></i>
                                 </a>
                                 <a href="tel:+359888555555" className="team-card-btn">
-                                    <i className="fas fa-envelope"></i>
+                                    <i className="fas fa-phone"></i>
                                 </a>
                             </div>
                         </div>
                     </article>
-                   
+
                 </div>
             </section>
         </>
