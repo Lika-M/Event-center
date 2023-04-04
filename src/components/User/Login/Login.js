@@ -14,7 +14,7 @@ export const Login = () => {
     const [input, setInput] = useState({});
     const [error, setError] = useState({});
 
-    if(currentUser._id){
+    if(currentUser !== null){
         return <Navigate to="/"/>
     }
 
