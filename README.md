@@ -1,4 +1,4 @@
-##React-app-Event-center
+## React-app-Event-center
 
 Responsive React app implementing AJAX, CRUD operations, subscription, search and pagination.
 
