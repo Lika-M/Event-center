@@ -1,6 +1,8 @@
-Responsive React app implementing AJAX, CRUD operations, subscription, search and pagination.
 
-[VIEW LIVE HERE]( https://event-center-eb631.web.app)
+Responsive React app implementing AJAX, CRUD operations, subscription, search and pagination -
+
+### Demo Project Online
+You can find the project by [clicking here]( https://event-center-eb631.web.app) to view it in the browser.
 
 ### Getting Started with Create React App
 
