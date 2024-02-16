@@ -39,6 +39,4 @@ React.JS, JavaScript, CSS, HTML
 ### Database storage:
 [Cloud platform Back4App](https://www.back4app.com/) for storing information about events and users.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
