@@ -7,9 +7,9 @@ Responsive React app implementing AJAX, CRUD operations, subscription, search an
 ### Demo Project Online
 You can find the project by [clicking here]( https://event-center-eb631.web.app) to view it in the browser.
 
-# Public part
+## Public part
 
-## The public part of the project is visible without authentication, intended for users with free access:
+### The public part of the project is visible without authentication, intended for users with free access:
 
 1. **Home Page** - the main page that introduces the user to the content.
 2. **About** – divided into three sections:
@@ -21,9 +21,9 @@ You can find the project by [clicking here]( https://event-center-eb631.web.app)
 5. **Login** - where the login form for already registered users is located.
 6. **Register** - where the registration form for new users is located.
 
-# Private part 
+## Private part 
 
-## The private part of the project is only available to registered users:
+### The private part of the project is only available to registered users:
 
 1. **Event Reservation** – provides event creators with the following options:
    - **Create** - form to create your own event, selecting options for date, time, and location.
@@ -37,7 +37,7 @@ You can find the project by [clicking here]( https://event-center-eb631.web.app)
 React.JS, JavaScript, CSS, HTML 
 
 ### Database storage:
-[Cloud platform Back4App](https://www.back4app.com/) for storing information about events or users.
+[Cloud platform Back4App](https://www.back4app.com/) for storing information about events and users.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
