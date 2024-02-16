@@ -10,7 +10,7 @@
     justify-content: space-around;
 }
 
-.event-card:hover{
+.event-card:hover {
     box-shadow: 0px 1px 10px 1px grey;
 }
 
@@ -71,7 +71,7 @@
     padding: 10px 15px;
     letter-spacing: 0.08em;
     overflow: hidden;
-    text-overflow: ellipsis;
+    /* text-overflow: ellipsis; */
     display: -webkit-box;
     line-height: 25px;
     height: 40px;
@@ -90,6 +90,7 @@
 .event-card-content-detail {
     display: inline-block;
     margin-top: 10px;
+    position: relative;
 }
 
 .event-card-content-detail span {
@@ -99,12 +100,16 @@
 
 .event-expired {
     display: inline-block;
+    height: 18px;
     background-color: #5979a9;
     color: #fff;
     font-size: 14px;
     font-weight: 100;
     padding: 3px 5px;
     margin-left: 15px;
+    position: relative;
+    top: 5px;
+    left: 58px;
 }
 
 .event-card-btn-wrapper {
@@ -129,7 +134,7 @@
         flex-grow: 1;
     }
 
-    .event-card-content-title{
+    .event-card-content-title {
         width: 100px;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -146,7 +151,7 @@
     .event-card {
         padding: 20px;
     }
-    
+
     .event-card-content-title {
         font-size: 1em;
         margin-bottom: 15px;
@@ -164,7 +169,7 @@
 
     .event-card-content-date {
         width: 48px;
-        height:auto ;
+        height: auto;
     }
 
     .event-card-content-date span:nth-child(1) {
@@ -220,7 +225,7 @@
 @media (max-width: 600px) {
     .event-card-content-title {
         font-size: 1em;
-       
+
     }
 
     .event-card-content-detail {

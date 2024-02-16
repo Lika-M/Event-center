@@ -18,16 +18,14 @@ export const EventItem = ({
                         <span>{day}</span><span>{month.slice(0, 3)}</span>
                     </div>
                     <h1 className="event-card-content-title">
-                        {/* <Link to="/calendar/details"> */}
                         {topic}
-                        {/* </Link> */}
+                    </h1>
                         {expired
                             ? <span className="event-expired">
                                 expired
                             </span>
                             : ''
                         }
-                    </h1>
 
                 </div>
                 <div className="event-card-btn-wrapper">
