@@ -7,6 +7,14 @@ Responsive React app implementing AJAX, CRUD operations, subscription, search an
 ### Demo Project Online
 You can find the project by [clicking here]( https://event-center-eb631.web.app) to view it in the browser.
 
+## Technical Description
+
+### Built with
+**JavaScript**, **HTML**, **CSS**, **ReactJS**
+
+### Database storage, deploy and hosting
+[Cloud platform Back4App](https://www.back4app.com/) for storing information about events and users. Hosted by [Firebase](https://firebase.google.com/).
+
 ## Public part
 
 ### The public part of the project is visible without authentication, intended for users with free access:
@@ -31,12 +39,6 @@ You can find the project by [clicking here]( https://event-center-eb631.web.app)
    - **Delete** - allows you to delete your own event after confirmation.
 2. **Event Details** - allows all other users to reserve seats for participation.
 
-## Technical Description
-
-### Built With:
-React.JS, JavaScript, CSS, HTML 
-
-### Database storage:
-[Cloud platform Back4App](https://www.back4app.com/) for storing information about events and users.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app),
 
 
